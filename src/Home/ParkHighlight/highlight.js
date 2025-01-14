@@ -183,7 +183,7 @@ const Highlight = () => {
           <div>
             <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
               <span
-                className="text-transparent text-3xl sm:text-5xl lg:text-7xl block"
+                className="text-transparent text-3xl sm:text-5xl lg:text-6xl block"
                 style={{
                   WebkitTextStroke: "1px #ffffff",
                   textStroke: "1px #ffffff",
@@ -191,8 +191,9 @@ const Highlight = () => {
               >
                 PARK
               </span>
-              <span className="text-[#8BC34A] text-3xl sm:text-5xl lg:text-7xl block mt-2">
+              <span className="text-[#8BC34A] text-3xl sm:text-5xl lg:text-6xl block mt-2">
                 HIGHLIGHTS
+                <span className="text-white text-[25px] rounded-full">●</span>
               </span>
             </h1>
           </div>

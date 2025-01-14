@@ -37,6 +37,7 @@ import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Highlight from "./ParkHighlight/highlight";
 import Offer from "./WhatWeOffer/offer";
+import News from "./News/news";
 
 const NSTPStats = [
   {
@@ -279,7 +280,8 @@ const Home = () => {
           </Link>
       </div>
       <CTA />
-      {/* <Footer /> */}
+      <News />
+      <Footer />
     </div>
   );
 };
