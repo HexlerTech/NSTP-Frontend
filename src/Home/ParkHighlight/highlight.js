@@ -193,7 +193,7 @@ const Highlight = () => {
               </span>
               <span className="text-[#8BC34A] text-3xl sm:text-5xl lg:text-6xl block mt-2">
                 HIGHLIGHTS
-                <span className="text-white text-[25px] rounded-full">●</span>
+                <span className="text-white text-[10px] sm:text-[25px] rounded-full">●</span>
               </span>
             </h1>
           </div>

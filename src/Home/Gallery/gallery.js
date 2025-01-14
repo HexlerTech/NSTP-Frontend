@@ -154,17 +154,17 @@
 
 // export default Gallery;
 
-import React from "react";
-import image1 from "../../Assets/highlight/image1.jpg";
-import image2 from "../../Assets/highlight/image2.JPG";
-import image3 from "../../Assets/highlight/image3.JPG";
-import image4 from "../../Assets/highlight/image4.jpg";
-import image5 from "../../Assets/highlight/image5.jpg";
-import image6 from "../../Assets/highlight/image6.JPG";
-import image7 from "../../Assets/highlight/image7.jpeg";
-import image8 from "../../Assets/highlight/image8.jpg";
-import image9 from "../../Assets/highlight/image9.jpg";
-import image10 from "../../Assets/highlight/image10.JPG";
+import React, { useEffect, useState } from "react";
+import image1 from "../../Assets/highlight/image1.svg";
+import image2 from "../../Assets/highlight/image2.svg";
+import image3 from "../../Assets/highlight/image3.svg";
+import image4 from "../../Assets/highlight/image4.svg";
+import image5 from "../../Assets/highlight/image5.svg";
+import image6 from "../../Assets/highlight/image6.svg";
+import image7 from "../../Assets/highlight/image7.svg";
+import image8 from "../../Assets/highlight/image8.svg";
+import image9 from "../../Assets/highlight/image9.svg";
+import image10 from "../../Assets/highlight/image10.svg";
 import image11 from "../../Assets/highlight/image11.jpg";
 import image12 from "../../Assets/highlight/image12.jpg";
 import image13 from "../../Assets/highlight/image13.jpg";
@@ -177,10 +177,35 @@ import image19 from "../../Assets/highlight/image19.jpg";
 import image20 from "../../Assets/highlight/image20.jpg";
 
 const Gallery = () => {
+  const [scrollSpeed, setScrollSpeed] = useState('35s');
+  
+  useEffect(() => {
+    const updateScrollSpeed = () => {
+      // Base speed is 35s for largest screen (1440px)
+      const baseSpeed = 35;
+      const baseWidth = 1440;
+      const currentWidth = window.innerWidth;
+      
+      // Adjust speed proportionally to screen width
+      const adjustedSpeed = Math.max((baseSpeed * currentWidth) / baseWidth, 20);
+      setScrollSpeed(`${adjustedSpeed}s`);
+    };
+
+    // Initial calculation
+    updateScrollSpeed();
+
+    // Update on resize
+    window.addEventListener('resize', updateScrollSpeed);
+    return () => window.removeEventListener('resize', updateScrollSpeed);
+  }, []);
   return (
     <div className="relative w-full overflow-hidden bg-white">
-      {/* animate-scroll-right */}
-      <div className="flex animate-scroll-right   ">
+    <div
+      className="flex"
+      style={{
+        animation: `moveRight ${scrollSpeed} linear infinite`,
+      }}
+    >
         {/* <div className="flex animate-scroll-right"> */}
         {/* First set of grid */}
         <div className="min-w-full grid grid-cols-3 gap-4 p-2">

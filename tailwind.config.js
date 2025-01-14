@@ -5,16 +5,16 @@ module.exports = {
     extend: {
       animation: {
         "spin-slow": "spin 30s linear infinite",
-        "infinite-scroll": "infinite-scroll 35s linear infinite",
-        "scroll-right": "moveRight 35s linear infinite",
+        "infinite-scroll": "infinite-scroll var(--scroll-speed, 35s) linear infinite",
+        "scroll-right": "moveRight var(--scroll-speed, 35s) linear infinite",
       },
       dropShadow: {
-        'custom': '0 4px 6px #90C74B', // Example red shadow
+        'custom': '0 4px 6px #90C74B',
       },
       keyframes: {
         "infinite-scroll": {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" }
         },
         moveRight: {
           "0%": { transform: "translateX(-100%)" },
