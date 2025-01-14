@@ -1,0 +1,158 @@
+.hollow-text {
+  font-size: 2.5rem; /* Adjust size as needed */
+  font-weight: 600; /* Keep the text bold */
+  color: transparent; /* Make the text itself transparent */
+  -webkit-text-stroke-width: 0.6px; /* Stroke width */
+  -webkit-text-stroke-color: #90C74B;
+  text-stroke-width: 0.5px; /* Stroke width for other browsers */
+  text-stroke-color: white; /* Stroke color for other browsers */
+}
+.hollow-text-main {
+  font-size: 5.5rem; /* Adjust size as needed */
+  font-weight: 600; /* Keep the text bold */
+  color: #90C74B;
+
+}
+
+.hollow-text-main2 {
+  font-size: 3.5rem; /* Adjust size as needed */
+  font-weight: 600; /* Keep the text bold */
+  color: transparent; /* Make the text itself transparent */
+
+  -webkit-text-stroke-width: 0.6px; /* Stroke width */
+  -webkit-text-stroke-color: #ffffff;
+  text-stroke-width: 0.5px; /* Stroke width for other browsers */
+  text-stroke-color: white; /* Stroke color for other browsers */
+
+}
+.hollow-text-main3 {
+
+  color: transparent; /* Make the text itself transparent */
+
+  -webkit-text-stroke-width: 0.6px; /* Stroke width */
+  -webkit-text-stroke-color: #ffffff;
+  text-stroke-width: 0.5px; /* Stroke width for other browsers */
+  text-stroke-color: white; /* Stroke color for other browsers */
+
+}
+.hollow-text-mobile {
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: 600; /* Keep the text bold */
+  color: transparent; /* Make the text itself transparent */
+  -webkit-text-stroke-width: 0.6px; /* Stroke width */
+  -webkit-text-stroke-color: #90C74B;
+  text-stroke-width: 0.5px; /* Stroke width for other browsers */
+  text-stroke-color: white; /* Stroke color for other browsers */
+}
+
+.hollow-text2 {
+  font-size: 3.5rem; /* Adjust size as needed */
+  font-weight: 600; /* Keep the text bold */
+  color:#90C74B;
+
+}
+
+.hollow-text3 {
+  font-size: 6.5rem; /* Adjust size as needed */
+  font-weight: 600; /* Keep the text bold */
+  color: transparent; /* Make the text itself transparent */
+  -webkit-text-stroke-width: 0.6px; /* Stroke width */
+  -webkit-text-stroke-color: rgb(194, 247, 204); /* Stroke color */
+  text-stroke-width: 0.5px; /* Stroke width for other browsers */
+  text-stroke-color: white; /* Stroke color for other browsers */
+}
+
+.hollow-text4 {
+  font-size: 3rem; /* Adjust size as needed */
+  font-weight: 600; /* Keep the text bold */
+  color: transparent; /* Make the text itself transparent */
+  -webkit-text-stroke-width: 1.3px; /* Stroke width */
+  -webkit-text-stroke-color: rgb(12, 67, 33); /* Stroke color */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slideLeft 1s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.transition-all {
+  transition-property: opacity, max-height;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+@media screen and (max-width: 1440px) {
+  .hollow-text2 {
+    font-size: 1.5rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hollow-text {
+    font-size: 1.5rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.6px; /* Stroke width */
+  }
+  .hollow-text2 {
+    font-size: 1.5rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  .hollow-text3 {
+    font-size: 3rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  .hollow-text4 {
+    font-size: 2rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  .hollow-text-mobile {
+    font-size: 1.5rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .hollow-text {
+    font-size: 1.5rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  .hollow-text2 {
+    font-size: 1rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  .hollow-text3 {
+    font-size: 2.5rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  .hollow-text4 {
+    font-size: 1.5rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  .hollow-text-mobile {
+    font-size: 1.2rem; /* Adjust size as needed */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+  
+}
