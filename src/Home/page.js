@@ -122,7 +122,7 @@ const NSTPAbout = () => {
           {/* About Us button */}
           <Link
             to="/about"
-            className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform transition-colors duration-300 ease-in-out w-fit"
+            className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
           >
             About us
             <HiArrowSmRight className="text-lg md:text-2xl" />
@@ -280,7 +280,7 @@ const Home = () => {
       <div className="flex flex-col items-center justify-center mt-1 p-10 pt-0 pb-0">
         <Link
           to="/"
-          className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform transition-colors duration-300 ease-in-out w-fit"
+          className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
         >
           View All Company
           <HiArrowSmRight className="text-lg md:text-2xl" />

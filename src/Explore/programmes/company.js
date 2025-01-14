@@ -491,7 +491,7 @@ const CompanyInfoPage = () => {
 
   return (
     <>
-      <div className="my-12 md:my-4 lg:my-12 md:pt-10 ">
+      <div className="my-10 md:my-4 lg:my-8 pt-4 md:pt-10">
         <div className="relative w-full flex justify-center">
           <div className="relative w-full h-[31rem] overflow-hidden">
             <img
@@ -576,13 +576,14 @@ const CompanyInfoPage = () => {
                 eligibility criteria will be contacted for further details.
               </p>
               <button
-                className="bg-primary mt-12 flex text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300 font-medium"
+                                      className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Apply Now"}</span>
                 <HiArrowSmRight className="ml-2" />
               </button>
             </div>
+          
 
             {showForm && (
               <div className="mt-10">

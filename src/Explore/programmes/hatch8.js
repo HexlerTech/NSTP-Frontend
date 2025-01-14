@@ -344,8 +344,9 @@ const Hatch = () => {
   const navigate = useNavigate();
   const about =
     "Hatch 8 is the nurturing space for great minds and brilliant ideas. It is a 5-month Pre-Incubation Programme for early stage startups that ensures development of entrepreneurs and their businesses. Residents in Hatch 8 are provided fully enabled working space in a professional environment, along with access to dynamic innovation ecosystem. Startups are also given support and guidance through expert mentorship and coaching, along with access to research facilities, labs and human resource.";
-    const hatch8Title="Nurturing Tomorrow's Innovations"
-    const hatch8Description="At Hatch 8, we're fostering the next generation of groundbreaking startups through our intensive 5-month pre-incubation program. Our innovative ecosystem supports early-stage entrepreneurs across multiple technology sectors, providing them with state-of-the-art facilities, expert mentorship, and comprehensive business development support to transform brilliant ideas into market-ready ventures."
+  const hatch8Title = "Nurturing Tomorrow's Innovations";
+  const hatch8Description =
+    "At Hatch 8, we're fostering the next generation of groundbreaking startups through our intensive 5-month pre-incubation program. Our innovative ecosystem supports early-stage entrepreneurs across multiple technology sectors, providing them with state-of-the-art facilities, expert mentorship, and comprehensive business development support to transform brilliant ideas into market-ready ventures.";
 
   const FixedDownloadButton = () => {
     const handleDownload = () => {
@@ -365,16 +366,16 @@ const Hatch = () => {
     return (
       <button
         onClick={handleDownload}
-        className="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 group"
+        className="fixed rounded-full bottom-8 right-8 z-50 flex items-center gap-2 bg-primary hover:bg-primary/90 px-6 py-3 hover:scale-110 transition-transform shadow-lg  duration-300 group"
       >
-        <Download className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-        <span className="font-medium"> Brochure</span>
+        <Download className="h-5 w-5  text-black group-hover:scale-110 transition-transform duration-300" />
+        <span className="font-medium  text-black"> Brochure</span>
       </button>
     );
   };
   return (
     <>
-      <div className=" my-12 md:my-4 lg:my-12  md:pt-10">
+      <div className=" my-10 md:my-4 lg:my-8 pt-4 md:pt-10">
         <div className="relative w-full   flex justify-center">
           {/* Image container with opacity */}
           <div className="relative w-full h-[31rem]  overflow-hidden">
@@ -486,7 +487,7 @@ const Hatch = () => {
                 for the next steps in the selection process.
               </p>
               <button
-                className="bg-primary  mt-12 flex  text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300 font-medium"
+                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Apply Now"}</span>
