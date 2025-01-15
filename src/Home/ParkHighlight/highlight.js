@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+
+
+import pitchus from "../../Assets/preview.png";
 import {
-  Building2,
-  Flask,
-  Users,
-  BadgeDollarSign,
-  Award,
-  Globe,
-  LineChart,
-  School,
-  Factory,
-  FlaskConical,
-  Target,
-  Trophy,
-  Building,
+  Building2, Flask, Users, BadgeDollarSign, Award, Globe,
+  LineChart, School, Factory, FlaskConical, Target, Trophy, Building,
+  ArrowUpRight
 } from "lucide-react";
 
 const Highlight = () => {
@@ -91,6 +83,7 @@ const Highlight = () => {
       description: "HEC Ranked 2021-2023",
     },
   ];
+  
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -173,41 +166,47 @@ const Highlight = () => {
       <div className="relative z-10">
         <hr className="border-primary/20" />
         
-        {/* Header Section */}
-        <div 
-          className="flex flex-col md:flex-row justify-between items-start mt-9 mb-12"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div>
-          <h1 className="mb-4 text-xl lg:text-3xl  font-extrabold leading-none tracking-tight">
-            <span
-              className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
-              style={{
-                WebkitTextStroke: "1px #ffffff",
-                textStroke: "1px #ffffff",
-              }}
-            >
-              PARK
-            </span>{" "}
-            <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
-            HIGHLIGHTS
-              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-white ml-1 rounded-full align-baseline"></span>
-            </span>
-          </h1>
-          </div>
-          <div className="flex flex-col items-end">
-            <p 
-              className="text-white text-md md:text-lg md:max-w-lg md:text-right mb-4"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 50 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+        {/* Header Section with Pitch Us Circle */}
+        <div className="flex flex-col md:flex-row justify-between items-start mt-9 mb-12">
+          <div className="flex-1">
+            <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #ffffff",
+                  textStroke: "1px #ffffff",
+                }}
+              >
+                PARK
+              </span>
+              <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
+                HIGHLIGHTS
+                <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-white ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
+            <p className="text-white text-md md:text-lg md:max-w-lg mb-4">
               Explore Pakistan's premier technology park, our innovative
               initiatives, and discover how NSTP is defining the future of
               innovation through success stories and strategic collaborations
             </p>
+          </div>
+
+          {/* Pitch Us Circle Component */}
+          <div className="relative flex items-center justify-center mt-8 md:mt-0">
+            <div
+              className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-[3.7rem] sm:px-6 lg:px-11 cursor-pointer"
+              onClick={() => (window.location.href = "/tenancy")}
+            >
+              <ArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
+              <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
+                Pitch Us
+              </span>
+            </div>
+            <img
+              src={pitchus}
+              alt="Pitch Us Circle"
+              className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
+            />
           </div>
         </div>
 
@@ -218,23 +217,19 @@ const Highlight = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col   items-center justify-center  gap-3"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="flex flex-col items-center justify-center gap-3"
               >
                 <div className="bg-white p-3 w-16 h-16 md:h-24 md:w-24 lg:w-28 lg:h-28 border flex items-center justify-center rounded-full">
-                  {/* <IconComponent className="w-12 md:w-16 h-12 md:h-16 text-black shadow-primary shadow-xl" /> */}
                   <IconComponent className="w-12 md:w-16 h-12 md:h-16 text-black stroke-1" />
                 </div>
-                <div className="w-full flex items-center justify-center flex-col text-center md:text-left ">
+                <div className="w-full flex items-center justify-center flex-col text-center md:text-left">
                   <div className="text-2xl lg:text-4xl font-bold text-white">
                     {item.value}
                   </div>
                   <div className="text-primary text-md lg:text-lg font-semibold">
                     {item.label}
                   </div>
-                  <div className="text-gray-400 text-md lg:text-lg ">
+                  <div className="text-gray-400 text-md lg:text-lg">
                     {item.description}
                   </div>
                 </div>
@@ -247,7 +242,7 @@ const Highlight = () => {
       {/* Bottom gradient line */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-      <style jsx global>{`
+      <style jsx>{`
         @keyframes float {
           0%, 100% {
             transform: translateY(0) translateX(0);
@@ -260,6 +255,19 @@ const Highlight = () => {
           }
           75% {
             transform: translateY(-20px) translateX(10px);
+          }
+        }
+
+        .animate-spin-slow {
+          animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
           }
         }
       `}</style>
