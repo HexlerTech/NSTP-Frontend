@@ -40,7 +40,7 @@ const Highlight = () => {
       icon: Building,
       value: "SEZ & STZ",
       label: "Status",
-      description: "Special Economic Zone",
+      description: "Tax Assumptions",
     },
     {
       icon: Globe,
@@ -181,21 +181,21 @@ const Highlight = () => {
           transition={{ duration: 0.8 }}
         >
           <div>
-            <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
-              <span
-                className="text-transparent text-3xl sm:text-5xl lg:text-6xl block"
-                style={{
-                  WebkitTextStroke: "1px #ffffff",
-                  textStroke: "1px #ffffff",
-                }}
-              >
-                PARK
-              </span>
-              <span className="text-[#8BC34A] text-3xl sm:text-5xl lg:text-6xl block mt-2">
-                HIGHLIGHTS
-                <span className="text-white text-[10px] sm:text-[25px] rounded-full">●</span>
-              </span>
-            </h1>
+          <h1 className="mb-4 text-xl lg:text-3xl  font-extrabold leading-none tracking-tight">
+            <span
+              className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
+              style={{
+                WebkitTextStroke: "1px #ffffff",
+                textStroke: "1px #ffffff",
+              }}
+            >
+              PARK
+            </span>{" "}
+            <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
+            HIGHLIGHTS
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-white ml-1 rounded-full align-baseline"></span>
+            </span>
+          </h1>
           </div>
           <div className="flex flex-col items-end">
             <p 
@@ -225,7 +225,7 @@ const Highlight = () => {
               >
                 <div className="bg-white p-3 w-16 h-16 md:h-24 md:w-24 lg:w-28 lg:h-28 border flex items-center justify-center rounded-full">
                   {/* <IconComponent className="w-12 md:w-16 h-12 md:h-16 text-black shadow-primary shadow-xl" /> */}
-                  <IconComponent className="w-12 md:w-16 h-12 md:h-16 text-black " />
+                  <IconComponent className="w-12 md:w-16 h-12 md:h-16 text-black stroke-1" />
                 </div>
                 <div className="w-full flex items-center justify-center flex-col text-center md:text-left ">
                   <div className="text-2xl lg:text-4xl font-bold text-white">

@@ -78,7 +78,7 @@ const NSTPAbout = () => {
       <div className="flex flex-col-reverse md:flex-row items-center gap-10  lg:gap-6">
         {/* Left side - Circle with video */}
 
-        <div className="w-full  md:w-2/6 lg:w-[600px]">
+        <div className="w-full   md:w-[540px] lg:w-[670px]">
           <video
             className="w-full h-full rounded-md"
             autoPlay
@@ -95,7 +95,7 @@ const NSTPAbout = () => {
         <div className="flex flex-col  flex-1 ml-0 md:ml-10 lg:ml-10 w-full ">
           <h1 className="mb-4 text-xl lg:text-3xl  font-extrabold leading-none tracking-tight">
             <span
-              className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-5xl block"
+              className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
               style={{
                 WebkitTextStroke: "1px #000",
                 textStroke: "1px #000",
@@ -103,11 +103,9 @@ const NSTPAbout = () => {
             >
               NATIONAL SCIENCE AND TECHNOLOGY PARK
             </span>{" "}
-            <span className="text-[#000000] text-3xl md:text-4xl  lg:text-5xl xl:text-5xl block mt-2">
-              PAKISTAN'S PREMIER TECHNOLOGY PARK
-              <span className="text-primary text-[10px] sm:text-[25px] rounded-full">
-                ●
-              </span>
+            <span className="text-[#000000] text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
+            PROXIMITY TO NUST'S CUTTING-EDGE INNOVATION ECOSYSTEM
+              <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
 
@@ -151,8 +149,9 @@ const Home = () => {
         </div>
 
         {/* Content - positioned above the overlay */}
-        <div className="relative z-10 flex flex-col items-start h-full">
-          <div className="flex items-center justify-center w-full h-[50%] lg:p-10 px-5 pt-10 pb-2 mt-28">
+        <div className="relative z-10 flex flex-col justify-between h-full">
+          {/* Top content */}
+          <div className="flex items-center w-full lg:p-10 px-5 pt-10 pb-2 mt-28">
             <div className="w-full">
               <p className="text-4xl sm:text-5xl lg:text-[5.5rem] text-[#90C74B] text-left mt-5 font-semibold slide-left leading-30">
                 NATIONAL SCIENCE
@@ -162,46 +161,57 @@ const Home = () => {
                 Innovation PowerHouse of Pakistan
               </h3>
               <h2 className="text-sm md:text-xl text-white text-left mt-2 italic">
-                Hi-Tech Economic Zone, 1st STP of the Nation
+                Hi-Tech Economic Zone, and Special Technology Zone
               </h2>
             </div>
           </div>
 
-          <div className="flex items-center w-full bottom-0 absolute justify-between pr-5 lg:pr-10">
-            <div className="text-right flex flex-col items-end justify-end gap-1 lg:gap-5 ml-11">
-              <h1 className="text-md sm:text-3xl lg:text-4xl text-white text-left w-full flex items-baseline">
-                Pakistan's
-                <div className="flex ml-1">
-                  <span className="text-primary text-3xl sm:text-7xl lg:text-8xl">
-                    1
-                  </span>
-                  <span className="text-white hollow-text2 text-sm items-start -ml-1 sm:-ml-3 justify-start">
-                    st
+          {/* Bottom content - positioned at bottom */}
+          <div className="w-full overflow-hidden">
+            <div className="relative w-full flex items-center justify-between px-6">
+              {/* Left side with 1st and text */}
+              <div className="flex items-center h-[160px] sm:h-[224px] lg:h-[384px] lg:mt-24">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+                  <div className="flex items-start">
+                    <span className="text-[#90C74B] text-4xl sm:text-7xl lg:text-8xl leading-none">
+                      1
+                    </span>
+                    <span className="text-white text-xs sm:text-sm -ml-1 sm:-ml-2 mt-1 hollow-text2">
+                      st
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <h1 className="text-sm md:text-2xl lg:text-4xl text-white whitespace-normal">
+                      Science Technology Park
+                    </h1>
+                    <h1 className="text-sm md:text-2xl -mt-1 lg:mt-2 lg:text-4xl text-white whitespace-normal">
+                      Established by NUST
+                    </h1>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side with rotating pitch us */}
+              <div className="relative flex items-center justify-center">
+                <div
+                  className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-12 sm:px-6 lg:px-11 cursor-pointer"
+                  onClick={() => (window.location.href = "/tenancy")}
+                >
+                  <FiArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
+                  <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
+                    Pitch Us
                   </span>
                 </div>
-              </h1>
-              <h1 className="text-md sm:text-3xl sm:-mt-4 lg:text-4xl text-white text-left flex items-center">
-                Science & Technology Park
-              </h1>
-            </div>
-            <div className="relative flex items-center justify-center">
-              <div
-                className="text-white absolute z-20 flex flex-col items-center rounded-full hover:bg-[#90C74B] hover:text-white py-3 px-2 sm:py-8 lg:py-7 sm:px-6 lg:px-8 cursor-pointer"
-                onClick={() => (window.location.href = "/tenancy")}
-              >
-                <FiArrowUpRight className="text-2xl -ml-3 lg:text-5xl -rotate-90" />
-                <h1 className="text-xs sm:text-base font-bold">Pitch Us</h1>
+                <img
+                  src={pitchus}
+                  alt="Pakistan's Largest Innovation Ecosystem"
+                  className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
+                />
               </div>
-              <img
-                src={pitchus}
-                alt="pitchus"
-                className="w-56 lg:w-[16rem] animate-spin-slow"
-              />
             </div>
           </div>
         </div>
       </div>
-
       <NSTPAbout />
       {/* <Statistics /> */}
       {/* <div className="flex flex-col md:flex-row mb-16 sm:mb-0 lg:flex-row items-right md:items-center justify-center p-10 pr-0 lg:p-20 lg:pr-0 lg:pb-0 lg:pt-0">
@@ -241,21 +251,22 @@ const Home = () => {
       {/* <Service /> */}
       <Highlight />
       <Offer />
-      <div className="flex flex-col items-center justify-center p-20 ">
-        <h1 className="sm:mb-10   text-center  font-extrabold leading-none tracking-tight">
-          <span
-            className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-5xl "
-            style={{
-              WebkitTextStroke: "1px #000",
-              textStroke: "1px #000",
-            }}
-          >
-            Life At
-          </span>{" "}
-          <span className="text-[#000000] text-3xl md:text-4xl  lg:text-5xl xl:text-5xl ml-4">
-            NSTP
-          </span>
-        </h1>
+      <div className="flex flex-col items-center justify-center px-2 py-8 ">
+      <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+        <span
+          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
+          style={{
+            WebkitTextStroke: "1px #000000",
+            textStroke: "1px #000000",
+          }}
+        >
+          LIFE
+        </span>{" "}
+        <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+          AT NSTP
+          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
+        </span>
+      </h1>
       </div>
       <Gallery />
 
@@ -279,7 +290,8 @@ const Home = () => {
       <Partners />
       <div className="flex flex-col items-center justify-center mt-1 p-10 pt-0 pb-0">
         <Link
-          to="/"
+        target="_blank"
+          to="/tenants"
           className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
         >
           View All Company

@@ -43,18 +43,19 @@ const Partners = () => {
 
   return (
     <>
-      <h1 className="mb-10 text-center font-extrabold leading-none tracking-tight mt-20">
+        <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
         <span
-          className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-5xl"
+          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{
-            WebkitTextStroke: "1px #000",
-            textStroke: "1px #000",
+            WebkitTextStroke: "1px #000000",
+            textStroke: "1px #000000",
           }}
         >
-          Our
+          OUR
         </span>{" "}
-        <span className="text-[#000000] text-3xl md:text-4xl lg:text-5xl xl:text-5xl ml-4">
-          Partners
+        <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+          PARTNERS
+          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-black ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
       <div className="w-full bg-gray-100 h-72 mb-16">

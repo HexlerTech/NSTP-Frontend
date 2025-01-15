@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import nstplogo from "../Assets/nstp-logoWhite.png";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState(window.location.pathname);
   const [isScrolling, setIsScrolling] = useState(false);
   const [mobileView, setMobileView] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpenAbout, setIsMenuOpenAbout] = useState(false);
+  const [isMenuOpenTeam, setIsMenuOpenTeam] = useState(false);
 
   useEffect(() => {
     setActiveLink(window.location.pathname);
@@ -49,6 +54,8 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpenAbout(!isMenuOpenAbout);
+    setIsMenuOpenTeam(!isMenuOpenTeam);
   };
 
   return (
@@ -87,7 +94,7 @@ const Navbar = () => {
                 >
                   HOME
                 </a> */}
-                <a
+                {/* <a
                   className={`cursor-pointer ${
                     activeLink === "/about"
                       ? "text-primary"
@@ -96,7 +103,41 @@ const Navbar = () => {
                   onClick={() => handleClick("/about")}
                 >
                   ABOUT
-                </a>
+                </a> */}
+                <div
+                  className="relative group"
+                  onMouseEnter={() => setIsMenuOpenAbout(true)}
+                  onMouseLeave={() => setIsMenuOpenAbout(false)}
+                >
+                  <Link
+                    className={`cursor-pointer ${
+                      activeLink === "/about" ||
+                      activeLink === "https://nust.edu.pk/about-us/"
+                        ? "text-primary"
+                        : "hover:text-primary"
+                    }`}
+                  >
+                    ABOUT
+                  </Link>
+                  <div className="absolute hidden group-hover:block top-full left-0 bg-black border border-gray-700 rounded-lg py-1 min-w-[130px] z-50">
+                    <Link
+                      target="_blank"
+                      className="block px-4 py-2 hover:bg-gray-800 cursor-pointer hover:text-primary"
+                      // onClick={() => handleClick("/about")}
+                      to={"/about"}
+                    >
+                      NSTP
+                    </Link>
+                    <Link
+                      target="_blank"
+                      className="block px-4 py-2 hover:bg-gray-800 cursor-pointer hover:text-primary"
+                      // onClick={() => handleClick("https://nust.edu.pk/about-us/")}
+                      to="https://nust.edu.pk/about-us/"
+                    >
+                      NUST
+                    </Link>
+                  </div>
+                </div>
                 {/* <a
                   className={`cursor-pointer ${
                     activeLink === "/innovate"
@@ -148,10 +189,10 @@ const Navbar = () => {
                 >
                   MENTORS
                 </a> */}
-                 <div
+                <div
                   className="relative group"
-                  onMouseEnter={() => setIsMenuOpen(true)}
-                  onMouseLeave={() => setIsMenuOpen(false)}
+                  onMouseEnter={() => setIsMenuOpenTeam(true)}
+                  onMouseLeave={() => setIsMenuOpenTeam(false)}
                 >
                   <a
                     className={`cursor-pointer ${
@@ -160,7 +201,7 @@ const Navbar = () => {
                         : "hover:text-primary"
                     }`}
                   >
-                    OUR TEAM 
+                    OUR TEAM
                   </a>
                   {/* Dropdown Menu */}
                   <div className="absolute hidden group-hover:block top-full left-0 bg-black border border-gray-700 rounded-lg py-1 min-w-[120px] z-50">
@@ -178,7 +219,7 @@ const Navbar = () => {
                     </a>
                   </div>
                 </div>
-               
+
                 <a
                   className={`cursor-pointer ${
                     activeLink === "/tenants"
@@ -231,14 +272,55 @@ const Navbar = () => {
           >
             HOME
           </a> */}
-          <a
-            className={`cursor-pointer ${
-              activeLink === "/about" ? "text-primary" : "hover:text-primary"
-            }`}
-            onClick={() => handleClick("/about")}
+          <div
+            className="relative group"
+            onMouseEnter={() => setIsMenuOpenAbout(true)}
+            onMouseLeave={() => setIsMenuOpenAbout(false)}
           >
-            ABOUT
-          </a>
+            <Link
+              to="/about"
+              className={`flex items-center space-x-1 px-3 py-2 rounded-md transition-colors duration-200 cursor-pointer ${
+                activeLink === "/about" ||
+                activeLink === "https://nust.edu.pk/about-us/"
+                  ? "text-primary"
+                  : "hover:text-primary"
+              }`}
+            >
+              <span>ABOUT</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isMenuOpenAbout ? "rotate-180" : ""
+                }`}
+              />
+            </Link>
+            <AnimatePresence>
+              {isMenuOpenAbout && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 bg-black border border-gray-700 rounded-lg py-1 min-w-[130px] z-50 shadow-lg"
+                >
+                  <Link
+                    to="/about"
+                    target="_blank"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200"
+                  >
+                    NSTP
+                  </Link>
+                  <Link
+                    to="https://nust.edu.pk/about-us/"
+                    target="_blank"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200"
+                  >
+                    NUST
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* <a
             className={`cursor-pointer ${
               activeLink === "/innovate"
@@ -284,36 +366,52 @@ const Navbar = () => {
           >
             MENTORS
           </a> */}
-          
+
           <div
             className="relative group"
-            onMouseEnter={() => setIsMenuOpen(true)}
-            onMouseLeave={() => setIsMenuOpen(false)}
+            onMouseEnter={() => setIsMenuOpenTeam(true)}
+            onMouseLeave={() => setIsMenuOpenTeam(false)}
           >
-            <a
-              className={`cursor-pointer ${
+            <Link
+              className={`flex items-center space-x-1 px-3 py-2 rounded-md transition-colors duration-200 cursor-pointer ${
                 activeLink === "/mentors" || activeLink === "/team"
                   ? "text-primary"
                   : "hover:text-primary"
               }`}
             >
-              OUR TEAM
-            </a>
-            {/* Dropdown Menu */}
-            <div className="absolute hidden group-hover:block top-full left-0 bg-black border border-gray-700 rounded-lg py-1 min-w-[130px] z-50">
-              <a
-                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer hover:text-primary"
-                onClick={() => handleClick("/mentors")}
-              >
-                MENTORS
-              </a>
-              <a
-                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer hover:text-primary"
-                onClick={() => handleClick("/team")}
-              >
-                NSTP TEAM
-              </a>
-            </div>
+              <span>OUR TEAM</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isMenuOpenTeam ? "rotate-180" : ""
+                }`}
+              />
+            </Link>
+            <AnimatePresence>
+              {isMenuOpenTeam && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 bg-black border border-gray-700 rounded-lg py-1 min-w-[130px] z-50 shadow-lg"
+                >
+                  <Link
+                    to="/mentors"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200 cursor-pointer"
+                    onClick={() => handleClick("/mentors")}
+                  >
+                    MENTORS
+                  </Link>
+                  <Link
+                    to="/team"
+                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200 cursor-pointer"
+                    onClick={() => handleClick("/team")}
+                  >
+                    NSTP TEAM
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
           <a
             className={`cursor-pointer ${
@@ -340,12 +438,11 @@ const Navbar = () => {
             CONTACT
           </a>
           <a
-            className="bg-primary flex gap-3 items-center justify-center text-black px-3 py-1 rounded-full text-sm md:text-lg font-semibold transform cursor-pointer hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+            className="bg-primary flex gap-3 items-center justify-center text-black px-3 py-1 rounded-full text-sm md:text-base font-semibold transform cursor-pointer hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             onClick={() => handleClick("/explore")}
           >
             Explore NSTP
           </a>
-       
         </div>
       )}
     </div>

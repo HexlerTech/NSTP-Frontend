@@ -13,13 +13,7 @@ const News = () => {
   const [cardsToShow, setCardsToShow] = useState(3); // Default is 3 cards
 
   const pressArticles = [
-    {
-      date: "June 04, 2024",
-      image: News1,
-      logo: "menabytes",
-      title: "Zayn Venture Capital becomes Resident VC at NSTP-NUST...",
-      link: "https://www.brecorder.com/news/40306731/zayn-venture-capital-becomes-resident-vc-at-nstp-nust",
-    },
+    
     {
       date: "August 13, 2024",
       image: News2,
@@ -54,6 +48,13 @@ const News = () => {
       logo: "Daily Times",
       title: "Federal Minister MoST visits Nust...",
       link: "https://www.brecorder.com/news/40278725/federal-minister-most-visits-nust",
+    },
+    {
+      date: "June 04, 2024",
+      image: News1,
+      logo: "menabytes",
+      title: "Zayn Venture Capital becomes Resident VC at NSTP-NUST...",
+      link: "https://www.brecorder.com/news/40306731/zayn-venture-capital-becomes-resident-vc-at-nstp-nust",
     },
   ];
 
@@ -94,35 +95,36 @@ const News = () => {
   return (
     <div className="w-full bg-white py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <h1 className="mb-10 text-center font-extrabold leading-none tracking-tight mt-20">
-          <span
-            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-5xl"
-            style={{
-              WebkitTextStroke: "1px #000",
-              textStroke: "1px #000",
-            }}
-          >
-            NSTP In
-          </span>{" "}
-          <span className="text-[#000000] text-3xl md:text-4xl lg:text-5xl xl:text-5xl ml-4">
-            The News
-          </span>
-        </h1>
+      <h1 className="text-xl lg:text-3xl mb-12   flex flex-col sm:flex-row items-center justify-center  sm:gap-4 font-extrabold leading-none tracking-tight">
+        <span
+          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
+          style={{
+            WebkitTextStroke: "1px #000000",
+            textStroke: "1px #000000",
+          }}
+        >
+          NSTP IN
+        </span>{" "}
+        <span className="text-BLACK text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+           THE NEWS
+          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
+        </span>
+      </h1>
 
         <div className="relative ">
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 sm:left-6 top-1/2  -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-primary hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg"
+            className="absolute left-2 sm:left-6 top-1/2  -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg"
           >
-            <ChevronLeft className="w-3 sm:w-6 h-3 sm:h-6" />
+            <ChevronLeft className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-2 sm:right-6 top-1/2  -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-primary hover:scale-110 transition-transform duration-150  p-2 sm:p-4 rounded-full shadow-lg"
+            className="absolute right-2 sm:right-6 top-1/2  -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-black hover:scale-110 transition-transform duration-150  p-2 sm:p-4 rounded-full shadow-lg"
           >
-            <ChevronRight className="w-3 sm:w-6 h-3 sm:h-6" />
+            <ChevronRight className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
           </button>
 
           {/* Cards Container */}

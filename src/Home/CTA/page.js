@@ -85,18 +85,19 @@ const CTA = () => {
         <div className="text-center space-y-8">
           {/* Heading with outline effect */}
           <div className="inline-flex flex-col items-center justify-center space-y-2">
-          <h1 className="mb-10   text-center  font-extrabold leading-none tracking-tight mt-20">
+          <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
         <span
-          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-5xl "
+          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{
             WebkitTextStroke: "1px #ffffff",
             textStroke: "1px #ffffff",
           }}
         >
-          Visit
+          VISIT
         </span>{" "}
-        <span className="text-primary text-3xl md:text-4xl  lg:text-5xl xl:text-5xl ml-4">
-         NSTP
+        <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+          NSTP
+          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-white ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
             <div className="flex items-center space-x-3">
@@ -115,14 +116,16 @@ const CTA = () => {
           {/* Action Buttons */}
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              to="/"
+            target="_blank"
+              to="/about"
               className="bg-primary flex gap-3 items-center justify-center text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
               Learn more
               <BookOpen className="w-5 h-5 mr-2" />
             </Link>
             <Link
-              to="/"
+            target="_blank"
+              to="/contact"
               className="bg-white flex gap-3 items-center justify-center text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
               Get started
