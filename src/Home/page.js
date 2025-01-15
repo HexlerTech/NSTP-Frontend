@@ -270,7 +270,7 @@ const Home = () => {
       </div>
       <Gallery />
 
-      <div className="flex flex-col items-center justify-center mt-6 sm:mt-28 p-10 pt-0 pb-0">
+      {/* <div className="flex flex-col items-center justify-center mt-6 sm:mt-28 p-10 pt-0 pb-0">
         <h1 className="mb-10   text-center  font-extrabold leading-none tracking-tight mt-20">
           <span
             className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-5xl "
@@ -279,13 +279,16 @@ const Home = () => {
               textStroke: "1px #000",
             }}
           >
-            Company At
+            HOME TO
           </span>{" "}
           <span className="text-[#000000] text-3xl md:text-4xl  lg:text-5xl xl:text-5xl ml-4">
-            NSTP
+            100+ COMPANIES
           </span>
         </h1>
-      </div>
+        <p className="max-w-2xl mx-auto text-lg text-gray-500 text-center mb-8">
+        Large multinational corporations (MNCs), startups, small and medium-sized enterprises (SMEs), and research and development (R&D) houses from all around the world
+          </p>
+      </div> */}
       <Companies />
       <Partners />
       <div className="flex flex-col items-center justify-center mt-1 p-10 pt-0 pb-0">

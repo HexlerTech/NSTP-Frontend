@@ -51,7 +51,7 @@ const Offer = () => {
 
   return (
     <div className="container mx-auto px-2 py-8 mt-14 ">
-      <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+      <h1 className="text-xl lg:text-3xl mb-5   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{
@@ -66,6 +66,11 @@ const Offer = () => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-black ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
+      
+      <p className="max-w-2xl mx-auto text-lg text-gray-500 text-center mb-8">
+      With over 500,000 sq ft of development space  NSTP  is the
+      ideal home for residents to expand their business in the proximity of NUST
+          </p>
       <div className="flex flex-wrap items-center justify-center gap-6 w-full ">
         {services.map((service, index) => (
           <div
