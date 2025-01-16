@@ -40,6 +40,7 @@ import Footer from "../../Components/footer";
 import { Cube8Form } from "../../TenancyForm/page";
 import { useNavigate } from "react-router-dom";
 import CompanyLogo from "./CompanyLogos/companyLogo";
+import { HiArrowSmRight } from "react-icons/hi";
 
 const CarouselSection = ({ title, items }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -180,62 +181,153 @@ const WhatWeOfferSection = () => {
   const offerings = [
     {
       title: "Access to Global Network",
-      icon: <NetworkIcon className="w-16 h-16 text-[#86BE3F]" />,
+      icon: NetworkIcon,
       description: "Network of Investors and VCs",
     },
     {
       title: "Professional Space",
-      icon: <Building className="w-16 h-16 text-[#86BE3F]" />,
+      icon: Building,
       description: "State-of-the-art Office Space and Facilities",
     },
     {
       title: "Expert Mentorship",
-      icon: <Users2 className="w-16 h-16 text-[#86BE3F]" />,
+      icon: Users2,
       description: "Strategic Partnerships with Industry Leaders",
     },
     {
       title: "Business Development",
-      icon: <Building2 className="w-16 h-16 text-[#86BE3F]" />,
+      icon: Building2,
       description: "Advanced Business Development Resources",
     },
     {
       title: "Market Access",
-      icon: <Globe className="w-16 h-16 text-[#86BE3F]" />,
+      icon: Globe,
       description: "Market Expansion Opportunities",
     },
     {
       title: "Investment Support",
-      icon: <Banknote className="w-16 h-16 text-[#86BE3F]" />,
+      icon: Banknote,
       description: "Investment Readiness Programs",
     },
     {
       title: "Research Access",
-      icon: <FlaskConicalIcon className="w-16 h-16 text-[#86BE3F]" />,
+      icon: FlaskConicalIcon,
       description: "Access to NSTP's Research and Development Labs",
     },
     {
       title: "Legal Support",
-      icon: <Scale className="w-16 h-16 text-[#86BE3F]" />,
+      icon: Scale,
       description: "Legal and IP Support for International Markets",
     },
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        What We Offer
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {offerings.map((item, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
-            <div className="mb-4 bg-[#F7FBF3] rounded-full p-6 w-24 h-24 flex items-center justify-center">
-              {item.icon}
-            </div>
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-600 text-sm">{item.description}</p>
-          </div>
-        ))}
+    <div className="relative bg-black p-10 sm:p-24 w-full overflow-hidden">
+      {/* Animated Background with Rotating Blur Circles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large rotating blur circles */}
+        <div className="absolute w-full h-full animate-[spin_20s_linear_infinite]">
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={`blur-${i}`}
+              className="absolute w-96 h-96 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(139, 195, 74, 0.3), transparent 70%)",
+                left: `${30 + 40 * Math.cos((2 * Math.PI * i) / 3)}%`,
+                top: `${30 + 40 * Math.sin((2 * Math.PI * i) / 3)}%`,
+                filter: "blur(40px)",
+                transform: `scale(${1 + Math.sin((i * Math.PI) / 3)})`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Floating blue bubbles */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`bubble-${i}`}
+              className="absolute w-3 h-3 rounded-full bg-primary/30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `float ${5 + Math.random() * 5}s linear infinite`,
+                animationDelay: `${-Math.random() * 5}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Small green dots */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`dot-${i}`}
+              className="absolute w-1 h-1 bg-primary/20 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `float ${5 + Math.random() * 5}s linear infinite`,
+                animationDelay: `${-Math.random() * 5}s`,
+              }}
+            />
+          ))}
+        </div>
       </div>
+
+      <div className="relative z-10">
+        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #ffffff",
+              textStroke: "1px #ffffff",
+            }}
+          >
+            WHAT
+          </span>{" "}
+          <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+            WE OFFER
+            <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-12">
+          {offerings.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center group w-[21rem]"
+              >
+                <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-semibold mb-3 text-primary">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 text-sm md:text-base w-5/6">
+                  {item.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0) translateX(0);
+          }
+          50% {
+            transform: translateY(-20px) translateX(10px);
+          }
+        }
+      `}</style>
     </div>
   );
 };
@@ -276,9 +368,21 @@ const StartupAchievementsSection = () => {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        What Startups Will Achieve
-      </h2>
+      <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #000000",
+                  textStroke: "1px #000000",
+                }}
+              >
+                WHAT STARTUPS
+              </span>{" "}
+              <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+                WILL ACHIEVE
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {achievements.map((item, index) => (
           <div
@@ -352,12 +456,24 @@ const ProgramRequirementsSection = () => {
   ];
 
   return (
-    <div className="w-full bg-gray-50 py-16">
+    <div className="w-full bg-black py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-7">
-          Program Requirements
-        </h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+      <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #ffffff",
+                  textStroke: "1px #ffffff",
+                }}
+              >
+                PROGRAM
+              </span>{" "}
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+                REQUIREMENTS
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
+            <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-300 px-4 mb-8">
           We're looking for exceptional startups that meet the following
           criteria
         </p>
@@ -409,7 +525,8 @@ const Cube8 = () => {
   const about =
     "Cube 8 is NSTP's premier accelerator program designed for growth-stage startups ready to scale their operations and impact. This intensive 2 years program provides established startups with advanced resources, strategic mentorship, and access to a global network of investors and industry leaders. Our focus is on helping promising companies accelerate their growth, optimize their business models, and prepare for significant market expansion.";
 
-  const hatch8Title = "Accelerating Growth-Stage Success";
+  const hatch8TitleHollow = "DRIVING ";
+  const hatch8TitleFilled = "GROWTH";
   const hatch8Description =
     "Cube 8 houses dynamic startups across eight thematic sectors, from AgriTech to SmartTech, creating a vibrant ecosystem of innovation. Our resident companies benefit from advanced resources, strategic mentorship, and global networking opportunities, working together to scale their operations and create meaningful impact in their respective industries.";
 
@@ -488,49 +605,90 @@ const Cube8 = () => {
                 </span>
                 <ChevronRight /> Accelerator
               </p>
-              <h1 className="font-bold text-center h-full flex items-center justify-center -mt-4 text-3xl md:text-5xl">
-                Cube 8 Accelerator
-              </h1>
+              <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #ffffff",
+                  textStroke: "1px #ffffff",
+                }}
+              >
+                CUBE 8
+              </span>{" "}
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+                ACCELERATOR
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
             </div>
           </div>
         </div>
 
-        <div className="px-4 sm:px-20 md:px-48 mt-10 flex flex-col items-center justify-center">
+        <div className=" mt-10 flex flex-col items-center justify-center">
           {/* Program Overview */}
-          <div className="w-full lg:w-[71rem] flex flex-col items-center justify-center md:flex-row gap-6">
-            <div className="md:w-3/4">
-              <h2 className="text-3xl md:text-4xl font-bold text-start mb-12">
-                Program Overview
-              </h2>
-              <p className="text-gray-600 text-justify mt-5 text-sm">{about}</p>
-              <button className="w-full md:w-fit">
-                <Link
-                  to="apply"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  className="text-black flex items-center cursor-pointer hover:underline mt-5 justify-center md:justify-start w-full"
-                >
-                  Apply Now <ChevronRight className="ml-1" />
-                </Link>
-              </button>
-            </div>
-            <div className="hidden sm:block w-1/4">
+          <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24  my-10 md:my-0">
+          <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
+            {/* Left side - Image */}
+            <div className="w-full md:w-[540px] lg:w-[670px]">
               <img
-                className="rounded-full shadow-md"
-                src={Image6}
-                alt="program overview"
+                src={Image2}
+                alt="Program Overview"
+                className="w-full h-full rounded-md "
               />
             </div>
+
+            {/* Right side - Content */}
+            <div className="flex flex-col flex-1   items-center md:items-start  ml-0 lg:ml-10 w-full">
+              <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  lg:gap-2   font-extrabold leading-none tracking-tight">
+                <span
+                  className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
+                  style={{
+                    WebkitTextStroke: "1px #000000",
+                    textStroke: "1px #000000",
+                  }}
+                >
+                  PROGRAM
+                </span>{" "}
+                <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+                  OVERVIEW
+                  <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+                </span>
+              </h1>
+
+              <p className="text-md font-normal text-gray-500 mb-10 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                {about}
+              </p>
+              <Link
+                          
+                          to="apply"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+                        >
+                          Apply Now
+                          <HiArrowSmRight className="text-lg md:text-2xl" />
+                        </Link>
+
+              {/* Learn More button */}
+              {/* <Link
+            to="/program-details"
+            className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+          >
+            Learn More
+            <HiArrowSmRight className="text-lg md:text-2xl" />
+          </Link> */}
+            </div>
           </div>
+        </div>
 
           {/* Replace your existing "what we offer" section with: */}
-          <div className="mt-16 w-full lg:w-[71rem]">
+          <div className="mt-16 w-full ">
             <WhatWeOfferSection />
           </div>
           {/* Company Logo  */}
           <div className="mt-16 w-full  lg:w-[71rem] ">
-            <CompanyLogo title={hatch8Title} description={hatch8Description} />
+            <CompanyLogo titleHollow={hatch8TitleHollow} titleFilled={hatch8TitleFilled} description={hatch8Description} />
           </div>
 
           {/* Replace your existing "what startups will achieve" section with: */}
@@ -548,11 +706,23 @@ const Cube8 = () => {
 
           {/* Apply Section */}
           <div id="apply" className="mt-16 w-full lg:w-[71rem]">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              How to Apply
-            </h2>
+            <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #000000",
+                  textStroke: "1px #000000",
+                }}
+              >
+                HOW
+              </span>{" "}
+              <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+                TO APPLY
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
             <div className="text-gray-600 text-center flex flex-col items-center justify-center text-sm mt-5">
-              <p>
+              <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
                 Growth-stage startups meeting our program requirements can apply
                 for the Cube 8 Accelerator Program through our application form.
                 Selected companies will be invited for detailed evaluation and
@@ -560,7 +730,7 @@ const Cube8 = () => {
               </p>
 
               <button
-                                       className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
+                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Apply Now"}</span>

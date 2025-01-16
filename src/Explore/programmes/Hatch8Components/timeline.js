@@ -79,8 +79,22 @@ const timelineSteps = [
 
 const Timeline = () => {
   return (
-    <div className="mt-16 w-full">
-     <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Program Timeline</h2>
+    <div className="mt-16 w-full bg-black py-20">
+     <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #ffffff",
+                  textStroke: "1px #ffffff",
+                }}
+              >
+                PROGRAM
+              </span>{" "}
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+                TIMELINE
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
       <div className="w-full max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-4">
           {timelineSteps.map((step, index) => (
@@ -109,8 +123,8 @@ const Timeline = () => {
 
               {/* Step Title and Month */}
               <div className="text-center mt-4">
-                <h3 className="text-lg font-semibold">{step.title}</h3>
-                <p className="text-gray-500 text-sm">{step.month}</p>
+                <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+                <p className="text-gray-200 text-sm">{step.month}</p>
               </div>
             </div>
           ))}

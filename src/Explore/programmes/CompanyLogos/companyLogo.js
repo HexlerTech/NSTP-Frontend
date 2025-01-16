@@ -10,7 +10,7 @@ import ilm from "../../../Assets/companieslogos/ilm.png";
 import zambeel from "../../../Assets/companieslogos/zambeel.png";
 import truid from "../../../Assets/companieslogos/truid_logo_main.png";
 import zytrics from "../../../Assets/companieslogos/zytrics.png";
-const CompanyLogo = ({ title, description }) => {
+const CompanyLogo = ({ titleHollow, titleFilled, description }) => {
   const logos = [
     { name: "Avionics Solution", src: avionicsSolution },
     { name: "Craft", src: craft },
@@ -28,10 +28,22 @@ const CompanyLogo = ({ title, description }) => {
 
   return (
     <div className="container mx-auto p-3 sm:p-8 mt-5">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-5">
-        {title}
-      </h2>
-      <p className="sm:text-center text-justify  text-gray-600 mb-16">{description}</p>
+      <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #000000",
+                  textStroke: "1px #000000",
+                }}
+              >
+                {titleHollow}
+              </span>{" "}
+              <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+                {titleFilled}
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
+            <p className="max-w-5xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">{description}</p>
       <div className="flex flex-wrap items-center justify-center gap-8">
         {logos.map((logo, index) => (
           <div className="relative group bg-white h-44 w-44 rounded-lg border p-4">

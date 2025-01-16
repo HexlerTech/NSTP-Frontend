@@ -167,61 +167,61 @@ const Highlight = () => {
         <hr className="border-primary/20" />
         
         {/* Header Section with Pitch Us Circle */}
-        <div className="flex flex-col md:flex-row justify-between items-start mt-9 mb-12">
-          <div className="flex-1">
-            <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
-              <span
-                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
-                style={{
-                  WebkitTextStroke: "1px #ffffff",
-                  textStroke: "1px #ffffff",
-                }}
-              >
-                PARK
-              </span>
-              <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
-                HIGHLIGHTS
-                <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-white ml-1 rounded-full align-baseline"></span>
-              </span>
-            </h1>
-            <p className="text-white text-md md:text-lg md:max-w-lg mb-4">
-              Explore Pakistan's premier technology park, our innovative
-              initiatives, and discover how NSTP is defining the future of
-              innovation through success stories and strategic collaborations
-            </p>
-          </div>
+        <div className="flex flex-col md:flex-row justify-between items-center min-h-[300px] mt-9 mb-12">
+      <div className="flex-1 md:mr-8">
+        <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #ffffff",
+              textStroke: "1px #ffffff",
+            }}
+          >
+            PARK
+          </span>
+          <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
+            HIGHLIGHTS
+            <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-white ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
+        <p className="text-white text-md md:text-lg md:max-w-lg mb-4">
+          Explore Pakistan's premier technology park, our innovative
+          initiatives, and discover how NSTP is defining the future of
+          innovation through success stories and strategic collaborations
+        </p>
+      </div>
 
-          {/* Pitch Us Circle Component */}
-          <div className="relative flex items-center justify-center mt-8 md:mt-0">
-            <div
-              className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-[3.7rem] sm:px-6 lg:px-11 cursor-pointer"
-              onClick={() => (window.location.href = "/tenancy")}
-            >
-              <ArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
-              <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
-                Pitch Us
-              </span>
-            </div>
-            <img
-              src={pitchus}
-              alt="Pitch Us Circle"
-              className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
-            />
-          </div>
+      <div className="relative flex items-center justify-center mt-8 md:mt-0">
+        <div
+          className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-14 sm:px-6 lg:px-11 cursor-pointer"
+          onClick={() => (window.location.href = "/tenancy")}
+        >
+          <ArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
+          <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
+            Pitch Us
+          </span>
         </div>
+        <img
+          src={pitchus}
+          alt="Pitch Us Circle"
+          className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
+        />
+      </div>
+    </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-16 sm:gap-y-28">
+        <div className="flex flex-wrap items-center justify-center gap-y-16 sm:gap-y-28">
           {highlights.map((item, index) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center gap-3"
+                className="flex flex-col items-center justify-center gap-3 w-[21rem]"
               >
-                <div className="bg-white p-3 w-16 h-16 md:h-24 md:w-24 lg:w-28 lg:h-28 border flex items-center justify-center rounded-full">
-                  <IconComponent className="w-12 md:w-16 h-12 md:h-16 text-black stroke-1" />
+                <div className="mb-6 bg-white w-16 md:w-[7rem] h-16 md:h-[7rem] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
                 </div>
+
                 <div className="w-full flex items-center justify-center flex-col text-center md:text-left">
                   <div className="text-2xl lg:text-4xl font-bold text-white">
                     {item.value}

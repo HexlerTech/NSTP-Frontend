@@ -34,6 +34,7 @@ import {
   Brain,
   Microscope,
   Link as LucideLink,
+  FlaskConical,
 } from "lucide-react";
 
 const BenefitsSection = () => {
@@ -109,6 +110,11 @@ const BenefitsSection = () => {
       description: "Airport is a 15-minute drive",
     },
     {
+      title: "Research Facilities",
+      icon: FlaskConical,
+      description: "State-of-the-art research laboratories",
+    },
+    {
       title: "Banking Facilities",
       icon: Landmark,
       description: "Banking through HBL and Askari Bank",
@@ -116,27 +122,112 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Key Benefits</h2>
-      <div className="flex flex-wrap items-center justify-center gap-8">
-        {benefits.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col w-[15rem] min-h-52 items-center text-center"
-          >
-            {/* Icon container */}
-            <div className="mb-6 bg-primary/10 p-4 rounded-full shadow-lg">
-              <div className="w-12 h-12 flex items-center justify-center text-primary">
-                <item.icon className="w-12 h-12 text-primary" />
-              </div>
-            </div>
+    <div className="relative bg-black p-10 sm:p-24 w-full overflow-hidden">
+      {/* Animated Background with Rotating Blur Circles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large rotating blur circles */}
+        <div className="absolute w-full h-full animate-[spin_20s_linear_infinite]">
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={`blur-${i}`}
+              className="absolute w-96 h-96 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(139, 195, 74, 0.3), transparent 70%)",
+                left: `${30 + 40 * Math.cos((2 * Math.PI * i) / 3)}%`,
+                top: `${30 + 40 * Math.sin((2 * Math.PI * i) / 3)}%`,
+                filter: "blur(40px)",
+                transform: `scale(${1 + Math.sin((i * Math.PI) / 3)})`,
+              }}
+            />
+          ))}
+        </div>
 
-            {/* Title and description */}
-            <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-            <p className="text-gray-600 text-sm">{item.description}</p>
-          </div>
-        ))}
+        {/* Floating blue bubbles */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`bubble-${i}`}
+              className="absolute w-3 h-3 rounded-full bg-primary/30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `float ${5 + Math.random() * 5}s linear infinite`,
+                animationDelay: `${-Math.random() * 5}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Small green dots */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`dot-${i}`}
+              className="absolute w-1 h-1 bg-primary/20 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `float ${5 + Math.random() * 5}s linear infinite`,
+                animationDelay: `${-Math.random() * 5}s`,
+              }}
+            />
+          ))}
+        </div>
       </div>
+
+      <div className="relative z-10">
+        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #ffffff",
+              textStroke: "1px #ffffff",
+            }}
+          >
+            KEY
+          </span>{" "}
+          <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+            BENEFITS
+            <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-12">
+          {benefits.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center group w-[21rem]"
+              >
+                <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-semibold mb-3 text-primary">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 text-sm md:text-base w-5/6">
+                  {item.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0) translateX(0);
+          }
+          50% {
+            transform: translateY(-20px) translateX(10px);
+          }
+        }
+      `}</style>
     </div>
   );
 };
@@ -184,54 +275,67 @@ const NSTPGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 mt-16">
-   <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Explore Our Facilities</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {images.map((image) => (
-          <div
-            key={image.id}
-            className="group relative overflow-hidden rounded-lg cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
-            onClick={() => setSelectedImage(image)}
+    <div className="w-full mx-auto px-4 mt-16 py-28 bg-black">
+     <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #ffffff",
+              textStroke: "1px #ffffff",
+            }}
           >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-48 object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <h3 className="text-lg font-semibold">{image.title}</h3>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {selectedImage && (
+           EXPLORE
+          </span>{" "}
+          <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+            OUR FACILITIES
+            <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
+    <div className="flex flex-wrap items-center justify-center gap-8">
+      {images.map((image) => (
         <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-          onClick={() => setSelectedImage(null)}
+          key={image.id}
+          className="group relative overflow-hidden rounded-lg w-[28rem] h-72 bg-white cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
+          onClick={() => setSelectedImage(image)}
         >
-          <div className="relative max-w-4xl w-full">
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full h-auto rounded-lg"
-            />
-            <button
-              className="absolute top-4 right-4 text-white text-xl font-bold p-2 hover:text-gray-300"
-              onClick={() => setSelectedImage(null)}
-            >
-              ×
-            </button>
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white rounded-b-lg">
-              <h3 className="text-xl font-semibold">{selectedImage.title}</h3>
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="w-full h-full object-cover" // Changed from h-48 to h-full
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h3 className="text-lg font-semibold">{image.title}</h3>
             </div>
           </div>
         </div>
-      )}
+      ))}
     </div>
+  
+    {selectedImage && (
+      <div
+        className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+        onClick={() => setSelectedImage(null)}
+      >
+        <div className="relative max-w-4xl w-full">
+          <img
+            src={selectedImage.src}
+            alt={selectedImage.alt}
+            className="w-full h-auto rounded-lg"
+          />
+          <button
+            className="absolute top-4 right-4 text-white text-xl font-bold p-2 hover:text-gray-300"
+            onClick={() => setSelectedImage(null)}
+          >
+            ×
+          </button>
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white rounded-b-lg">
+            <h3 className="text-xl font-semibold">{selectedImage.title}</h3>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
   );
 };
 const EnhancedSections = () => {
@@ -338,7 +442,9 @@ const EnhancedSections = () => {
       <div className="mt-8">
         {activeTab === "eligibility" ? (
           <div>
-           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Eligibility Criteria</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Eligibility Criteria
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {eligibilityCriteria.map((item, index) => (
                 <div
@@ -371,7 +477,7 @@ const EnhancedSections = () => {
           </div>
         ) : (
           <div>
-            <h2 className="text-3xl font-bold text-center mb-12">
+             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               Target Sectors
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -519,20 +625,58 @@ const CompanyInfoPage = () => {
                 </span>
                 <HiArrowSmRight /> Company
               </p>
-              <h1 className="font-bold text-center h-full flex items-center justify-center -mt-4 text-3xl md:text-5xl">
-                Company Office Space
-              </h1>
+              <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #ffffff",
+                  textStroke: "1px #ffffff",
+                }}
+              >
+                COMPANY
+              </span>{" "}
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+                OFFICE SPACE
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
             </div>
           </div>
         </div>
 
-        <div className="px-4 sm:px-20 md:px-48 mt-10 flex flex-col items-center justify-center ">
+        <div className=" mt-10 flex flex-col items-center justify-center ">
           {/* // Program Overview */}
-          <div className="w-full lg:w-[71rem] flex flex-col items-center justify-center md:flex-row gap-6">
-            <div className="md:w-3/4">
-            <h2 className="text-3xl md:text-4xl font-bold text-start mb-12">Program Overview</h2>
-              <p className="text-gray-600 text-justify mt-5 text-sm">
-                NSTP offers the companies with the best office spaces. The
+          <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24  my-10 md:my-0">
+          <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
+            {/* Left side - Image */}
+            <div className="w-full md:w-[540px] lg:w-[670px]">
+              <img
+                src={Image2}
+                alt="Program Overview"
+                className="w-full h-full rounded-md "
+              />
+            </div>
+
+            {/* Right side - Content */}
+            <div className="flex flex-col flex-1 ml-0 lg:ml-10 w-full">
+              <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center    lg:gap-4 font-extrabold leading-none tracking-tight">
+                <span
+                  className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
+                  style={{
+                    WebkitTextStroke: "1px #000000",
+                    textStroke: "1px #000000",
+                  }}
+                >
+                  PROGRAM
+                </span>{" "}
+                <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+                  OVERVIEW
+                  <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+                </span>
+              </h1>
+
+              <p className="text-md font-normal text-gray-500 mb-10 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+              NSTP offers the companies with the best office spaces. The
                 office spaces are designed to provide a comfortable and
                 productive environment for the employees. The office spaces are
                 equipped with all the necessary facilities and amenities to
@@ -542,19 +686,22 @@ const CompanyInfoPage = () => {
                 located in prime locations and are well connected to the major
                 business hubs of the city.
               </p>
-             
-            </div>
-            <div className="hidden sm:block w-1/4">
-              <img
-                className="rounded-full shadow-md"
-                src={Image7}
-                alt="program overview"
-              />
+
+              {/* Learn More button */}
+              {/* <Link
+            to="/program-details"
+            className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+          >
+            Learn More
+            <HiArrowSmRight className="text-lg md:text-2xl" />
+          </Link> */}
             </div>
           </div>
-          
+        </div>
+         
+         
 
-          <div className="w-full lg:w-[71rem] mt-16 ">
+          <div className="w-full  mt-16 ">
             <NSTPGallery />
           </div>
 
@@ -562,28 +709,41 @@ const CompanyInfoPage = () => {
             <EnhancedSections />
           </div>
 
-          <div className="w-full lg:w-[71rem] mt-16">
+          <div className="w-full  mt-16">
             <BenefitsSection />
           </div>
 
           <div id="apply" className="w-full lg:w-[71rem] mt-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">How to Apply</h2>
+          <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #000000",
+              textStroke: "1px #000000",
+            }}
+          >
+           HOW 
+          </span>{" "}
+          <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+            TO APPLY
+            <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
             <div className="text-gray-600 flex flex-col items-center justify-center text-center text-sm">
-              <p>
+            <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
                 Companies interested in renting office spaces at NSTP can fill
                 the application form available on the website. The applications
                 will be reviewed by the NSTP team, and the companies meeting the
                 eligibility criteria will be contacted for further details.
               </p>
               <button
-                                      className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
+                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Apply Now"}</span>
                 <HiArrowSmRight className="ml-2" />
               </button>
             </div>
-          
 
             {showForm && (
               <div className="mt-10">
