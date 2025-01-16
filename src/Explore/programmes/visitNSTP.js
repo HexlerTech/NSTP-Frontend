@@ -236,7 +236,7 @@ const VisitNSTP = () => {
 
             {/* Right side - Content */}
             <div className="flex flex-col flex-1 ml-0 lg:ml-10 w-full">
-              <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  lg:gap-2   font-extrabold leading-none tracking-tight">
+              <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
                 <span
                   className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
                   style={{

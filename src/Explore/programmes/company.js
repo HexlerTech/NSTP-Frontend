@@ -177,7 +177,7 @@ const BenefitsSection = () => {
       </div>
 
       <div className="relative z-10">
-        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -276,7 +276,7 @@ const NSTPGallery = () => {
 
   return (
     <div className="w-full mx-auto px-4 mt-16 py-28 bg-black">
-     <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+     <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -625,7 +625,7 @@ const CompanyInfoPage = () => {
                 </span>
                 <HiArrowSmRight /> Company
               </p>
-              <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+              <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -714,7 +714,7 @@ const CompanyInfoPage = () => {
           </div>
 
           <div id="apply" className="w-full lg:w-[71rem] mt-16">
-          <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2  font-extrabold leading-none tracking-tight">
+          <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{

@@ -218,7 +218,7 @@ const BenefitsSection = () => {
       </div>
 
       <div className="relative z-10">
-        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -311,7 +311,7 @@ const CarouselSection = ({ items }) => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col mx-auto px-4 py-12">
-      <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+      <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
           style={{
@@ -522,7 +522,7 @@ const Hatch = () => {
                 </span>
                 <HiArrowSmRight /> Company
               </p>
-              <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+              <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
                 <span
                   className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                   style={{
@@ -556,7 +556,7 @@ const Hatch = () => {
 
               {/* Right side - Content */}
               <div className="flex flex-col flex-1 items-center md:items-start  ml-0 lg:ml-10 w-full">
-                <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  lg:gap-2   font-extrabold leading-none tracking-tight">
+                <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
                   <span
                     className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
                     style={{
@@ -629,7 +629,7 @@ const Hatch = () => {
           </div>
           {/* Apply */}
           <div id="apply" className="mt-16 w-full  lg:w-[71rem] ">
-            <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+            <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
