@@ -222,7 +222,7 @@ const Navbar = () => {
 
                 <a
                   className={`cursor-pointer ${
-                    activeLink === "/tenants"
+                    activeLink === "/newsroom"
                       ? "text-primary"
                       : "hover:text-primary"
                   }`}
@@ -415,7 +415,7 @@ const Navbar = () => {
           </div>
           <a
             className={`cursor-pointer ${
-              activeLink === "/tenants" ? "text-primary" : "hover:text-primary"
+              activeLink === "/newsroom" ? "text-primary" : "hover:text-primary"
             }`}
             onClick={() => handleClick("/newsroom")}
           >

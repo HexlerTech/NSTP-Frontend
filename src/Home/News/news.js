@@ -128,45 +128,47 @@ const News = () => {
           </button>
 
           {/* Cards Container */}
-          <div className="relative overflow-hidden ">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)`,
-              }}
-            >
-              {allSlides.map((article, index) => (
-                <Link to={article.link} target="_blank"
-                  key={index}
-                  className={`flex-none px-2`}
-                  style={{ width: `${100 / cardsToShow}%` }}
-                >
-                  <div className="relative group cursor-pointer">
-                    <div className="relative h-64 overflow-hidden rounded-lg">
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity group-hover:bg-opacity-50">
-                        <div className="absolute top-4 left-4">
-                          <h3 className="text-white text-2xl font-bold">
-                            {article.logo}
-                          </h3>
-                        </div>
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <p className="text-gray-200 mb-2">{article.date}</p>
-                          <h4 className="text-white text-lg font-semibold">
-                            {article.title}
-                          </h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
+          <div className="relative overflow-hidden">
+  <div
+    className="flex transition-transform duration-500 ease-in-out"
+    style={{
+      transform: `translateX(-${(currentIndex % pressArticles.length) * (100 / cardsToShow)}%)`,
+    }}
+  >
+    {allSlides.map((article, index) => (
+      <Link 
+        to={article.link} 
+        target="_blank"
+        key={index}
+        className="flex-none px-2"
+        style={{ width: `${100 / cardsToShow}%` }}
+      >
+        <div className="relative group cursor-pointer">
+          <div className="relative h-64 overflow-hidden rounded-lg">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity group-hover:bg-opacity-50">
+              <div className="absolute top-4 left-4">
+                <h3 className="text-white text-2xl font-bold">
+                  {article.logo}
+                </h3>
+              </div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-gray-200 mb-2">{article.date}</p>
+                <h4 className="text-white text-lg font-semibold">
+                  {article.title}
+                </h4>
+              </div>
             </div>
           </div>
+        </div>
+      </Link>
+    ))}
+  </div>
+</div>
 
           {/* Dots Navigation */}
           <div className="flex justify-center mt-8 gap-2">

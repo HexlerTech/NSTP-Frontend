@@ -31,9 +31,9 @@ const Companies = () => {
 
 
   return (
-    <div className="min-h-screen bg-black mb-24 mt-36 py-16">
+    <div className="h-fit bg-black mb-24 mt-36 py-16">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 ">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             <span className="text-transparent" style={{
               WebkitTextStroke: "1px #ffffff",
@@ -51,7 +51,7 @@ const Companies = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto ">
           <motion.div 
             className="flex items-center justify-center flex-wrap gap-6"
             initial="hidden"
