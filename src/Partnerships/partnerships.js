@@ -186,9 +186,9 @@ const Partnerships = () => {
               >
                 GLOBAL
               </span>{" "}
-              <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
                 PARTNERSHIPS
-                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-white ml-1 rounded-full align-baseline"></span>
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
           </div>

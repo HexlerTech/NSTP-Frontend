@@ -273,41 +273,42 @@ const BenefitsSection = () => {
   );
 };
 const CarouselSection = ({ items }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const itemsPerPage = {
-    mobile: 1, // Show 1 item on mobile
-    desktop: 3, // Show 3 items on desktop
-  };
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsToShow, setItemsToShow] = useState(3);
 
-  const getItemsPerPage = () => {
-    return window.innerWidth < 768 ? itemsPerPage.mobile : itemsPerPage.desktop;
-  };
+  // Double the items array for continuous scrolling
+  const allItems = [...items, ...items];
 
-  const [itemsToShow, setItemsToShow] = useState(getItemsPerPage());
-
+  // Update itemsToShow based on screen width
   useEffect(() => {
-    const handleResize = () => {
-      setItemsToShow(getItemsPerPage());
+    const updateItemsToShow = () => {
+      if (window.innerWidth < 768) {
+        setItemsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsToShow(2);
+      } else {
+        setItemsToShow(3);
+      }
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    updateItemsToShow();
+    window.addEventListener('resize', updateItemsToShow);
+    return () => window.removeEventListener('resize', updateItemsToShow);
   }, []);
 
-  const totalPages = Math.ceil(items.length / itemsToShow);
-
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalPages);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % allItems.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalPages) % totalPages);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? allItems.length - 1 : prevIndex - 1
+    );
   };
 
-  const visibleItems = items.slice(
-    currentSlide * itemsToShow,
-    (currentSlide + 1) * itemsToShow
-  );
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
 
   return (
     <div className="w-full flex items-center justify-center flex-col mx-auto px-4 py-12">
@@ -327,53 +328,65 @@ const CarouselSection = ({ items }) => {
         </span>
       </h1>
 
-      <div className="relative   w-5/6 sm:w-[80%]">
-        <div className="flex flex-col md:flex-row gap-8 ">
-          {visibleItems.map((item, index) => (
-            <div key={index} className="flex-1 ">
-              <div className="flex flex-col items-center p-4">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
-                  <img
-                    src={item.image || "/api/placeholder/128/128"}
-                    alt={item.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-center mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-primary font-medium mb-2">{item.role}</p>
-                <p className="text-gray-600 text-sm text-center max-w-md">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Navigation Buttons - Repositioned for mobile */}
+      <div className="relative w-5/6 sm:w-[80%]">
         <button
           onClick={prevSlide}
-          className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 z-10"
+          className="absolute -left-12 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
         >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 z-10"
-        >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronLeft className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
         </button>
 
-        {/* Dots Navigation */}
+        <button
+          onClick={nextSlide}
+          className="absolute -right-12 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
+        >
+          <ChevronRight className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
+        </button>
+
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${(currentIndex % items.length) * (100 / itemsToShow)}%)`,
+            }}
+          >
+            {allItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex-none px-2"
+                style={{ width: `${100 / itemsToShow}%` }}
+              >
+                <div className="flex flex-col items-center p-4">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
+                    <img
+                      src={item.image || "/api/placeholder/128/128"}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-center mb-2">
+                    {item.name}
+                  </h3>
+                  <p className="text-primary font-medium mb-2">{item.role}</p>
+                  <p className="text-gray-600 text-sm text-center max-w-md">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="flex justify-center gap-2 mt-8">
-          {Array.from({ length: totalPages }).map((_, index) => (
+          {items.map((_, i) => (
             <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                currentSlide === index ? "bg-primary w-6" : "bg-gray-300"
-              }`}
+              key={i}
+              onClick={() => goToSlide(i)}
+              className={`h-2 transition-all ${
+                i === currentIndex % items.length
+                  ? "bg-primary w-6"
+                  : "bg-gray-300 w-2"
+              } rounded-full`}
             />
           ))}
         </div>
@@ -381,6 +394,7 @@ const CarouselSection = ({ items }) => {
     </div>
   );
 };
+
 const FacultyAndTeams = () => {
   const mentors = [
     {
@@ -413,45 +427,12 @@ const FacultyAndTeams = () => {
     },
   ];
 
-  // const teams = [
-  //   {
-  //     name: "TechForge Team",
-  //     role: "Software Development",
-  //     description:
-  //       "Award-winning team developing cutting-edge solutions in cloud computing and artificial intelligence.",
-  //     image: "/api/placeholder/128/128",
-  //   },
-  //   {
-  //     name: "BioInnovate Group",
-  //     role: "Biotechnology Research",
-  //     description:
-  //       "Pioneering team working on breakthrough solutions in healthcare and sustainable biotechnology.",
-  //     image: "/api/placeholder/128/128",
-  //   },
-  //   {
-  //     name: "FinTech Solutions",
-  //     role: "Financial Technology",
-  //     description:
-  //       "Innovative team revolutionizing financial services through blockchain and AI technologies.",
-  //     image: "/api/placeholder/128/128",
-  //   },
-  //   {
-  //     name: "GreenTech Initiative",
-  //     role: "Sustainable Technology",
-  //     description:
-  //       "Dedicated team developing sustainable solutions for environmental challenges.",
-  //     image: "/api/placeholder/128/128",
-  //   },
-  // ];
-
   return (
     <div className="space-y-16">
       <CarouselSection items={mentors} />
-      {/* <CarouselSection title="Featured Teams" items={teams} /> */}
     </div>
   );
 };
-
 const Hatch = () => {
   const [showForm, setShowForm] = useState(false);
 
@@ -580,7 +561,7 @@ const Hatch = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+                  className="bg-black cursor-pointer flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
                 >
                   Apply Now
                   <HiArrowSmRight className="text-lg md:text-2xl" />

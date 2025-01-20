@@ -1,11 +1,22 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useEffect, useState } from "react";
 
 import pitchus from "../../Assets/preview.png";
 import {
-  Building2, Flask, Users, BadgeDollarSign, Award, Globe,
-  LineChart, School, Factory, FlaskConical, Target, Trophy, Building,
-  ArrowUpRight
+  Building2,
+  Flask,
+  Users,
+  BadgeDollarSign,
+  Award,
+  Globe,
+  LineChart,
+  School,
+  Factory,
+  FlaskConical,
+  Target,
+  Trophy,
+  Building,
+  ArrowUpRight,
+  Users2,
 } from "lucide-react";
 
 const Highlight = () => {
@@ -41,7 +52,7 @@ const Highlight = () => {
       description: "Global Presence",
     },
     {
-      icon: Users,
+      icon: Users2,
       value: "115+",
       label: "Companies",
       description: "Housed in NSTP",
@@ -83,7 +94,7 @@ const Highlight = () => {
       description: "HEC Ranked 2021-2023",
     },
   ];
-  
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -94,7 +105,7 @@ const Highlight = () => {
       { threshold: 0.1 }
     );
 
-    const section = document.getElementById('highlights-section');
+    const section = document.getElementById("highlights-section");
     if (section) {
       observer.observe(section);
     }
@@ -107,7 +118,10 @@ const Highlight = () => {
   }, []);
 
   return (
-    <div id="highlights-section" className="relative bg-black p-10 sm:p-24 md:p-36 w-full overflow-hidden">
+    <div
+      id="highlights-section"
+      className="relative bg-black p-10 sm:p-24 w-full overflow-hidden"
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large rotating blur circles */}
@@ -117,11 +131,12 @@ const Highlight = () => {
               key={`blur-${i}`}
               className="absolute w-96 h-96 rounded-full"
               style={{
-                background: 'radial-gradient(circle, rgba(139, 195, 74, 0.3), transparent 70%)',
+                background:
+                  "radial-gradient(circle, rgba(139, 195, 74, 0.3), transparent 70%)",
                 left: `${30 + 40 * Math.cos((2 * Math.PI * i) / 3)}%`,
                 top: `${30 + 40 * Math.sin((2 * Math.PI * i) / 3)}%`,
-                filter: 'blur(40px)',
-                transform: `scale(${1 + Math.sin(i * Math.PI / 3)})`,
+                filter: "blur(40px)",
+                transform: `scale(${1 + Math.sin((i * Math.PI) / 3)})`,
               }}
             />
           ))}
@@ -153,7 +168,9 @@ const Highlight = () => {
                 width: `${100 + Math.random() * 100}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animation: `slideLine ${6 + Math.random() * 4}s linear infinite`,
+                animation: `slideLine ${
+                  6 + Math.random() * 4
+                }s linear infinite`,
                 animationDelay: `${-Math.random() * 6}s`,
                 transform: `rotate(${Math.random() * 360}deg)`,
               }}
@@ -165,61 +182,61 @@ const Highlight = () => {
       {/* Content */}
       <div className="relative z-10">
         <hr className="border-primary/20" />
-        
-        {/* Header Section with Pitch Us Circle */}
-        <div className="flex flex-col md:flex-row justify-between items-center min-h-[300px] mt-9 mb-12">
-      <div className="flex-1 md:mr-8">
-        <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
-          <span
-            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
-            style={{
-              WebkitTextStroke: "1px #ffffff",
-              textStroke: "1px #ffffff",
-            }}
-          >
-            PARK
-          </span>
-          <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
-            HIGHLIGHTS
-            <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-white ml-1 rounded-full align-baseline"></span>
-          </span>
-        </h1>
-        <p className="text-white text-md md:text-lg md:max-w-lg mb-4">
-          Explore Pakistan's premier technology park, our innovative
-          initiatives, and discover how NSTP is defining the future of
-          innovation through success stories and strategic collaborations
-        </p>
-      </div>
 
-      <div className="relative flex items-center justify-center mt-8 md:mt-0">
-        <div
-          className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-14 sm:px-6 lg:px-11 cursor-pointer"
-          onClick={() => (window.location.href = "/tenancy")}
-        >
-          <ArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
-          <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
-            Pitch Us
-          </span>
+        {/* Header Section with Pitch Us Circle */}
+        <div className="flex flex-col md:flex-row justify-between items-center min-h-[300px] mt-9 mb-12 sm:px-7 md:px-16 ">
+          <div className="flex-1  ">
+            <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #ffffff",
+                  textStroke: "1px #ffffff",
+                }}
+              >
+                PARK
+              </span>
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+                HIGHLIGHTS
+                <span className=" text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
+            <p className="text-white text-md md:text-lg md:max-w-lg mb-4">
+              Explore Pakistan's premier technology park, our innovative
+              initiatives, and discover how NSTP is defining the future of
+              innovation through success stories and strategic collaborations
+            </p>
+          </div>
+
+          <div className="relative flex items-center justify-center mt-8 md:mt-0 ">
+            <div
+              className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-16 sm:px-6 lg:px-11 cursor-pointer"
+              onClick={() => (window.location.href = "/tenancy")}
+            >
+              <ArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
+              <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
+                Pitch Us
+              </span>
+            </div>
+            <img
+              src={pitchus}
+              alt="Pitch Us Circle"
+              className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
+            />
+          </div>
         </div>
-        <img
-          src={pitchus}
-          alt="Pitch Us Circle"
-          className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
-        />
-      </div>
-    </div>
 
         {/* Stats Grid */}
-        <div className="flex flex-wrap items-center justify-center gap-y-16 sm:gap-y-28">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-12 ">
           {highlights.map((item, index) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center gap-3 w-[21rem]"
+                className="flex flex-col items-center text-center group w-[21rem]"
               >
-                <div className="mb-6 bg-white w-16 md:w-[7rem] h-16 md:h-[7rem] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
+                <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300 stroke-1" />
                 </div>
 
                 <div className="w-full flex items-center justify-center flex-col text-center md:text-left">
@@ -244,7 +261,8 @@ const Highlight = () => {
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0) translateX(0);
           }
           25% {

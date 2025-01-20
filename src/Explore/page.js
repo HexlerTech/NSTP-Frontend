@@ -7,215 +7,225 @@ import explore from "../Assets/explore.png";
 import VisitNSTP from "../Assets/exploreNSTP/visitNSTP.jpg";
 import { HiArrowRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import "./explore.css";
 
+// Card Component
 const Card = ({ title, description, imageSrc, imageAlt, link }) => {
   const navigate = useNavigate();
+
   return (
-    <div className="bg-gray-100 p-5 rounded-lg flex flex-col md:flex-row justify-between w-full relative z-10 min-h-[250px]">
-      <div className="w-full md:w-2/3 flex flex-col justify-between">
-        <div>
-          <h1 className="text-primary">{title}</h1>
-          <p className="text-gray-700 mt-2">{description}</p>
+    <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+      <div className="relative">
+        <div className="h-48 overflow-hidden">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          />
         </div>
+        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
+          <ArrowRight className="w-5 h-5 text-primary" />
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{description}</p>
         <button
-          className="text-black flex items-center hover:underline mt-4 mb-3 md:mb-0"
           onClick={() => navigate(link)}
+          className="inline-flex items-center text-primary font-medium hover:underline"
         >
-          Learn More <HiArrowRight className="ml-1" />
+          Learn More <ChevronRight className="ml-1 w-4 h-4" />
         </button>
       </div>
-      <div className="flex justify-center md:justify-end w-full md:w-64">
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          className="rounded-lg w-64 h-48 object-cover"
-        />
-      </div>
     </div>
   );
 };
 
-const Students = () => {
-  return (
-    <div className="mt-28 animate-fade">
-      <h1 className="font-bold text-xl sm:text-3xl lg:text-4xl">
-        See which programs match
-      </h1>
-      <div className="mt-5">
-        <p className="text-gray-500">
-          NSTP offers access to critical hands-on experience, training, and
-          guidance. This collaborative environment will add to the professional
-          growth of the students and equip them with the technical skills and
-          confidence crucial for their future careers. Would you like to get
-          experience from a Tech Company? Let us help you!
-        </p>
-      </div>
-      <div className="flex flex-col md:flex-row gap-5 mt-5">
-        <div className="w-full md:w-1/2">
-          <Card
-            title="Internship Program"
-            description="NSTP offers a 6-month internship program for students in their final year of graduation. The program is designed to give students real-world experience in the tech industry."
-            imageSrc={internship}
-            imageAlt="coworking"
-            link="/explore/internship"
-          />
-        </div>
-        <div className="w-full md:w-1/2">
-          <Card
-            title="Hatch 8 Incubation Program"
-            description="NSTP offers a co-working space for students who are working on their startup ideas. The program provides mentorship, networking opportunities, and access to resources to help students grow their startups."
-            imageSrc={hatch8}
-            imageAlt="hatch8"
-            link="/explore/hatch"
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
+// Role Selection Button Component
+const RoleButton = ({ role, selected, onClick }) => (
+  <button
+    onClick={onClick}
+    // className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
+    className={`  flex gap-3 items-center justify-center  px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7px-6    ${
+      selected
+        ? "bg-primary text-white shadow-lg scale-105"
+        : "bg-black text-white "
+    } font-medium text-sm md:text-base whitespace-nowrap`}
+  >
+    {role}
+  </button>
+);
 
-const EducationalInstitutes = () => {
-  return (
-    <div className="mt-28 animate-fade">
-      <h1 className="font-bold text-xl sm:text-3xl lg:text-4xl">
-        See which programs match
-      </h1>
-      <div className="mt-5">
-        <p className="text-gray-700">
-          NSTP offers access to critical hands-on experience, training, and
-          guidance. This collaborative environment will add to the professional
-          growth of the students and equip them with the technical skills and
-          confidence crucial for their future careers. Would you like to get
-          experience from a Tech Company? Let us help you!
-        </p>
-      </div>
-      <div className="mt-5">
-        <Card
-          title="Visit NSTP"
-          description="Get a first-hand experience of NSTP's world-class facilities and innovative ecosystem. Our campus tours showcase our state-of-the-art research labs, innovation centers, and learning spaces. Visit NSTP to discover how we can help your students excel in their technical education and career development."
-          imageSrc={VisitNSTP}
-          imageAlt="Visit NSTP"
-          link="/explore/visit"
-        />
-      </div>
+// Section Components
+const Students = () => (
+  <div className="mt-12 animate-fade-up">
+    <div className="mb-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        Student Opportunities
+      </h2>
+      <p className="text-gray-600">
+        Gain hands-on experience and kickstart your career in technology through
+        our specialized programs designed for students.
+      </p>
     </div>
-  );
-};
-
-const Startup = () => {
-  return (
-    <div className="mt-28 animate-fade">
-      <h1 className="font-bold text-xl sm:text-3xl lg:text-4xl">
-        See which programs match
-      </h1>
-      <div className="mt-5">
-        <p className="text-gray-700">
-          NSTP offers access to critical hands-on experience, training, and
-          guidance. This collaborative environment will add to the professional
-          growth of the students and equip them with the technical skills and
-          confidence crucial for their future careers. Would you like to get
-          experience from a Tech Company? Let us help you!
-        </p>
-      </div>
-      <div className="flex flex-col md:flex-row gap-5 mt-5">
-        <div className="w-full md:w-1/2">
-          <Card
-            title="Hatch 8 Incubation Program"
-            description="NSTP offers a co-working space for students who are working on their startup ideas. The program provides mentorship, networking opportunities, and access to resources to help students grow their startups."
-            imageSrc={hatch8}
-            imageAlt="hatch8"
-            link="/explore/hatch"
-          />
-        </div>
-        <div className="w-full md:w-1/2">
-          <Card
-            title="Cube 8 Accelerator Program"
-            description="NSTP offers a working space for the startups who have already developed their product and are looking to scale. The program provides mentorship, networking opportunities, and access to resources to help startups grow their business."
-            imageSrc={cube8}
-            imageAlt="cube8"
-            link="/explore/cube"
-          />
-        </div>
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card
+        title="Internship Program"
+        description="Join our comprehensive 6-month internship program designed for final-year students. Work on real projects, learn from industry experts, and build your professional network."
+        imageSrc={internship}
+        imageAlt="Internship Program"
+        link="/explore/internship"
+      />
+      <Card
+        title="Hatch 8 Incubation"
+        description="Transform your innovative ideas into successful ventures with our startup incubation program. Access mentorship, workspace, and resources to build your startup."
+        imageSrc={hatch8}
+        imageAlt="Hatch 8"
+        link="/explore/hatch"
+      />
     </div>
-  );
-};
+  </div>
+);
 
-const Company = () => {
-  return (
-    <div className="mt-28 animate-fade">
-      <h1 className="font-bold text-xl sm:text-3xl lg:text-4xl">
-        See which programs match
-      </h1>
-      <div className="mt-5">
-        <p className="text-gray-700">
-          NSTP provides international companies with world-class facilities,
-          strategic location advantages, and a supportive ecosystem for
-          innovation and growth. Whether you're looking to establish a regional
-          headquarters, R&D center, or innovation hub, our infrastructure and
-          support services are designed to help global enterprises thrive in the
-          region.
-        </p>
-      </div>
-      <div className="mt-5">
-        <Card
-          title="Company "
-          description="NSTP offers international companies a comprehensive solution for establishing their presence in the region. Our state-of-the-art facilities include premium office spaces, R&D labs, and innovation centers, complemented by a full range of business support services. Companies can leverage our strategic location, access local talent through our educational partnerships, and join a thriving ecosystem of industry leaders, research institutions, and innovative startups."
-          imageSrc={companyOffice}
-          imageAlt="companyOffice"
-          link="/explore/company"
-        />
-      </div>
+const EducationalInstitutes = () => (
+  <div className="mt-12 animate-fade-up">
+    <div className="mb-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        Educational Partnership Opportunities
+      </h2>
+      <p className="text-gray-600">
+        Partner with NSTP to enhance your institution's technical education
+        offerings and provide students with industry exposure.
+      </p>
     </div>
-  );
-};
+    <Card
+      title="Visit NSTP"
+      description="Experience our world-class facilities firsthand. Our campus tours showcase state-of-the-art research labs, innovation centers, and learning spaces designed to foster technical education and career development."
+      imageSrc={VisitNSTP}
+      imageAlt="Visit NSTP"
+      link="/explore/visit"
+    />
+  </div>
+);
 
+const Startup = () => (
+  <div className="mt-12 animate-fade-up">
+    <div className="mb-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        Startup Programs
+      </h2>
+      <p className="text-gray-600">
+        Access resources, mentorship, and facilities to grow your startup in our
+        innovation ecosystem.
+      </p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card
+        title="Hatch 8 Incubation"
+        description="Perfect for early-stage startups, our incubation program provides mentorship, workspace, and essential resources to help validate and grow your business idea."
+        imageSrc={hatch8}
+        imageAlt="Hatch 8"
+        link="/explore/hatch"
+      />
+      <Card
+        title="Cube 8 Accelerator"
+        description="Designed for growth-stage startups, our accelerator program offers advanced resources, strategic partnerships, and scaling opportunities to take your business to the next level."
+        imageSrc={cube8}
+        imageAlt="Cube 8"
+        link="/explore/cube"
+      />
+    </div>
+  </div>
+);
+
+const Company = () => (
+  <div className="mt-12 animate-fade-up">
+    <div className="mb-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        International Company Solutions
+      </h2>
+      <p className="text-gray-600">
+        Establish your presence in the region with our comprehensive facilities
+        and support services.
+      </p>
+    </div>
+    <Card
+      title="Corporate Solutions"
+      description="Access premium office spaces, R&D labs, and innovation centers backed by comprehensive business support services. Leverage our strategic location and educational partnerships to drive your regional growth."
+      imageSrc={companyOffice}
+      imageAlt="Company Office"
+      link="/explore/company"
+    />
+  </div>
+);
+
+// Main Component
 const ExploreNSTP = () => {
-  const navigate = useNavigate();
-  const [possibleRoles, setPossibleRoles] = useState([
+  const [selectedRole, setSelectedRole] = useState("");
+  const roles = [
     "Student",
     "Startup",
     "International Company",
     "Educational Institute",
-  ]);
-  const [selectedRole, setSelectedRole] = useState("");
+  ];
+
+  const renderContent = () => {
+    switch (selectedRole) {
+      case "Student":
+        return <Students />;
+      case "Educational Institute":
+        return <EducationalInstitutes />;
+      case "Startup":
+        return <Startup />;
+      case "International Company":
+        return <Company />;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <div className="p-6 md:p-10 lg:p-20 mt-28 animate-fade-up">
-      <h1 className="text-[#90C74B] text-4xl md:text-6xl lg:text-7xl font-bold">
-        Explore NSTP
-      </h1>
-
-      <p className="mt-5 text-gray-700 text-lg sm:text-xl md:text-2xl font-semibold md:w-[50rem]">
-        Help us get you to the right place! We've put together tailored journeys
-        based on your needs. Just select the category that applies to you.
-      </p>
-
-      <div className="mt-5">
-        <p className="text-gray-700 text-lg sm:text-xl lg:text-2xl">
-          I am a...
-        </p>
-        <div className="flex gap-3 xl:gap-10 flex-wrap mt-4">
-          {possibleRoles.map((role) => (
-            <button
-              key={role}
-              className={`px-6 sm:px-8 lg:px-11 py-3 lg:py-4 rounded-full text-base sm:text-lg lg:text-2xl whitespace-nowrap ${
-                selectedRole === role
-                  ? "bg-primary text-white"
-                  : "bg-black text-white hover:bg-primary"
-              }`}
-              onClick={() => setSelectedRole(role)}
+    <div className="min-h-screen bg-white animate-fade-up">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-14">
+        {/* Hero Section */}
+        <div className="text-center my-16">
+          <h1 className="text-xl lg:text-3xl mb-8 h-full flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
+            <span
+              className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+              style={{
+                WebkitTextStroke: "1px #000000",
+                textStroke: "1px #000000",
+              }}
             >
-              {role}
-            </button>
+              EXPLORE
+            </span>{" "}
+            <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+              NSTP
+              <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+            </span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover opportunities tailored to your needs. Select your role
+            below to begin your journey with NSTP.
+          </p>
+        </div>
+
+        {/* Role Selection */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {roles.map((role) => (
+            <RoleButton
+              key={role}
+              role={role}
+              selected={selectedRole === role}
+              onClick={() => setSelectedRole(role)}
+            />
           ))}
         </div>
+
+        {/* Dynamic Content */}
+        {renderContent()}
       </div>
-      {selectedRole === "Student" && <Students />}
-      {selectedRole === "Educational Institute" && <EducationalInstitutes />}
-      {selectedRole === "Startup" && <Startup />}
-      {selectedRole === "International Company" && <Company />}
     </div>
   );
 };

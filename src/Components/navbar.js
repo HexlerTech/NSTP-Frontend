@@ -438,7 +438,7 @@ const Navbar = () => {
             CONTACT
           </a>
           <a
-            className="bg-primary flex gap-3 items-center justify-center text-black px-3 py-1 rounded-full text-sm md:text-base font-semibold transform cursor-pointer hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+            className="bg-primary flex gap-3 items-center justify-center text-black px-3 py-1 rounded-full text-sm md:text-[0.9rem] font-semibold transform cursor-pointer hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             onClick={() => handleClick("/explore")}
           >
             Explore NSTP

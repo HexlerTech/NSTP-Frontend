@@ -53,9 +53,9 @@ const Partners = () => {
         >
           OUR
         </span>{" "}
-        <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+        <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
           PARTNERS
-          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-black ml-1 rounded-full align-baseline"></span>
+          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
       <div className="w-full bg-gray-100 h-72 mb-16">

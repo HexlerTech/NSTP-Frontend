@@ -28,6 +28,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/footer";
 import { InternshipForm } from "../../TenancyForm/page";
+import { Link } from "react-scroll";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -500,6 +501,17 @@ const InternshipProgram = () => {
                   work alongside experienced professionals in a dynamic
                   environment that fosters learning and professional growth.
               </p>
+              <Link
+                                        
+                                        to="apply"
+                                        spy={true}
+                                        smooth={true}
+                                        duration={500}
+                                        className="bg-black cursor-pointer flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+                                      >
+                                        Apply Now
+                                        <HiArrowSmRight className="text-lg md:text-2xl" />
+                                      </Link>
              
 
               {/* Learn More button */}
@@ -528,7 +540,7 @@ const InternshipProgram = () => {
           </div>
 
           {/* Apply Section */}
-          <div className="mt-16 w-full lg:w-[71rem]">
+          <div id="apply" className="mt-16 w-full lg:w-[71rem]">
             <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"

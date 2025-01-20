@@ -664,7 +664,7 @@ const Cube8 = () => {
                           spy={true}
                           smooth={true}
                           duration={500}
-                          className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+                          className="bg-black cursor-pointer flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
                         >
                           Apply Now
                           <HiArrowSmRight className="text-lg md:text-2xl" />

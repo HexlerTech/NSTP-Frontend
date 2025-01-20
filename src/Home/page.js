@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useRef,useEffect } from "react";
+import { Play, Pause } from "lucide-react";
 import Service from "./Services/service";
 import Statistics from "./Stats/stats";
 import Gallery from "./Gallery/gallery";
@@ -73,23 +74,126 @@ const NSTPStats = [
 ];
 
 const NSTPAbout = () => {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [showControls, setShowControls] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const videoRef = useRef(null);
+  const progressBarRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      const updateDuration = () => setDuration(video.duration);
+      video.addEventListener('loadedmetadata', updateDuration);
+      return () => video.removeEventListener('loadedmetadata', updateDuration);
+    }
+  }, []);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      setCurrentTime(videoRef.current.currentTime);
+    }
+  };
+
+  const formatTime = (timeInSeconds) => {
+    if (!timeInSeconds) return '0:00';
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = Math.floor(timeInSeconds % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const handleProgressBarClick = (e) => {
+    if (progressBarRef.current && videoRef.current) {
+      const rect = progressBarRef.current.getBoundingClientRect();
+      const clickPosition = (e.clientX - rect.left) / rect.width;
+      const newTime = clickPosition * videoRef.current.duration;
+      videoRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+    }
+  };
+
+  const handleVideoClick = (e) => {
+    // Prevent click from triggering when clicking progress bar
+    if (e.target === videoRef.current) {
+      togglePlay();
+    }
+  };
   return (
     <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24 my-16">
       <div className="flex flex-col-reverse md:flex-row items-center gap-10  lg:gap-6">
         {/* Left side - Circle with video */}
 
-        <div className="w-full   md:w-[540px] lg:w-[670px]">
-          <video
-            className="w-full h-full rounded-md"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src={NSTPVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div 
+      className="relative w-full md:w-[540px] lg:w-[670px] group"
+      onMouseEnter={() => setShowControls(true)}
+      onMouseLeave={() => setShowControls(false)}
+    >
+      <video
+        ref={videoRef}
+        className="w-full h-full rounded-md cursor-pointer"
+        autoPlay
+        loop
+        muted
+        playsInline
+        onClick={handleVideoClick}
+        onTimeUpdate={handleTimeUpdate}
+      >
+        <source src={NSTPVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Center Play/Pause Button */}
+      <button
+        onClick={togglePlay}
+        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+          bg-black/50 hover:bg-black/70 text-white rounded-full p-4
+          transition-all duration-300 ${showControls ? 'opacity-100' : 'opacity-0'}`}
+      >
+        {isPlaying ? (
+          <Pause className="w-8 h-8" />
+        ) : (
+          <Play className="w-8 h-8" />
+        )}
+      </button>
+
+      {/* Bottom Controls */}
+      <div 
+        className={`absolute bottom-0 left-0 right-0 bg-black/40 py-2 px-4 transition-opacity duration-300 
+          ${showControls ? 'opacity-100' : 'opacity-0'}`}
+      >
+        {/* Time display */}
+        <div className="flex justify-between text-white text-sm mb-1">
+          <span>{formatTime(currentTime)}</span>
+          <span>{formatTime(duration)}</span>
         </div>
+
+        {/* Progress bar */}
+        <div
+          ref={progressBarRef}
+          className="h-1 bg-gray-200 rounded-full cursor-pointer"
+          onClick={handleProgressBarClick}
+        >
+          <div
+            className="h-full bg-primary rounded-full transition-all"
+            style={{
+              width: `${(currentTime / (duration || 1)) * 100}%`,
+            }}
+          />
+        </div>
+      </div>
+    </div>
 
         {/* Right side - Content */}
         <div className="flex flex-col  flex-1 ml-0 md:ml-10 lg:ml-10 w-full ">
@@ -104,7 +208,7 @@ const NSTPAbout = () => {
               NATIONAL SCIENCE AND TECHNOLOGY PARK
             </span>{" "}
             <span className="text-[#000000] text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
-            PROXIMITY TO NUST'S CUTTING-EDGE INNOVATION ECOSYSTEM
+              PROXIMITY TO NUST'S CUTTING-EDGE INNOVATION ECOSYSTEM
               <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
@@ -125,6 +229,21 @@ const NSTPAbout = () => {
             About us
             <HiArrowSmRight className="text-lg md:text-2xl" />
           </Link>
+
+
+          {/* <Link
+            to="/about"
+            className="bg-black flex gap-3 items-center justify-center hover:bg-primary text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+            style={{
+              transformOrigin: "center",
+              willChange: "transform",
+            }}
+          >
+            <span className="flex items-center gap-3">
+              About us
+              <HiArrowSmRight className="text-lg md:text-2xl" />
+            </span>
+          </Link> */}
         </div>
       </div>
     </div>
@@ -176,7 +295,7 @@ const Home = () => {
                     <span className="text-[#90C74B] text-4xl sm:text-7xl lg:text-8xl leading-none">
                       1
                     </span>
-                    <span className="text-white text-xs sm:text-sm -ml-1 sm:-ml-2 mt-1 hollow-text2">
+                    <span style={{ WebkitTextStrokeWidth: "0.4px" }} className="text-primary text-xs sm:text-sm  -ml-1 sm:-ml-2 mt-1 md:text-2xl lg:text-3xl">
                       st
                     </span>
                   </div>
@@ -252,21 +371,21 @@ const Home = () => {
       <Highlight />
       <Offer />
       <div className="flex flex-col items-center justify-center px-2 py-8 ">
-      <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
-        <span
-          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
-          style={{
-            WebkitTextStroke: "1px #000000",
-            textStroke: "1px #000000",
-          }}
-        >
-          LIFE
-        </span>{" "}
-        <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
-          AT NSTP
-          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
-        </span>
-      </h1>
+        <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #000000",
+              textStroke: "1px #000000",
+            }}
+          >
+            LIFE
+          </span>{" "}
+          <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+            AT NSTP
+            <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
       </div>
       <Gallery />
 
@@ -293,7 +412,7 @@ const Home = () => {
       <Partners />
       <div className="flex flex-col items-center justify-center mt-1 p-10 pt-0 pb-0">
         <Link
-        target="_blank"
+          target="_blank"
           to="/tenants"
           className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
         >

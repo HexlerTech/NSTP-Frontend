@@ -342,9 +342,9 @@ const Contact = () => {
               >
                 LET'S
               </span>{" "}
-              <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
                 CONNECT
-                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-white ml-1 rounded-full align-baseline"></span>
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
           </div>
@@ -359,7 +359,7 @@ const Contact = () => {
         {/* Contact Cards Grid */}
         <div className="flex flex-wrap items-center justify-center gap-8 mb-24 animate-fade-up">
           <div className="bg-white p-8 w-[21rem] min-h-64 rounded-xl group shadow-lg  transition-transform hover:scale-105 duration-500">
-            <div className="w-14 h-14 bg-black group-hover:scale-105 group-hover:-rotate-12 group-hover:bg-primary transition-transform duration-500 rounded-lg flex items-center justify-center mb-6">
+            <div className="w-14 h-14 bg-black group-hover:scale-105  group-hover:bg-primary transition-transform duration-500 rounded-lg flex items-center justify-center mb-6">
               <BiPhone className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Call Us</h3>
@@ -367,7 +367,7 @@ const Contact = () => {
           </div>
 
           <div className="bg-white p-8 w-[21rem] min-h-64 rounded-xl group shadow-lg transition-transform hover:scale-105 duration-500">
-            <div className="w-14 h-14 bg-black group-hover:scale-105 group-hover:bg-primary group-hover:-rotate-12 transition-transform duration-500 rounded-lg flex items-center justify-center mb-6">
+            <div className="w-14 h-14 bg-black group-hover:scale-105 group-hover:bg-primary  transition-transform duration-500 rounded-lg flex items-center justify-center mb-6">
               <MdEmail className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
@@ -375,7 +375,7 @@ const Contact = () => {
           </div>
 
           <div className="bg-white p-8 w-[21rem] min-h-64 rounded-xl group shadow-lg transition-transform hover:scale-105 duration-500">
-            <div className="w-14 h-14 bg-black group-hover:scale-105 group-hover:bg-primary group-hover:-rotate-12 transition-transform duration-500 rounded-lg flex items-center justify-center mb-6">
+            <div className="w-14 h-14 bg-black group-hover:scale-105 group-hover:bg-primary  transition-transform duration-500 rounded-lg flex items-center justify-center mb-6">
               <BiLocationPlus className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
@@ -444,7 +444,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-4 px-8 rounded-lg hover:scale-105 transition-transform duration-300 font-semibold text-lg"
+                className="w-full bg-black text-white py-4 px-8 rounded-full hover:scale-105 hover:bg-primary transition-transform duration-300 font-semibold text-lg"
               >
                 Send Message
               </button>

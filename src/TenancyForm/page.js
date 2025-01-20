@@ -74,7 +74,7 @@ const VisitNSTPForm = () => {
     <div className="p-20">
      
 
-      <div className="min-h-screen flex justify-center bg-[#FBF5F3]">
+      <div className="min-h-screen flex justify-center bg-gray-100">
         <form className="w-full mx-auto px-5 md:p-20">
             {/* <strong className="mr-1">Visit Details:</strong> */}
           {/* <p className="text-justify text-sm mb-8">
@@ -251,9 +251,9 @@ const VisitNSTPForm = () => {
 
           <button
             type="submit"
-            className="mt-5 text-white bg-primary hover:bg-opacity-80  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+            className="mt-5 text-white bg-black hover:bg-primary rounded-full hover:scale-105 transition-transform  font-medium  text-sm w-full sm:w-auto px-5 py-2.5 text-center "
           >
-            Submit Visit Request
+            Submit 
           </button>
         </form>
       </div>
@@ -268,7 +268,7 @@ const InternshipForm = () => {
     // Handle form submission
   };
   return (
-    <div className="min-h-screen flex mt-20 justify-center bg-[#FBF5F3]">
+    <div className="min-h-screen flex mt-20 justify-center bg-gray-100">
       <form className="w-full mx-auto px-5 md:p-20" onSubmit={handleSubmit}>
         {/* <p className="text-justify text-sm mb-8">
           <strong className="mr-1">Internship Application:</strong>
@@ -423,12 +423,12 @@ const InternshipForm = () => {
           />
         </div>
 
-        <div className="mt-8 flex justify-end">
+        <div className="mt-8 flex justify-start">
           <button
             type="submit"
-            className="mt-5 text-white bg-primary hover:bg-opacity-80  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+            className="mt-5 text-white bg-black hover:bg-primary rounded-full hover:scale-105 transition-transform  font-medium  text-sm w-full sm:w-auto px-5 py-2.5 text-center "
           >
-            Submit Application
+            Submit 
           </button>
         </div>
       </form>
@@ -445,7 +445,7 @@ const CompanyForm = () => {
   const [pocPhone, setPocPhone] = useState("");
   const [pocLandline, setPocLandline] = useState("");
   return (
-    <div className="min-h-screen flex mt-20 justify-center bg-[#FBF5F3]">
+    <div className="min-h-screen flex mt-20 justify-center bg-gray-100">
       <form className="w-full mx-auto px-5 md:p-20">
           <strong className="mr-1 text-[1rem]">Company Information:</strong>
         {/* <p className="text-justify text-sm">
@@ -1412,7 +1412,7 @@ const CompanyForm = () => {
         </div>
         <button
           type="submit"
-           className="mt-5 text-white bg-primary hover:bg-opacity-80  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+           className="mt-5 text-white bg-black hover:bg-primary rounded-full hover:scale-105 transition-transform font-medium  text-sm w-full sm:w-auto px-5 py-2.5 text-center "
         >
           Submit
         </button>
@@ -1431,7 +1431,7 @@ const Hatch8 = () => {
   const [pocPhone, setPocPhone] = useState("");
   const [pocLandline, setPocLandline] = useState("");
   return (
-    <div className="min-h-screen flex mt-20 justify-center bg-[#FBF5F3]">
+    <div className="min-h-screen flex mt-20 justify-center bg-gray-100">
       <form className="w-full mx-auto p-20">
         <div className="flex text-sm mb-4">
             {/* <h2 className="mr-1 text-md font-semibold text-gray-900">Hatch 8 Pre-Incubation Programme</h2> */}
@@ -2496,7 +2496,7 @@ const Hatch8 = () => {
         </div>
         <button
           type="submit"
-          className="mt-5 text-white bg-primary hover:bg-opacity-80  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+          className="mt-5 text-white bg-black hover:bg-primary rounded-full hover:scale-105 transition-transform   font-medium  text-sm w-full sm:w-auto px-5 py-2.5 text-center "
         >
           Submit
         </button>
@@ -2515,7 +2515,7 @@ const Cube8Form = () => {
   const [pocPhone, setPocPhone] = useState("");
   const [pocLandline, setPocLandline] = useState("");
   return (
-    <div className="min-h-screen flex mt-20 justify-center bg-[#FBF5F3]">
+    <div className="min-h-screen flex mt-20 justify-center bg-gray-100">
       <form className="w-full mx-auto px-5 md:p-20">
         <div className="flex text-sm mb-4">
             <strong className="mr-1 text-[1rem] ">Cube 8 Incubation Programme</strong>
@@ -3615,7 +3615,7 @@ const Cube8Form = () => {
         </div>
         <button
           type="submit"
-             className="mt-5 text-white bg-primary hover:bg-opacity-80  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+             className="mt-5 text-white bg-black hover:bg-primary rounded-full hover:scale-105 transition-transform font-medium  text-sm w-full sm:w-auto px-5 py-2.5 text-center "
         >
           Submit
         </button>
@@ -3634,7 +3634,7 @@ const Excelerate = () => {
   const [pocPhone, setPocPhone] = useState("");
   const [pocLandline, setPocLandline] = useState("");
   return (
-    <div className="min-h-screen flex mt-20 justify-center bg-[#FBF5F3]">
+    <div className="min-h-screen flex mt-20 justify-center bg-gray-100">
       <form className="w-full mx-auto p-20">
         <p className="text-md text-gray-900">
           Intense program for late stage startups that need coaching, networking

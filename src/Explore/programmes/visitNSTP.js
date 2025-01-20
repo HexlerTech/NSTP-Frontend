@@ -25,6 +25,7 @@ import {
   ChevronRight,
   Presentation,
 } from "lucide-react";
+import { Link } from "react-scroll";
 
 const VisitSections = () => {
   const targetAudiences = [
@@ -203,7 +204,7 @@ const VisitNSTP = () => {
                 </span>
                 <HiArrowSmRight /> Visit NSTP
               </p>
-              <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center  md:gap-4 font-extrabold leading-none tracking-tight">
+              <h1 className="text-xl lg:text-3xl h-full flex flex-col  text-center  items-center justify-center  font-extrabold leading-none tracking-tight">
                 <span
                   className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                   style={{
@@ -211,10 +212,10 @@ const VisitNSTP = () => {
                     textStroke: "1px #ffffff",
                   }}
                 >
-                  VISIT
+                  VISIT CUTTING EDGE
                 </span>{" "}
                 <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
-                  OUR CAMPUS
+                  ECOSYSTEM OF NUST
                   <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
                 </span>
               </h1>
@@ -260,7 +261,16 @@ const VisitNSTP = () => {
                 industry partner, visiting NSTP will help you understand how we
                 can support your journey in technology and innovation.
               </p>
-
+              <Link
+                to="apply"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="bg-black flex gap-3 items-center cursor-pointer justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+              >
+                Apply Now
+                <HiArrowSmRight className="text-lg md:text-2xl" />
+              </Link>
               {/* Learn More button */}
               {/* <Link
             to="/program-details"
@@ -275,7 +285,10 @@ const VisitNSTP = () => {
         <div className="w-full  mt-16">
           <VisitSections />
         </div>
-        <div className="px-4 sm:px-20 md:px-48 mt-10 flex flex-col items-center justify-center">
+        <div
+          id="apply"
+          className="px-4 sm:px-20 md:px-48 mt-10 flex flex-col items-center justify-center"
+        >
           <div id="schedule" className="w-full lg:w-[71rem] mt-16">
             <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-4 font-extrabold leading-none tracking-tight">
               <span
