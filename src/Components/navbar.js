@@ -148,7 +148,7 @@ const Navbar = () => {
                 >
                   INNOVATE PAKISTAN
                 </a> */}
-                <a
+                {/* <a
                   href="#"
                   className={`cursor-pointer ${
                     activeLink === "/sectors"
@@ -158,8 +158,8 @@ const Navbar = () => {
                   onClick={() => handleClick("/sectors")}
                 >
                   SECTORS
-                </a>
-                <a
+                </a> */}
+                {/* <a
                   className={`cursor-pointer ${
                     activeLink === "/events"
                       ? "text-primary"
@@ -168,7 +168,7 @@ const Navbar = () => {
                   onClick={() => handleClick("/events")}
                 >
                   EVENTS
-                </a>
+                </a> */}
                 <a
                   className={`cursor-pointer ${
                     activeLink === "/partnerships"
@@ -331,7 +331,7 @@ const Navbar = () => {
           >
             INNOVATE PAKISTAN
           </a> */}
-          <a
+          {/* <a
             href="#"
             className={`cursor-pointer ${
               activeLink === "/sectors" ? "text-primary" : "hover:text-primary"
@@ -339,15 +339,15 @@ const Navbar = () => {
             onClick={() => handleClick("/sectors")}
           >
             SECTORS
-          </a>
-          <a
+          </a> */}
+          {/* <a
             className={`cursor-pointer ${
               activeLink === "/events" ? "text-primary" : "hover:text-primary"
             }`}
             onClick={() => handleClick("/events")}
           >
             EVENTS
-          </a>
+          </a> */}
           <a
             className={`cursor-pointer ${
               activeLink === "/partnerships"

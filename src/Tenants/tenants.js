@@ -4,6 +4,7 @@ import { Globe, ChevronRight } from "lucide-react";
 import data from "./data";
 import hexlerLogo from "../Assets/Hexler Logo.png";
 import Image2 from "../Assets/exploreNSTP/nstpimage2.jpg";
+import Footer from "../Components/footer";
 
 const Tenants = () => {
   const [floors, setFloors] = useState([]);
@@ -29,7 +30,7 @@ const Tenants = () => {
   }, {});
 
   return (
-    <div className="min-h-screen mt-[70px] relative">
+    <div className="min-h-screen mt-[70px] bg-white relative">
       {/* Fixed Background */}
       <div
         className="fixed inset-0"
@@ -212,6 +213,7 @@ const Tenants = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
