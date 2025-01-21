@@ -6,8 +6,6 @@ import { BiPhone } from "react-icons/bi";
 import { FaFax } from "react-icons/fa";
 import { BiLocationPlus } from "react-icons/bi";
 
-
-
 import {
   BookOpen,
   ArrowRight,
@@ -29,7 +27,7 @@ const contactInfo = {
 };
 const CTA = () => {
   return (
-    <div className="relative w-full min-h-[400px] mt-16 bg-gradient-to-br from-black via-black/95 to-black overflow-hidden">
+    <div className="relative w-full min-h-[400px]  p-6 md:p-12  lg:p-24 bg-gradient-to-br from-black via-black/95 to-black overflow-hidden">
       {/* Animated rotating background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large rotating circles */}
@@ -81,25 +79,25 @@ const CTA = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.05),transparent_70%)]" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto ">
         <div className="text-center space-y-8">
           {/* Heading with outline effect */}
           <div className="inline-flex flex-col items-center justify-center space-y-2">
-          <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
-        <span
-          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
-          style={{
-            WebkitTextStroke: "1px #ffffff",
-            textStroke: "1px #ffffff",
-          }}
-        >
-          VISIT
-        </span>{" "}
-        <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
-          NSTP
-          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
-        </span>
-      </h1>
+            <h1 className="text-xl lg:text-3xl mb-8 md:mb-14   flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
+              <span
+                className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
+                style={{
+                  WebkitTextStroke: "1px #ffffff",
+                  textStroke: "1px #ffffff",
+                }}
+              >
+                VISIT
+              </span>{" "}
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+                NSTP
+                <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
+              </span>
+            </h1>
             <div className="flex items-center space-x-3">
               <span className="h-0.5 w-12 bg-primary/30"></span>
               <CircuitBoard className="w-6 h-6 text-primary" />
@@ -116,7 +114,7 @@ const CTA = () => {
           {/* Action Buttons */}
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-            target="_blank"
+              target="_blank"
               to="/about"
               className="bg-primary flex gap-3 items-center justify-center text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
@@ -124,7 +122,7 @@ const CTA = () => {
               <BookOpen className="w-5 h-5 mr-2" />
             </Link>
             <Link
-            target="_blank"
+              target="_blank"
               to="/contact"
               className="bg-white flex gap-3 items-center justify-center text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
@@ -138,8 +136,6 @@ const CTA = () => {
       {/* Subtle bottom pattern */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       {/* <hr className="border-primary/20" /> */}
-
-     
     </div>
   );
 };

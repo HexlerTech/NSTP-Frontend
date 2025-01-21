@@ -131,7 +131,7 @@ const NSTPAbout = () => {
     }
   };
   return (
-    <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24 my-16">
+    <div className="relative p-6 md:p-12  lg:p-24">
       <div className="flex flex-col-reverse md:flex-row items-center gap-10  lg:gap-6">
         {/* Left side - Circle with video */}
 
@@ -197,7 +197,7 @@ const NSTPAbout = () => {
 
         {/* Right side - Content */}
         <div className="flex flex-col  flex-1 ml-0 md:ml-10 lg:ml-10 w-full ">
-          <h1 className="mb-4 text-xl lg:text-3xl  font-extrabold leading-none tracking-tight">
+          <h1 className=" text-xl lg:text-3xl mb-8 font-extrabold leading-none tracking-tight">
             <span
               className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
               style={{
@@ -213,7 +213,7 @@ const NSTPAbout = () => {
             </span>
           </h1>
 
-          <p className="text-md font-normal  text-gray-500 mb-10 lg:leading-6   md:leading-6 text-justify w-full md:w-[80%]">
+          <p className="text-md font-normal  text-gray-500 mb-8 lg:leading-6   md:leading-6 text-justify w-full md:w-[80%]">
             The National Science and Technology Park (NSTP) in Islamabad fosters
             innovation, housing high-tech companies, startups, research centers,
             and educational institutions. It promotes science, technology, and a
@@ -410,7 +410,7 @@ const Home = () => {
       </div> */}
       <Companies />
       <Partners />
-      <div className="flex flex-col items-center justify-center mt-1 p-10 pt-0 pb-0">
+      <div className="flex flex-col items-center justify-center pb-6 md:pb-12  lg:pb-24">
         <Link
           target="_blank"
           to="/tenants"

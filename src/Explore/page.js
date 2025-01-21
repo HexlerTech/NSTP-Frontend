@@ -189,8 +189,8 @@ const ExploreNSTP = () => {
     <div className="min-h-screen bg-white animate-fade-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-14">
         {/* Hero Section */}
-        <div className="text-center my-16">
-          <h1 className="text-xl lg:text-3xl mb-8 h-full flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
+        <div className="text-center mt-16">
+          <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 h-full flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
             <span
               className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
               style={{

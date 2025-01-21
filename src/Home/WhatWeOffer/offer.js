@@ -50,8 +50,8 @@ const Offer = () => {
   ];
 
   return (
-    <div className="container mx-auto px-2 py-8 mt-14 ">
-      <h1 className="text-xl lg:text-3xl mb-5   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+    <div className=" mx-auto p-6 md:p-12  lg:p-24 ">
+      <h1 className="text-xl lg:text-3xl mb-8    flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{

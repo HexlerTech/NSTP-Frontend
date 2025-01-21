@@ -165,7 +165,7 @@ const BenefitsSection = () => {
                 className="flex flex-col items-center text-center group w-[21rem] min-h-[11rem] md:min-h-[15rem]"
               >
                 <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
+                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300 stroke-1" />
                 </div>
 
                 <h3 className="text-xl md:text-2xl font-semibold mb-3 text-primary">

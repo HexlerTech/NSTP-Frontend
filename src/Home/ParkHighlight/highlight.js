@@ -120,7 +120,7 @@ const Highlight = () => {
   return (
     <div
       id="highlights-section"
-      className="relative bg-black p-10 sm:p-24 w-full overflow-hidden"
+      className="relative bg-black p-6 md:p-12  lg:p-24 w-full overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -180,13 +180,13 @@ const Highlight = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 ">
         <hr className="border-primary/20" />
 
         {/* Header Section with Pitch Us Circle */}
         <div className="flex flex-col md:flex-row justify-between items-center min-h-[300px] mt-9 mb-12 sm:px-7 md:px-16 ">
           <div className="flex-1  ">
-            <h1 className="mb-4 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
+            <h1 className="mb-8 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -201,7 +201,7 @@ const Highlight = () => {
                 <span className=" text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
-            <p className="text-white text-md md:text-lg md:max-w-lg mb-4">
+            <p className="text-white text-md md:text-lg md:max-w-lg ">
               Explore Pakistan's premier technology park, our innovative
               initiatives, and discover how NSTP is defining the future of
               innovation through success stories and strategic collaborations
@@ -233,7 +233,7 @@ const Highlight = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center group w-[21rem]"
+                className="flex flex-col items-center text-center group w-[21rem] min-h-[11rem] md:min-h-[15rem]"
               >
                 <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300 stroke-1" />

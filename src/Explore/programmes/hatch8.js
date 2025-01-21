@@ -243,7 +243,7 @@ const BenefitsSection = () => {
                 className="flex flex-col  items-center text-center group w-[21rem] min-h-[11rem] md:min-h-[15rem]"
               >
                 <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
+                  <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300 stroke-1" />
                 </div>
 
                 <h3 className="text-xl md:text-2xl font-semibold mb-3 text-primary">
@@ -276,17 +276,14 @@ const CarouselSection = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3);
 
-  // Double the items array for continuous scrolling
-  const allItems = [...items, ...items];
-
-  // Update itemsToShow based on screen width
+  // Update itemsToShow based on screen width with more specific breakpoints
   useEffect(() => {
     const updateItemsToShow = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 640) { // sm
         setItemsToShow(1);
-      } else if (window.innerWidth < 1024) {
+      } else if (window.innerWidth < 1024) { // md to lg
         setItemsToShow(2);
-      } else {
+      } else { // lg and above
         setItemsToShow(3);
       }
     };
@@ -297,80 +294,77 @@ const CarouselSection = ({ items }) => {
   }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % allItems.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? allItems.length - 1 : prevIndex - 1
+      prevIndex === 0 ? items.length - 1 : prevIndex - 1
     );
   };
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
-
   return (
-    <div className="w-full flex items-center justify-center flex-col mx-auto ">
-      <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
-        <span
-          className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+    <div className="w-full px-4 md:px-8 max-w-7xl mx-auto">
+      <h1 className="text-center mb-8 md:mb-12">
+        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight block mb-1"
           style={{
             WebkitTextStroke: "1px #000000",
             textStroke: "1px #000000",
-          }}
-        >
+            color: "transparent"
+          }}>
           MEET
-        </span>{" "}
-        <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+        </span>
+        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-black">
           THE MENTORS
-          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+          <span className="inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
 
-      <div className="relative w-full sm:w-[80%]">
+      <div className="relative">
+        {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
+          className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 rounded-full shadow-lg z-10"
         >
-          <ChevronLeft className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
+          <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-white" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
+          className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 rounded-full shadow-lg z-10"
         >
-          <ChevronRight className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
+          <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-white" />
         </button>
 
-        <div className="overflow-hidden">
+        {/* Carousel Container */}
+        <div className="overflow-hidden mx-8">
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${
-                (currentIndex % items.length) * (100 / itemsToShow)
-              }%)`,
+              transform: `translateX(-${(currentIndex * (100 / itemsToShow))}%)`,
             }}
           >
-            {allItems.map((item, index) => (
+            {items.map((item, index) => (
               <div
                 key={index}
-                className="flex-none px-2"
+                className="flex-none px-2 md:px-4"
                 style={{ width: `${100 / itemsToShow}%` }}
               >
-                <div className="flex flex-col items-center p-4">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
+                <div className="flex flex-col items-center p-2 md:p-4">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-3 md:mb-4">
                     <img
                       src={item.image || "/api/placeholder/128/128"}
                       alt={item.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-center mb-2">
+                  <h3 className="text-lg md:text-xl font-semibold text-center mb-1 md:mb-2">
                     {item.name}
                   </h3>
-                  <p className="text-primary font-medium mb-2">{item.role}</p>
-                  <p className="text-gray-600 text-sm text-center max-w-md">
+                  <p className="text-primary text-sm md:text-base font-medium mb-1 md:mb-2">
+                    {item.role}
+                  </p>
+                  <p className="text-gray-600 text-xs md:text-sm text-center">
                     {item.description}
                   </p>
                 </div>
@@ -379,16 +373,17 @@ const CarouselSection = ({ items }) => {
           </div>
         </div>
 
-        <div className="flex justify-center gap-2 mt-8">
+        {/* Indicators */}
+        <div className="flex justify-center gap-2 mt-6">
           {items.map((_, i) => (
             <button
               key={i}
-              onClick={() => goToSlide(i)}
-              className={`h-2 transition-all ${
-                i === currentIndex % items.length
+              onClick={() => setCurrentIndex(i)}
+              className={`h-2 rounded-full transition-all ${
+                i === currentIndex
                   ? "bg-primary w-6"
                   : "bg-gray-300 w-2"
-              } rounded-full`}
+              }`}
             />
           ))}
         </div>
@@ -602,16 +597,16 @@ const Hatch = () => {
             <EligibilitySection />
           </div>
           {/* Mentors */}
-          <div className="p-6 md:p-12  lg:p-24    ">
+          {/* <div className="p-6 md:p-12  lg:p-24    ">
             <FacultyAndTeams />
-          </div>
+          </div> */}
 
           {/* Timeline */}
-          <div className=" w-full p-6 md:p-12  lg:p-24   bg-black">
+          <div className=" w-full p-6 md:p-12  lg:p-24   ">
             <TimeLine />
           </div>
           {/* Apply */}
-          <div id="apply" className="p-6 md:p-12  lg:p-24   w-full">
+          <div id="apply" className="px-6 md:px-12  lg:px-24 pb-6 md:pb-12  lg:pb-24   w-full">
             <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"

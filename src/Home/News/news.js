@@ -93,9 +93,9 @@ const News = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white py-16 px-4 md:px-8 lg:px-16">
+    <div className="w-full bg-white p-6 md:p-12  lg:p-24">
       <div className="max-w-7xl mx-auto">
-      <h1 className="text-xl lg:text-3xl mb-12   flex flex-col sm:flex-row items-center justify-center  sm:gap-4 font-extrabold leading-none tracking-tight">
+      <h1 className="text-xl lg:text-3xl mb-8 md:mb-14   flex flex-col sm:flex-row items-center justify-center  sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{

@@ -27,6 +27,20 @@ code {
     monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Optional: Add if you want smoother backdrop blur transitions */
+.backdrop-blur-sm {
+  transition: backdrop-filter 0.3s ease;
+}
 
 
 

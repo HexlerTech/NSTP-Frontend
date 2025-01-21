@@ -79,51 +79,63 @@
 // export default Partnerships;import React from "react";
 
 import React from "react";
-import aspalogo from "../Assets/logos/aspalogo.jpg";
-import iasplogo from "../Assets/logos/iasplogo.png";
-import iAcceleratelogo from "../Assets/logos/iAccelerateLogo.png";
-import ibichinalogo from "../Assets/logos/ibi-chinalogo.png";
-import INSTPlogo from "../Assets/logos/INSTPlogo.png";
-import WTAlogo from "../Assets/logos/WTAlogo.jpg";
+import GoogleCloud from "../Assets/partners/google-cloud.png";
+import AWS from "../Assets/partners/aws.png";
+import NAMA from "../Assets/partners/nama.png";
+import IASP from "../Assets/partners/iasp.png";
+import NUST from "../Assets/partners/NUST.png";
+import PakLaunch from "../Assets/partners/paklaunch.png";
+import UBank from "../Assets/partners/U-Bank.png";
+import USEmbassy from "../Assets/partners/us-embassy.png";
+import ZaynVC from "../Assets/partners/zayn-vc.png";
 import Footer from "../Components/footer";
 
 const Partnerships = () => {
   const data = [
     {
-      name: "International Association of Science Parks (IASP)",
-      logo: iasplogo, // Replace with actual logo path
-      description:
-        "IASP is a worldwide network of Science & Technology Parks having 347 members from 77 countries. NSTP is the only full member of IASP from Pakistan.",
+      name: "Google Cloud",
+      logo: GoogleCloud,
+      description: "A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products. Offering cutting-edge technology solutions for businesses of all sizes.",
     },
     {
-      name: "World Technopolis Association (WTA)",
-      logo: WTAlogo, // Replace with actual logo path
-      description:
-        "WTA is a multilateral international organisation created with the purpose to connect the advancement of science and technology with local development. NSTP is the only associate member of WTA from Pakistan.",
+      name: "Amazon Web Services (AWS)",
+      logo: AWS,
+      description: "A comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Leading the cloud computing industry with innovative solutions.",
     },
     {
-      name: "Asia Science Park Association (ASPA)",
-      logo: aspalogo, // Replace with actual logo path
-      description:
-        "ASPA is an international nongovernmental organization established in Japan in 1997 for the purpose of accomplishing the joint development in the fields of scientific technology, industry and economy in the Asian region.",
+      name: "NAMA",
+      logo: NAMA,
+      description: "NAMA Group is a leading organization in Pakistan focused on innovation and technological advancement, providing diverse solutions and services across multiple sectors.",
     },
     {
-      name: "Inter-Islamic Network on Science & Technology Parks (INSTP)",
-      logo: INSTPlogo, // Replace with actual logo path
-      description:
-        "INSTP is a platform for technological development among Muslim countries. NSTP is member for INSTP as well as the only Pakistani member of its Executive Council.",
+      name: "IASP",
+      logo: IASP,
+      description: "International Association of Science Parks and Areas of Innovation, connecting science parks worldwide and fostering innovation ecosystems globally.",
     },
     {
-      name: "International Business Incubator (IBI) Beijing, China",
-      logo: ibichinalogo, // Replace with actual logo path
-      description:
-        "International Business Incubator (IBI) Beijing, China also known as Zhongguancun Science and Technology Park. It is the most intensive scientific, education and talent resource base in China.",
+      name: "NUST",
+      logo: NUST,
+      description: "National University of Sciences & Technology, one of Pakistan's premier institutions of science and technology education, driving research and innovation.",
     },
     {
-      name: "iAccelerate, Wollongong, Australia",
-      logo: iAcceleratelogo, // Replace with actual logo path
-      description:
-        "iAccelerate one of the leading and unique business accelerator and incubator program run by the University of Wollongong (UOW)). It's a thriving community of like-minded entrepreneurs with vision, purpose and passion, offering a unique eco-system with exceptional education, mentoring and support.",
+      name: "PakLaunch",
+      logo: PakLaunch,
+      description: "A pioneering platform connecting Pakistani startups with investors and resources globally, fostering the growth of Pakistan's startup ecosystem.",
+    },
+    {
+      name: "U Microfinance Bank",
+      logo: UBank,
+      description: "A leading microfinance institution in Pakistan, providing innovative financial solutions and supporting economic growth through accessible banking services.",
+    },
+    {
+      name: "U.S. Embassy Islamabad",
+      logo: USEmbassy,
+      description: "The diplomatic mission of the United States in Pakistan, fostering bilateral relations and supporting collaborative initiatives in technology, education, and innovation.",
+    },
+    {
+      name: "Zayn Capital Ventures",
+      logo: ZaynVC,
+      description: "A venture capital firm investing in high-potential Pakistani startups, driving innovation and supporting the growth of technology-driven businesses in the region.",
     },
   ];
 
