@@ -123,7 +123,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <div className="relative bg-black p-10 sm:p-24 w-full overflow-hidden">
+    <div className="relative bg-black  p-6 md:p-12  lg:p-24   w-full overflow-hidden">
       {/* Animated Background with Rotating Blur Circles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large rotating blur circles */}
@@ -177,8 +177,8 @@ const BenefitsSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10">
-        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
+      <div className="relative z-10 ">
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -200,7 +200,7 @@ const BenefitsSection = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center group w-[21rem]"
+                className="flex flex-col items-center text-center group w-[21rem] min-h-[11rem] md:min-h-[15rem]"
               >
                 <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300 stroke-1" />
@@ -276,8 +276,8 @@ const NSTPGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="w-full mx-auto px-4 mt-16 py-28 bg-black">
-      <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
+    <div className="w-full mx-auto p-6 md:p-12  lg:p-24  bg-black  flex flex-col items-center justify-center">
+      <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
           style={{
@@ -292,11 +292,11 @@ const NSTPGallery = () => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center gap-8">
+      <div className="flex flex-wrap items-center justify-center gap-8 max-w-7xl">
         {images.map((image) => (
           <div
             key={image.id}
-            className="group relative overflow-hidden rounded-lg w-[28rem] h-72 bg-white cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
+            className="group relative overflow-hidden rounded-lg w-[17rem] sm:w-[21rem] min-h-56 bg-white cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
             onClick={() => setSelectedImage(image)}
           >
             <img
@@ -414,7 +414,7 @@ const EnhancedSections = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 bg-white">
+    <div className="max-w-7xl mx-auto  bg-white">
       <div className="flex justify-center mb-12">
         <div className="inline-flex rounded-lg border border-[#8cc63f] p-1">
           <button
@@ -458,11 +458,11 @@ const EnhancedSections = () => {
                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-wrap items-center justify-center gap-8">
               {eligibilityCriteria.map((item, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                  className="group bg-white rounded-xl w-[17rem] sm:w-[21rem] sm:h-[20rem] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="mb-4 p-3 rounded-full bg-[#8cc63f]/10 group-hover:bg-[#8cc63f]/20 transition-colors">
@@ -505,11 +505,11 @@ const EnhancedSections = () => {
                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-wrap items-center justify-center gap-8">
               {targetSectors.map((sector, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                  className="group bg-white rounded-xl shadow-lg w-[17rem] sm:w-[21rem] sm:h-[20rem] p-6 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="mb-4 p-3 rounded-full bg-[#8cc63f]/10 group-hover:bg-[#8cc63f]/20 transition-colors">
@@ -669,9 +669,9 @@ const CompanyInfoPage = () => {
           </div>
         </div>
 
-        <div className=" mt-10 flex flex-col items-center justify-center ">
+        <div className=" flex flex-col items-center justify-center ">
           {/* // Program Overview */}
-          <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24  my-10 md:my-0">
+          <div className="relative  p-6 md:p-12  lg:p-24 ">
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
               {/* Left side - Image */}
               <div className="w-full md:w-[540px] lg:w-[670px]">
@@ -700,7 +700,7 @@ const CompanyInfoPage = () => {
                   </span>
                 </h1>
 
-                <p className="text-md font-normal text-gray-500 mb-10 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
                   NSTP offers the companies with the best office spaces. The
                   office spaces are designed to provide a comfortable and
                   productive environment for the employees. The office spaces
@@ -716,7 +716,7 @@ const CompanyInfoPage = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="bg-black cursor-pointer flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+                  className="bg-black cursor-pointer mx-auto md:mx-0 flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
                 >
                   Apply Now
                   <HiArrowSmRight className="text-lg md:text-2xl" />
@@ -734,20 +734,20 @@ const CompanyInfoPage = () => {
             </div>
           </div>
 
-          <div className="w-full  mt-16 ">
+          <div className="w-full    ">
             <NSTPGallery />
           </div>
 
-          <div className="w-full lg:w-[71rem] mt-16 ">
+          <div className="w-full  p-6 md:p-12  lg:p-24   ">
             <EnhancedSections />
           </div>
 
-          <div className="w-full  mt-16">
+          <div className="w-full    ">
             <BenefitsSection />
           </div>
 
-          <div id="apply" className="w-full lg:w-[71rem] mt-16">
-            <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
+          <div id="apply" className="w-full  p-6 md:p-12  lg:p-24  ">
+            <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -770,7 +770,7 @@ const CompanyInfoPage = () => {
                 eligibility criteria will be contacted for further details.
               </p>
               <button
-                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
+                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  "
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Apply Now"}</span>
@@ -779,7 +779,7 @@ const CompanyInfoPage = () => {
             </div>
 
             {showForm && (
-              <div className="mt-10">
+              <div className="">
                 <CompanyForm />
               </div>
             )}

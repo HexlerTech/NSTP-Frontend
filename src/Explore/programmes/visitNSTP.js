@@ -90,8 +90,8 @@ const VisitSections = () => {
   return (
     <div className="w-full bg-white">
       {/* Target Audience Section */}
-      <div className="bg-black mx-auto px-4 py-12 md:py-20">
-        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center md:gap-4 font-extrabold leading-none tracking-tight">
+      <div className="bg-black mx-auto  p-6 md:p-12  lg:p-24  flex flex-col items-center justify-center  ">
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-4 font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -106,11 +106,11 @@ const VisitSections = () => {
             <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
           </span>
         </h1>
-        <div className="flex items-center justify-center flex-wrap gap-8">
+        <div className="flex items-center justify-center flex-wrap gap-8 sm:max-w-7xl">
           {targetAudiences.map((audience, index) => (
             <div
               key={index}
-              className="group p-6 bg-white rounded-xl w-[21rem] shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 bg-white rounded-xl w-[20rem] md:w-[32rem] h-56 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="mb-4 p-3 rounded-full bg-primary/10 w-16 h-16 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <audience.icon className="w-8 h-8 text-primary" />
@@ -123,49 +123,47 @@ const VisitSections = () => {
       </div>
 
       {/* What to Expect Section */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center   md:gap-4 font-extrabold leading-none tracking-tight">
-            <span
-              className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
-              style={{
-                WebkitTextStroke: "1px #000000",
-                textStroke: "1px #000000",
-              }}
+      <div className="bg-white  flex flex-col items-center justify-center  p-6 md:p-12  lg:p-24  ">
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center   md:gap-4 font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #000000",
+              textStroke: "1px #000000",
+            }}
+          >
+            WHAT
+          </span>{" "}
+          <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+            TO EXPECT
+            <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:max-w-7xl">
+          {expectations.map((item, index) => (
+            <div
+              key={index}
+              className="group relative bg-white p-8 rounded-xl shadow-lg transform  w-[17rem] sm:w-[21rem] min-h-56 transition-all duration-300 hover:-translate-y-2 hover:rotate-1 overflow-hidden"
             >
-              WHAT
-            </span>{" "}
-            <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
-              TO EXPECT
-              <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
-            </span>
-          </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {expectations.map((item, index) => (
-              <div
-                key={index}
-                className="group relative bg-white p-8 rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:rotate-1 overflow-hidden"
-              >
-                {/* Gradient overlay that appears on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Gradient overlay that appears on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Decorative elements */}
-                <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300" />
+              {/* Decorative elements */}
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300" />
 
-                <div className="relative">
-                  <div className="mb-6 p-3 rounded-full bg-primary/10 w-16 h-16 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/20">
-                    <item.icon className="w-8 h-8 text-primary transform group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 transform transition-transform duration-300 group-hover:translate-x-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 transition-colors duration-300 group-hover:text-gray-700">
-                    {item.description}
-                  </p>
+              <div className="relative">
+                <div className="mb-6 p-3 rounded-full bg-primary/10 w-16 h-16 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/20">
+                  <item.icon className="w-8 h-8 text-primary transform group-hover:scale-110 transition-transform duration-300" />
                 </div>
+                <h3 className="text-xl font-semibold mb-3 transform transition-transform duration-300 group-hover:translate-x-1">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 transition-colors duration-300 group-hover:text-gray-700">
+                  {item.description}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -224,8 +222,8 @@ const VisitNSTP = () => {
         </div>
 
         {/* Program overview */}
-        <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24  my-10 md:my-0">
-          <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
+        <div className="relative  p-6 md:p-12  lg:p-24  ">
+          <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6 ">
             {/* Left side - Image */}
             <div className="w-full md:w-[540px] lg:w-[670px]">
               <img
@@ -253,7 +251,7 @@ const VisitNSTP = () => {
                 </span>
               </h1>
 
-              <p className="text-md font-normal text-gray-500 mb-10 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+              <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
                 Experience first-hand what NSTP has to offer by visiting our
                 campus. Our guided tours provide a comprehensive overview of our
                 facilities, programs, and the vibrant innovation ecosystem we've
@@ -282,15 +280,15 @@ const VisitNSTP = () => {
             </div>
           </div>
         </div>
-        <div className="w-full  mt-16">
+        <div className="w-full    ">
           <VisitSections />
         </div>
         <div
           id="apply"
-          className="px-4 sm:px-20 md:px-48 mt-10 flex flex-col items-center justify-center"
+          className=" px-6 md:px-12  lg:px-24  pb-6 md:pb-12  lg:pb-24 flex flex-col items-center justify-center"
         >
-          <div id="schedule" className="w-full lg:w-[71rem] mt-16">
-            <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-4 font-extrabold leading-none tracking-tight">
+          <div id="schedule" className="w-full lg:w-[71rem] ">
+            <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-4 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -313,7 +311,7 @@ const VisitNSTP = () => {
                 advance to ensure the best experience.
               </p>
               <button
-                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit mt-10 mb-7"
+                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit "
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Book Your Visit"}</span>
@@ -322,7 +320,7 @@ const VisitNSTP = () => {
             </div>
 
             {showForm && (
-              <div className="mt-10">
+              <div className="">
                 <VisitNSTPForm />
               </div>
             )}

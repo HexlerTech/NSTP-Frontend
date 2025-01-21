@@ -85,7 +85,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <div className="relative bg-black p-10 sm:p-24 w-full overflow-hidden">
+    <div className="relative bg-black p-6 md:p-12  lg:p-24   w-full overflow-hidden">
       {/* Animated Background with Rotating Blur Circles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large rotating blur circles */}
@@ -139,8 +139,8 @@ const BenefitsSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10">
-        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+      <div className="relative z-10 ">
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -162,7 +162,7 @@ const BenefitsSection = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center group w-[21rem]"
+                className="flex flex-col items-center text-center group w-[21rem] min-h-[11rem] md:min-h-[15rem]"
               >
                 <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
@@ -202,10 +202,10 @@ const ProgramSections = () => {
     "Real-world project experience",
   ];
   return (
-    <div className="w-full  py-20">
-      <div className="container mx-auto px-4">
+    <div className="w-full  p-6 md:p-12  lg:p-24 ">
+      <div className="container mx-auto  ">
         {/* Header */}
-        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -222,12 +222,12 @@ const ProgramSections = () => {
         </h1>
 
         {/* Cards Container */}
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10">
           {/* Target Audience Card */}
           <div className="group relative h-full">
             {/* Decorative background elements */}
             <div className="absolute -inset-1 bg-gradient-to-r from-white/30 to-white/30 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-            <div className="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300 h-full flex flex-col">
+            <div className="relative bg-white rounded-lg w-full sm:w-[30rem] sm:h-[22rem]  p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
               {/* Icon and Title */}
               <div className="flex items-center gap-6 mb-8">
                 <div className="relative">
@@ -245,9 +245,9 @@ const ProgramSections = () => {
               </div>
 
               {/* Content */}
-              <div className="relative overflow-hidden rounded-xl p-6 bg-gradient-to-br from-gray-50 to-white flex-grow">
+              <div className="relative overflow-hidden rounded-xl w-[23rem] p-6 bg-gradient-to-br from-gray-50 to-white flex-grow">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-gray-600 text-lg leading-relaxed ">
                   Final year university students pursuing degrees in Computer
                   Science, Software Engineering, Information Technology, or
                   related technical fields.
@@ -260,7 +260,7 @@ const ProgramSections = () => {
           <div className="group relative h-full">
             {/* Decorative background elements */}
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/30 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-            <div className="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300 h-full flex flex-col">
+            <div className="relative bg-white rounded-2xl w-full sm:w-[30rem] sm:h-[22rem] p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
               {/* Icon and Title */}
               <div className="flex items-center gap-6 mb-8">
                 <div className="relative">
@@ -278,7 +278,7 @@ const ProgramSections = () => {
               </div>
 
               {/* Content */}
-              <div className="relative overflow-hidden rounded-xl p-6 bg-gradient-to-br from-gray-50 to-white flex-grow">
+              <div className="relative overflow-hidden rounded-xl w-[23rem] p-6 bg-gradient-to-br from-gray-50 to-white flex-grow">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-gray-700 font-medium">
@@ -337,8 +337,8 @@ const EligibilitySection = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center mx-auto px-4 py-16 bg-black">
-      <h1 className="text-xl lg:text-3xl mb-12 flex  md:flex-row items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+    <div className="w-full flex flex-col items-center justify-center mx-auto   bg-black">
+      <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex  md:flex-row items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
           style={{
@@ -354,7 +354,7 @@ const EligibilitySection = () => {
         </span>
       </h1>
 
-      <div className="flex items-center justify-center w-full sm:max-w-7xl flex-wrap gap-8 mt-16">
+      <div className="flex items-center justify-center w-full sm:max-w-7xl flex-wrap gap-8 ">
         {criteria.map((item, index) => (
           <div
             key={index}
@@ -462,86 +462,84 @@ const InternshipProgram = () => {
           </div>
         </div>
 
-        <div className=" mt-10 flex flex-col items-center justify-center">
+        <div className="  flex flex-col items-center justify-center">
           {/* Program Overview */}
-          <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24  my-10 md:my-0">
-          <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
-            {/* Left side - Image */}
-            <div className="w-full md:w-[540px] lg:w-[670px]">
-              <img
-                src={Image2}
-                alt="Program Overview"
-                className="w-full h-full rounded-md "
-              />
-            </div>
+          <div className="relative p-6 md:p-12  lg:p-24  ">
+            <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6 ">
+              {/* Left side - Image */}
+              <div className="w-full md:w-[540px] lg:w-[670px] ">
+                <img
+                  src={Image2}
+                  alt="Program Overview"
+                  className="w-full h-full rounded-md "
+                />
+              </div>
 
-            {/* Right side - Content */}
-            <div className="flex flex-col flex-1 ml-0 lg:ml-10 w-full">
-              <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
-                <span
-                  className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
-                  style={{
-                    WebkitTextStroke: "1px #000000",
-                    textStroke: "1px #000000",
-                  }}
-                >
-                  PROGRAM
-                </span>{" "}
-                <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
-                  OVERVIEW
-                  <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
-                </span>
-              </h1>
+              {/* Right side - Content */}
+              <div className="flex flex-col flex-1 ml-0 lg:ml-10 w-full ">
+                <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
+                  <span
+                    className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
+                    style={{
+                      WebkitTextStroke: "1px #000000",
+                      textStroke: "1px #000000",
+                    }}
+                  >
+                    PROGRAM
+                  </span>{" "}
+                  <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+                    OVERVIEW
+                    <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+                  </span>
+                </h1>
 
-              <p className="text-md font-normal text-gray-500 mb-10 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
-              NSTP's 6-month internship program bridges academic learning
+                <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                  NSTP's 6-month internship program bridges academic learning
                   and industry requirements. Our program provides hands-on
                   experience in real-world projects, mentorship from industry
                   experts, and exposure to cutting-edge technologies. Interns
                   work alongside experienced professionals in a dynamic
                   environment that fosters learning and professional growth.
-              </p>
-              <Link
-                                        
-                                        to="apply"
-                                        spy={true}
-                                        smooth={true}
-                                        duration={500}
-                                        className="bg-black cursor-pointer flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
-                                      >
-                                        Apply Now
-                                        <HiArrowSmRight className="text-lg md:text-2xl" />
-                                      </Link>
-             
+                </p>
+                <Link
+                  to="apply"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="bg-black cursor-pointer mx-auto md:mx-0 flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
+                >
+                  Apply Now
+                  <HiArrowSmRight className="text-lg md:text-2xl" />
+                </Link>
 
-              {/* Learn More button */}
-              {/* <Link
+                {/* Learn More button */}
+                {/* <Link
             to="/program-details"
             className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform duration-300 ease-in-out w-fit"
           >
             Learn More
             <HiArrowSmRight className="text-lg md:text-2xl" />
           </Link> */}
+              </div>
             </div>
           </div>
-        </div>
-       
+
           {/* Benefits Section */}
-          <div className="mt-16 w-full ">
+          <div className=" w-full ">
             <BenefitsSection />
           </div>
-          <div className="mt-16 w-full lg:w-[71rem]">
+          <div className=" w-full ">
             <ProgramSections />
           </div>
 
           {/* Eligibility Section */}
-          <div className="mt-16 w-full ">
+          <div className="bg-black  p-6 md:p-12  lg:p-24   w-full ">
             <EligibilitySection />
           </div>
 
           {/* Apply Section */}
-          <div id="apply" className="mt-16 w-full lg:w-[71rem]">
-            <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+          <div id="apply" className=" w-full p-6 md:p-12  lg:p-24 ">
+            <h1 className="text-xl lg:text-3xl mb-8  flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -557,7 +555,7 @@ const InternshipProgram = () => {
               </span>
             </h1>
             <div className="text-gray-900 text-center flex flex-col items-center justify-center text-sm">
-              <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
+              <p className="max-w-2xl mx-auto text-lg mb-8 text-justify sm:text-center text-gray-500 px-4 ">
                 Interested students can apply through their university's career
                 portal or directly through NSTP's application portal.
                 Applications should include a current resume, academic
@@ -566,7 +564,7 @@ const InternshipProgram = () => {
                 interviews.
               </p>
               <button
-                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
+                className="bg-black flex gap-3 items-center  justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  "
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Apply Now"}</span>
@@ -575,7 +573,7 @@ const InternshipProgram = () => {
             </div>
 
             {showForm && (
-              <div className="mt-10">
+              <div className="">
                 <InternshipForm />
               </div>
             )}

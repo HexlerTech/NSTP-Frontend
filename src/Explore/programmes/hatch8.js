@@ -65,8 +65,8 @@ const EligibilitySection = () => {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4">
-      <h1 className="text-xl lg:text-3xl mb-12 flex  md:flex-row items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+    <div className="w-full  mx-auto flex flex-col items-center justify-center ">
+      <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex  md:flex-row items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
           style={{
@@ -81,11 +81,11 @@ const EligibilitySection = () => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="flex flex-wrap items-center justify-center gap-8 sm:max-w-7xl ">
         {criteria.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="group relative bg-white rounded-lg w-[17rem] sm:w-[21rem] h-56 shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
             {/* Decorative background elements */}
             {/* <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-br-full transition-all duration-300 group-hover:w-full group-hover:h-full group-hover:bg-primary/10" />
@@ -163,7 +163,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <div className="relative bg-black p-10 sm:p-24 w-full overflow-hidden">
+    <div className="relative bg-black p-6 md:p-12  lg:p-24   w-full overflow-hidden">
       {/* Animated Background with Rotating Blur Circles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large rotating blur circles */}
@@ -217,8 +217,8 @@ const BenefitsSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10">
-        <h1 className="text-xl lg:text-3xl mb-24 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+      <div className="relative z-10 ">
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
             style={{
@@ -240,7 +240,7 @@ const BenefitsSection = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center group w-[21rem]"
+                className="flex flex-col  items-center text-center group w-[21rem] min-h-[11rem] md:min-h-[15rem]"
               >
                 <div className="mb-6 bg-white w-16 md:w-24 h-16 md:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <IconComponent className="w-9 md:w-12 h-9 md:h-12 text-black group-hover:text-primary transition-colors duration-300" />
@@ -292,8 +292,8 @@ const CarouselSection = ({ items }) => {
     };
 
     updateItemsToShow();
-    window.addEventListener('resize', updateItemsToShow);
-    return () => window.removeEventListener('resize', updateItemsToShow);
+    window.addEventListener("resize", updateItemsToShow);
+    return () => window.removeEventListener("resize", updateItemsToShow);
   }, []);
 
   const nextSlide = () => {
@@ -311,8 +311,8 @@ const CarouselSection = ({ items }) => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center flex-col mx-auto px-4 py-12">
-      <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+    <div className="w-full flex items-center justify-center flex-col mx-auto ">
+      <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
           style={{
@@ -328,17 +328,17 @@ const CarouselSection = ({ items }) => {
         </span>
       </h1>
 
-      <div className="relative w-5/6 sm:w-[80%]">
+      <div className="relative w-full sm:w-[80%]">
         <button
           onClick={prevSlide}
-          className="absolute -left-12 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
+          className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
         >
           <ChevronLeft className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute -right-12 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
+          className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-black hover:scale-110 transition-transform duration-150 p-2 sm:p-4 rounded-full shadow-lg z-10"
         >
           <ChevronRight className="w-3 sm:w-6 h-3 sm:h-6 text-white" />
         </button>
@@ -347,7 +347,9 @@ const CarouselSection = ({ items }) => {
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${(currentIndex % items.length) * (100 / itemsToShow)}%)`,
+              transform: `translateX(-${
+                (currentIndex % items.length) * (100 / itemsToShow)
+              }%)`,
             }}
           >
             {allItems.map((item, index) => (
@@ -522,9 +524,9 @@ const Hatch = () => {
           </div>
         </div>
 
-        <div className="   mt-10 flex flex-col items-center justify-center ">
+        <div className="    flex flex-col items-center justify-center ">
           {/* Program Overview */}
-          <div className="relative p-6 md:p-12 lg:pt-40 lg:p-24  my-10 md:my-0">
+          <div className="relative p-6 md:p-12  lg:p-24  ">
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
               {/* Left side - Image */}
               <div className="w-full md:w-[540px] lg:w-[670px]">
@@ -553,7 +555,7 @@ const Hatch = () => {
                   </span>
                 </h1>
 
-                <p className="text-md font-normal text-gray-500 mb-10 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
                   {about}
                 </p>
                 <Link
@@ -581,12 +583,12 @@ const Hatch = () => {
 
           {/* Key Benefits */}
 
-          <div className="mt-16 w-full   ">
+          <div className=" w-full   ">
             <BenefitsSection />
           </div>
 
           {/* Company Logo  */}
-          <div className="mt-16 w-full  lg:w-[71rem] ">
+          <div className=" w-full p-6 md:p-12  lg:p-24     ">
             <CompanyLogo
               titleHollow={hatch8TitleHollow}
               titleFilled={hatch8TitleFilled}
@@ -596,21 +598,21 @@ const Hatch = () => {
 
           {/* Eligibility */}
 
-          <div className="mt-16 w-full bg-black py-20  ">
+          <div className=" w-full bg-black p-6 md:p-12  lg:p-24    ">
             <EligibilitySection />
           </div>
           {/* Mentors */}
-          <div className="mt-16 w-full  lg:w-[71rem] ">
+          <div className="p-6 md:p-12  lg:p-24    ">
             <FacultyAndTeams />
           </div>
 
           {/* Timeline */}
-          <div className=" w-full l bg-black">
+          <div className=" w-full p-6 md:p-12  lg:p-24   bg-black">
             <TimeLine />
           </div>
           {/* Apply */}
-          <div id="apply" className="mt-16 w-full  lg:w-[71rem] ">
-            <h1 className="text-xl lg:text-3xl mb-12 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+          <div id="apply" className="p-6 md:p-12  lg:p-24   w-full">
+            <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -626,7 +628,7 @@ const Hatch = () => {
               </span>
             </h1>
 
-            <div className="text-gray-600 flex flex-col  items-center justify-center text-center text-sm mt-5">
+            <div className="text-gray-600 flex flex-col  items-center justify-center text-center text-sm">
               <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
                 Startups interested in joining the Hatch 8 Incubation Program
                 can apply by filling out the application form below. Our team
@@ -634,7 +636,7 @@ const Hatch = () => {
                 for the next steps in the selection process.
               </p>
               <button
-                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
+                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit "
                 onClick={() => setShowForm(!showForm)}
               >
                 <span>{showForm ? "Hide Form" : "Apply Now"}</span>
@@ -643,7 +645,7 @@ const Hatch = () => {
             </div>
 
             {showForm && (
-              <div className="mt-10">
+              <div className="">
                 <Hatch8 />
               </div>
             )}
