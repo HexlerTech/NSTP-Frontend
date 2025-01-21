@@ -155,39 +155,45 @@
 // export default Gallery;
 
 import React, { useEffect, useState } from "react";
-import image1 from "../../Assets/highlight/image1.svg";
-import image2 from "../../Assets/highlight/image2.svg";
-import image3 from "../../Assets/highlight/image3.svg";
-import image4 from "../../Assets/highlight/image4.svg";
-import image5 from "../../Assets/highlight/image5.svg";
-import image6 from "../../Assets/highlight/image6.svg";
-import image7 from "../../Assets/highlight/image7.svg";
-import image8 from "../../Assets/highlight/image8.svg";
-import image9 from "../../Assets/highlight/image9.svg";
-import image10 from "../../Assets/highlight/image10.svg";
-import image11 from "../../Assets/highlight/image11.jpg";
-import image12 from "../../Assets/highlight/image12.jpg";
-import image13 from "../../Assets/highlight/image13.jpg";
-import image14 from "../../Assets/highlight/image14.jpg";
-import image15 from "../../Assets/highlight/image15.jpg";
-import image16 from "../../Assets/highlight/image16.JPG";
-import image17 from "../../Assets/highlight/image17.JPG";
-import image18 from "../../Assets/highlight/image18.jpg";
-import image19 from "../../Assets/highlight/image19.jpg";
-import image20 from "../../Assets/highlight/image20.jpg";
+import image1 from "../../Assets/Gallery/image1.svg";
+import image2 from "../../Assets/Gallery/image2.svg";
+import image3 from "../../Assets/Gallery/image3.svg";
+import image4 from "../../Assets/Gallery/image4.svg";
+import image5 from "../../Assets/Gallery/image5.svg";
+import image6 from "../../Assets/Gallery/image6.svg";
+import image7 from "../../Assets/Gallery/image7.svg";
+import image8 from "../../Assets/Gallery/image8.svg";
+import image9 from "../../Assets/Gallery/image9.svg";
+import image10 from "../../Assets/Gallery/image10.svg";
+import image11 from "../../Assets/Gallery/image11.svg";
+import image12 from "../../Assets/Gallery/image12.svg";
+import image13 from "../../Assets/Gallery/image13.svg";
+import image14 from "../../Assets/Gallery/image14.svg";
+import image15 from "../../Assets/Gallery/image15.svg";
+import image16 from "../../Assets/Gallery/image16.svg";
+import image17 from "../../Assets/Gallery/image17.svg";
+import image18 from "../../Assets/Gallery/image18.svg";
+import image19 from "../../Assets/Gallery/image19.svg";
+import image20 from "../../Assets/Gallery/image20.svg";
+import image21 from "../../Assets/Gallery/image21.svg";
+import image22 from "../../Assets/Gallery/image22.svg";
+import image23 from "../../Assets/Gallery/image23.svg";
 
 const Gallery = () => {
-  const [scrollSpeed, setScrollSpeed] = useState('35s');
-  
+  const [scrollSpeed, setScrollSpeed] = useState("35s");
+
   useEffect(() => {
     const updateScrollSpeed = () => {
       // Base speed is 35s for largest screen (1440px)
       const baseSpeed = 35;
       const baseWidth = 1440;
       const currentWidth = window.innerWidth;
-      
+
       // Adjust speed proportionally to screen width
-      const adjustedSpeed = Math.max((baseSpeed * currentWidth) / baseWidth, 20);
+      const adjustedSpeed = Math.max(
+        (baseSpeed * currentWidth) / baseWidth,
+        20
+      );
       setScrollSpeed(`${adjustedSpeed}s`);
     };
 
@@ -195,17 +201,17 @@ const Gallery = () => {
     updateScrollSpeed();
 
     // Update on resize
-    window.addEventListener('resize', updateScrollSpeed);
-    return () => window.removeEventListener('resize', updateScrollSpeed);
+    window.addEventListener("resize", updateScrollSpeed);
+    return () => window.removeEventListener("resize", updateScrollSpeed);
   }, []);
   return (
-    <div className="relative w-full overflow-hidden bg-white">
-    <div
-      className="flex"
-      style={{
-        animation: `moveRight ${scrollSpeed} linear infinite`,
-      }}
-    >
+    <div className="relative w-full overflow-hidden bg-white mb-8 md:mb-24">
+      <div
+        className="flex"
+        style={{
+          animation: `moveRight ${scrollSpeed} linear infinite`,
+        }}
+      >
         {/* <div className="flex animate-scroll-right"> */}
         {/* First set of grid */}
         <div className="min-w-full grid grid-cols-3 gap-4 p-2">
@@ -220,14 +226,14 @@ const Gallery = () => {
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image4}
+                src={image2}
                 alt=""
               />
             </div>
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image7}
+                src={image3}
                 alt=""
               />
             </div>
@@ -236,7 +242,30 @@ const Gallery = () => {
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image2}
+                src={image15}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image16}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image17}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image4}
                 alt=""
               />
             </div>
@@ -250,29 +279,6 @@ const Gallery = () => {
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image8}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image10}
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image3}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
                 src={image6}
                 alt=""
               />
@@ -280,66 +286,35 @@ const Gallery = () => {
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image9}
+                src={image7}
                 alt=""
               />
             </div>
           </div>
         </div>
 
-        {/* Second set of grid */}
+        {/* Second set of grid  */}
+
         <div className="min-w-full grid grid-cols-3 gap-4 p-2">
           <div className="flex flex-col items-center justify-center gap-4">
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image6}
+                src={image18}
                 alt=""
               />
             </div>
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image8}
+                src={image19}
                 alt=""
               />
             </div>
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image3}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image5}
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4">
-            
-           
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image9}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image2}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image7}
+                src={image20}
                 alt=""
               />
             </div>
@@ -348,10 +323,34 @@ const Gallery = () => {
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image4}
+                src={image11}
                 alt=""
               />
             </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image12}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image13}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image14}
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-4">
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
@@ -362,14 +361,41 @@ const Gallery = () => {
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image10}
+                src={image22}
                 alt=""
               />
             </div>
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image6}
+                src={image23}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* third set of grid */}
+        <div className="min-w-full grid grid-cols-3 gap-4 p-2">
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image8}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image9}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image10}
                 alt=""
               />
             </div>

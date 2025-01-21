@@ -370,8 +370,8 @@ const Home = () => {
       {/* <Service /> */}
       <Highlight />
       <Offer />
-      <div className="flex flex-col items-center justify-center px-2 py-8 ">
-        <h1 className="text-xl lg:text-3xl mb-12   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+      <div className="flex flex-col items-center justify-center  ">
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-24   flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
           <span
             className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
             style={{
