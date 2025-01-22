@@ -222,15 +222,15 @@ const ProgramSections = () => {
         </h1>
 
         {/* Cards Container */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-10 px-4 ">
           {/* Target Audience Card */}
-          <div className="group relative h-full">
+          <div className="group relative h-full w-full  flex items-center justify-center ">
             {/* Decorative background elements */}
             <div className="absolute -inset-1 bg-gradient-to-r from-white/30 to-white/30 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-            <div className="relative bg-white rounded-lg w-full sm:w-[30rem] sm:h-[22rem]  p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
+            <div className="relative bg-gray-50 rounded-lg w-full xl:w-[35rem] min-h-[27rem] xl:min-h-[24rem] lg:min-h-[22rem]  p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
               {/* Icon and Title */}
-              <div className="flex items-center gap-6 mb-8">
-                <div className="relative">
+              <div className="flex items-center  sm:gap-6 flex-col sm:flex-row sm:mb-8">
+                <div className="relative ">
                   {/* Animated rings */}
                   <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-[spin_8s_linear_infinite]"></div>
                   <div className="absolute inset-1 rounded-full border-2 border-primary/30 animate-[spin_6s_linear_infinite_reverse]"></div>
@@ -239,15 +239,15 @@ const ProgramSections = () => {
                     <Target className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
+                <h3 className="text-xl  md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
                   Target Audience
                 </h3>
               </div>
 
               {/* Content */}
-              <div className="relative overflow-hidden rounded-xl w-[23rem] p-6 bg-gradient-to-br from-gray-50 to-white flex-grow">
+              <div className="relative overflow-hidden rounded-xl p-2 sm:p-6  flex-grow">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-                <p className="text-gray-600 text-lg leading-relaxed ">
+                <p className="text-gray-600 text-md leading-relaxed text-sm md:text-base">
                   Final year university students pursuing degrees in Computer
                   Science, Software Engineering, Information Technology, or
                   related technical fields.
@@ -257,35 +257,35 @@ const ProgramSections = () => {
           </div>
 
           {/* Program Structure Card */}
-          <div className="group relative h-full">
+          <div className="group relative h-full w-full flex items-center justify-center  ">
             {/* Decorative background elements */}
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/30 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-            <div className="relative bg-white rounded-2xl w-full sm:w-[30rem] sm:h-[22rem] p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
+            <div className="relative bg-gray-50 rounded-lg w-full xl:w-[35rem] min-h-[27rem] xl:min-h-[24rem] lg:min-h-[22rem] p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
               {/* Icon and Title */}
-              <div className="flex items-center gap-6 mb-8">
+              <div className="flex items sm:gap-6 flex-col sm:flex-row sm:mb-8">
                 <div className="relative">
                   {/* Animated rings */}
-                  <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-[spin_8s_linear_infinite]"></div>
-                  <div className="absolute inset-1 rounded-full border-2 border-primary/30 animate-[spin_6s_linear_infinite_reverse]"></div>
+                  {/* <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-[spin_8s_linear_infinite]"></div>
+                  <div className="absolute inset-1 rounded-full border-2 border-primary/30 animate-[spin_6s_linear_infinite_reverse]"></div> */}
                   {/* Icon container */}
                   <div className="relative w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <BookOpen className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
+                <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
                   Program Structure
                 </h3>
               </div>
 
               {/* Content */}
-              <div className="relative overflow-hidden rounded-xl w-[23rem] p-6 bg-gradient-to-br from-gray-50 to-white flex-grow">
+              <div className="relative overflow-hidden rounded-xl  p-2 sm:p-6   flex-grow">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-gray-700 font-medium">
                     <Clock className="w-5 h-5 text-primary" />
                     <span>Duration: 6 months</span>
                   </div>
-                  <ul className="space-y-3 mt-4">
+                  <ul className="space-y-3 mt-4 text-sm md:text-base">
                     {components.map((item, index) => (
                       <li
                         key={index}
@@ -358,7 +358,7 @@ const EligibilitySection = () => {
         {criteria.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white shadow-xl w-[17rem] sm:w-[21rem] min-h-56 rounded-lg overflow-hidden transform perspective-1000"
+            className="group relative bg-gray-50 shadow-xl w-[17rem] sm:w-[21rem] min-h-56 rounded-lg overflow-hidden transform perspective-1000"
           >
             {/* Card Background with Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -477,7 +477,7 @@ const InternshipProgram = () => {
 
               {/* Right side - Content */}
               <div className="flex flex-col flex-1 ml-0 lg:ml-10 w-full ">
-                <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
+                <h1 className="text-xl lg:text-3xl mb-4 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
                   <span
                     className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
                     style={{
@@ -493,7 +493,7 @@ const InternshipProgram = () => {
                   </span>
                 </h1>
 
-                <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                <p className="text-base  font-normal text-gray-500 mb-4 text-justify md:text-left w-full md:w-[80%]">
                   NSTP's 6-month internship program bridges academic learning
                   and industry requirements. Our program provides hands-on
                   experience in real-world projects, mentorship from industry
@@ -539,7 +539,7 @@ const InternshipProgram = () => {
 
           {/* Apply Section */}
           <div id="apply" className=" w-full p-6 md:p-12  lg:p-24 ">
-            <h1 className="text-xl lg:text-3xl mb-8  flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+            <h1 className="text-xl lg:text-3xl mb-4  flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -555,7 +555,7 @@ const InternshipProgram = () => {
               </span>
             </h1>
             <div className="text-gray-900 text-center flex flex-col items-center justify-center text-sm">
-              <p className="max-w-2xl mx-auto text-lg mb-8 text-justify sm:text-center text-gray-500 px-4 ">
+              <p className="md:max-w-2xl mx-auto text-base mb-4 text-center text-gray-500 px-4 ">
                 Interested students can apply through their university's career
                 portal or directly through NSTP's application portal.
                 Applications should include a current resume, academic

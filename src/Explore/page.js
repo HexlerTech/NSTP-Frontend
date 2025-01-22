@@ -15,7 +15,7 @@ const Card = ({ title, description, imageSrc, imageAlt, link }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+    <div className="group bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
       <div className="relative">
         <div className="h-48 overflow-hidden">
           <img
@@ -47,7 +47,7 @@ const RoleButton = ({ role, selected, onClick }) => (
   <button
     onClick={onClick}
     // className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7"
-    className={`  flex gap-3 items-center justify-center  px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit  mt-10 mb-7px-6    ${
+    className={`  flex gap-3 items-center justify-center  px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit     ${
       selected
         ? "bg-primary text-white shadow-lg scale-105"
         : "bg-black text-white "
@@ -64,7 +64,7 @@ const Students = () => (
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
         Student Opportunities
       </h2>
-      <p className="text-gray-600">
+      <p className="text-gray-500">
         Gain hands-on experience and kickstart your career in technology through
         our specialized programs designed for students.
       </p>
@@ -94,7 +94,7 @@ const EducationalInstitutes = () => (
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
         Educational Partnership Opportunities
       </h2>
-      <p className="text-gray-600">
+      <p className="text-gray-500">
         Partner with NSTP to enhance your institution's technical education
         offerings and provide students with industry exposure.
       </p>
@@ -115,7 +115,7 @@ const Startup = () => (
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
         Startup Programs
       </h2>
-      <p className="text-gray-600">
+      <p className="text-gray-500">
         Access resources, mentorship, and facilities to grow your startup in our
         innovation ecosystem.
       </p>
@@ -145,7 +145,7 @@ const Company = () => (
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
         International Company Solutions
       </h2>
-      <p className="text-gray-600">
+      <p className="text-gray-500">
         Establish your presence in the region with our comprehensive facilities
         and support services.
       </p>
@@ -190,7 +190,7 @@ const ExploreNSTP = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-14">
         {/* Hero Section */}
         <div className="text-center mt-16">
-          <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 h-full flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
+          <h1 className="text-xl lg:text-3xl mb-4 h-full flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
             <span
               className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
               style={{
@@ -205,7 +205,7 @@ const ExploreNSTP = () => {
               <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-md md:text-lg text-gray-600 max-w-3xl mx-auto mb-8">
             Discover opportunities tailored to your needs. Select your role
             below to begin your journey with NSTP.
           </p>

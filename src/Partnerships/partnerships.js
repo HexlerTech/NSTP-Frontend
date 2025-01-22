@@ -186,7 +186,7 @@ const Partnerships = () => {
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto  animate-fade-up flex items-center justify-center h-full flex-col">
-          <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="flex items-center justify-center gap-4 mb-4">
             {/* <img src={nstp} alt="NSTP" className="w-16 h-16"/> */}
             <h1 className="text-xl lg:text-3xl    flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
               <span
@@ -204,7 +204,7 @@ const Partnerships = () => {
               </span>
             </h1>
           </div>
-          <p className="text-center text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-center text-md md:text-lg text-gray-300 max-w-2xl mx-auto">
             NSTP is member and in strategic Alliance with leading international
             organizations, fostering innovation and technological advancement
             across borders.
@@ -230,7 +230,7 @@ const Partnerships = () => {
         className="group relative h-96 overflow-hidden rounded-xl shadow-lg transition-all duration-500 hover:shadow-2xl"
       >
         {/* Initial Content */}
-        <div className="absolute inset-0 w-full h-full p-6 flex flex-col items-center justify-center bg-white opacity-100 group-hover:opacity-0 transition-all duration-500">
+        <div className="absolute inset-0 w-full h-full p-6 flex flex-col items-center justify-center bg-gray-50 opacity-100 group-hover:opacity-0 transition-all duration-500">
           <div className="w-full h-32 flex items-center justify-center mb-6">
             <img
               src={item.logo}

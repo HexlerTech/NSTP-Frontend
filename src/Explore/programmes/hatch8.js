@@ -550,7 +550,7 @@ const Hatch = () => {
                   </span>
                 </h1>
 
-                <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                <p className="text-base font-normal text-gray-500 mb-8  text-justify md:text-left w-full md:w-[80%]">
                   {about}
                 </p>
                 <Link
@@ -607,7 +607,7 @@ const Hatch = () => {
           </div>
           {/* Apply */}
           <div id="apply" className="px-6 md:px-12  lg:px-24 pb-6 md:pb-12  lg:pb-24   w-full">
-            <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+            <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -624,7 +624,7 @@ const Hatch = () => {
             </h1>
 
             <div className="text-gray-600 flex flex-col  items-center justify-center text-center text-sm">
-              <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
+              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500  mb-4">
                 Startups interested in joining the Hatch 8 Incubation Program
                 can apply by filling out the application form below. Our team
                 will review your application and contact qualified candidates

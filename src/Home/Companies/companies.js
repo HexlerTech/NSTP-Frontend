@@ -34,7 +34,7 @@ const Companies = () => {
     <div className="h-fit bg-black p-6 md:p-12  lg:p-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 ">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-8">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             <span className="text-transparent" style={{
               WebkitTextStroke: "1px #ffffff",
               textStroke: "1px #ffffff",
@@ -46,7 +46,7 @@ const Companies = () => {
               <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
        </span>
           </h1>
-          <p className="max-w-2xl mx-auto text-lg text-gray-500 mb-8">
+          <p className="max-w-2xl mx-auto text-base text-justify md:text-center text-gray-300 mb-8">
             Large multinational corporations (MNCs), startups, small and medium-sized enterprises (SMEs), and research and development (R&D) houses from all around the world
           </p>
         </div>

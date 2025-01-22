@@ -80,10 +80,10 @@ const CTA = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto ">
-        <div className="text-center space-y-8">
+        <div className="text-center ">
           {/* Heading with outline effect */}
           <div className="inline-flex flex-col items-center justify-center space-y-2">
-            <h1 className="text-xl lg:text-3xl mb-8 md:mb-14   flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
+            <h1 className="text-xl lg:text-3xl mb-4    flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
                 style={{
@@ -98,7 +98,7 @@ const CTA = () => {
                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 mb-4">
               <span className="h-0.5 w-12 bg-primary/30"></span>
               <CircuitBoard className="w-6 h-6 text-primary" />
               <span className="h-0.5 w-12 bg-primary/30"></span>
@@ -106,7 +106,7 @@ const CTA = () => {
           </div>
 
           {/* Description */}
-          <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">
+          <p className="max-w-2xl mx-auto text-base text-justify md:text-center text-gray-300 mb-8">
             National Science and Technology Park at NUST provides a platform for
             innovation and technology growth in Pakistan.
           </p>

@@ -51,7 +51,7 @@ const Offer = () => {
 
   return (
     <div className=" mx-auto p-6 md:p-12  lg:p-24 ">
-      <h1 className="text-xl lg:text-3xl mb-8    flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+      <h1 className="text-xl lg:text-3xl mb-4    flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{
@@ -67,15 +67,15 @@ const Offer = () => {
         </span>
       </h1>
       
-      <p className="max-w-2xl mx-auto text-lg text-gray-500 text-center mb-8">
+      <p className="max-w-2xl mx-auto text-base text-gray-500 text-center mb-8">
       With over 500,000 sq ft of development space  NSTP  is the
       ideal home for residents to expand their business in the proximity of NUST
           </p>
-      <div className="flex flex-wrap items-center justify-center gap-6 w-full ">
+      <div className="flex flex-wrap items-center justify-center gap-6 sm:max-w-[88rem]  mx-auto">
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br from-white to-gray-50 w-5/6 sm:w-80 h-full sm:h-64 group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2"
+            className="bg-gray-50 w-72 sm:w-80  h-64 group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2"
           >
             {/* Animated background patterns */}
             {/* <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-br-full transition-all duration-500 ease-in-out group-hover:scale-150 group-hover:bg-primary/20" />

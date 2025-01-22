@@ -197,7 +197,7 @@ const NSTPAbout = () => {
 
         {/* Right side - Content */}
         <div className="flex flex-col  flex-1 ml-0 md:ml-10 lg:ml-10 w-full ">
-          <h1 className=" text-xl lg:text-3xl mb-8 font-extrabold leading-none tracking-tight">
+          <h1 className=" text-center md:text-left text-xl lg:text-3xl mb-4 font-extrabold leading-none tracking-tight">
             <span
               className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
               style={{
@@ -207,13 +207,13 @@ const NSTPAbout = () => {
             >
               NATIONAL SCIENCE AND TECHNOLOGY PARK
             </span>{" "}
-            <span className="text-[#000000] text-3xl md:text-4xl lg:text-5xl xl:text-4xl block mt-2">
+            <span className="text-[#000000] text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
               PROXIMITY TO NUST'S CUTTING-EDGE INNOVATION ECOSYSTEM
               <span className="text-primary text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
 
-          <p className="text-md font-normal  text-gray-500 mb-8 lg:leading-6   md:leading-6 text-justify w-full md:w-[80%]">
+          <p className="text-base font-normal  text-gray-500 mb-4 text-center md:text-left w-full md:w-[80%]">
             The National Science and Technology Park (NSTP) in Islamabad fosters
             innovation, housing high-tech companies, startups, research centers,
             and educational institutions. It promotes science, technology, and a
@@ -224,7 +224,7 @@ const NSTPAbout = () => {
           {/* About Us button */}
           <Link
             to="/about"
-            className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+            className="bg-black flex gap-3 mx-auto md:mx-0 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
           >
             About us
             <HiArrowSmRight className="text-lg md:text-2xl" />

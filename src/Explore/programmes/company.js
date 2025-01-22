@@ -296,7 +296,7 @@ const NSTPGallery = () => {
         {images.map((image) => (
           <div
             key={image.id}
-            className="group relative overflow-hidden rounded-lg w-[17rem] sm:w-[21rem] min-h-56 bg-white cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
+            className="group relative overflow-hidden rounded-lg w-[21rem] min-h-56 bg-white cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
             onClick={() => setSelectedImage(image)}
           >
             <img
@@ -462,7 +462,7 @@ const EnhancedSections = () => {
               {eligibilityCriteria.map((item, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl w-[17rem] sm:w-[21rem] sm:h-[20rem] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                  className="group bg-white rounded-xl w-[21rem] sm:h-[20rem] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="mb-4 p-3 rounded-full bg-[#8cc63f]/10 group-hover:bg-[#8cc63f]/20 transition-colors">
@@ -684,7 +684,7 @@ const CompanyInfoPage = () => {
 
               {/* Right side - Content */}
               <div className="flex flex-col flex-1 ml-0 lg:ml-10 w-full">
-                <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center    lg:gap-4 font-extrabold leading-none tracking-tight">
+                <h1 className="text-xl lg:text-3xl mb-4 flex-wrap flex flex-col md:flex-row items-center    lg:gap-4 font-extrabold leading-none tracking-tight">
                   <span
                     className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
                     style={{
@@ -700,7 +700,7 @@ const CompanyInfoPage = () => {
                   </span>
                 </h1>
 
-                <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                <p className="text-base font-normal text-gray-500 mb-4 text-justify md:text-left w-full md:w-[80%]">
                   NSTP offers the companies with the best office spaces. The
                   office spaces are designed to provide a comfortable and
                   productive environment for the employees. The office spaces
@@ -747,7 +747,7 @@ const CompanyInfoPage = () => {
           </div>
 
           <div id="apply" className="w-full  p-6 md:p-12  lg:p-24  ">
-            <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
+            <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -763,7 +763,7 @@ const CompanyInfoPage = () => {
               </span>
             </h1>
             <div className="text-gray-600 flex flex-col items-center justify-center text-center text-sm">
-              <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
+              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500  mb-4">
                 Companies interested in renting office spaces at NSTP can fill
                 the application form available on the website. The applications
                 will be reviewed by the NSTP team, and the companies meeting the

@@ -110,7 +110,7 @@ const VisitSections = () => {
           {targetAudiences.map((audience, index) => (
             <div
               key={index}
-              className="group p-6 bg-white rounded-xl w-[20rem] md:w-[32rem] h-56 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 bg-gray-50 rounded-xl w-[21rem] xl:w-[32rem] h-56 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="mb-4 p-3 rounded-full bg-primary/10 w-16 h-16 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <audience.icon className="w-8 h-8 text-primary" />
@@ -143,7 +143,7 @@ const VisitSections = () => {
           {expectations.map((item, index) => (
             <div
               key={index}
-              className="group relative bg-white p-8 rounded-xl shadow-lg transform  w-[17rem] sm:w-[21rem] min-h-56 transition-all duration-300 hover:-translate-y-2 hover:rotate-1 overflow-hidden"
+              className="group relative bg-gray-50 p-8 rounded-xl shadow-lg transform  w-[21rem] min-h-56 transition-all duration-300 hover:-translate-y-2 hover:rotate-1 overflow-hidden"
             >
               {/* Gradient overlay that appears on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -235,7 +235,7 @@ const VisitNSTP = () => {
 
             {/* Right side - Content */}
             <div className="flex flex-col flex-1 ml-0 lg:ml-10 w-full">
-              <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
+              <h1 className="text-xl lg:text-3xl mb-4 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
                 <span
                   className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
                   style={{
@@ -251,7 +251,7 @@ const VisitNSTP = () => {
                 </span>
               </h1>
 
-              <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+              <p className="text-base font-normal text-gray-500 mb-4 text-justify md:text-left w-full md:w-[80%]">
                 Experience first-hand what NSTP has to offer by visiting our
                 campus. Our guided tours provide a comprehensive overview of our
                 facilities, programs, and the vibrant innovation ecosystem we've
@@ -288,7 +288,7 @@ const VisitNSTP = () => {
           className=" px-6 md:px-12  lg:px-24  pb-6 md:pb-12  lg:pb-24 flex flex-col items-center justify-center"
         >
           <div id="schedule" className="w-full lg:w-[71rem] ">
-            <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-4 font-extrabold leading-none tracking-tight">
+            <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center md:gap-4 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -304,7 +304,7 @@ const VisitNSTP = () => {
               </span>
             </h1>
             <div className="text-gray-600 flex flex-col items-center justify-center text-center text-sm">
-              <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
+              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500 px-4 mb-4">
                 Campus tours are available Monday through Friday, from 9 AM to 4
                 PM. Group tours can be arranged for educational institutions and
                 organizations. Please schedule your visit at least one week in

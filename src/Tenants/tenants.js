@@ -69,7 +69,7 @@ const Tenants = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto animate-fade-up">
-          <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="flex items-center justify-center gap-4 mb-4">
             <h1 className="text-xl lg:text-3xl flex items-center justify-center gap-4 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -86,7 +86,7 @@ const Tenants = () => {
               </span>
             </h1>
           </div>
-          <p className="text-center text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-center text-md md:text-lg text-gray-300 max-w-2xl mx-auto">
             Home to over 80 innovative companies pushing the boundaries of technology
           </p>
         </div>
@@ -125,7 +125,7 @@ const Tenants = () => {
             <button
               className={`px-6 py-2 rounded-full transform-gpu hover:scale-105 transition-transform duration-300 ease-in-out ${activeFloor === "All"
                 ? "bg-primary text-white"
-                : "bg-gray-100 hover:bg-gray-200"
+                : "bg-black hover:bg-primary text-white"
                 }`}
               onClick={() => setActiveFloor("All")}
             >
@@ -136,7 +136,7 @@ const Tenants = () => {
                 key={floor}
                 className={`px-6 py-2 rounded-full transform-gpu hover:scale-105 transition-transform duration-300 ease-in-out ${activeFloor === floor
                   ? "bg-primary text-white"
-                  : "bg-gray-100 hover:bg-gray-200"
+                  : "bg-black hover:bg-primary text-white"
                   }`}
                 onClick={() => setActiveFloor(floor)}
               >
@@ -171,7 +171,7 @@ const Tenants = () => {
                 <motion.div
                   key={tenant.name}
                   whileHover={{ scale: 1.02 }}
-                  className="bg-white w-[25rem] min-h-40 rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:border-primary/20 transition-colors"
+                  className="bg-gray-50 opacity-90 w-[25rem] min-h-40 rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:border-primary/20 transition-colors"
                 >
                   <div className="p-6">
                     <div className="flex items-center gap-4">

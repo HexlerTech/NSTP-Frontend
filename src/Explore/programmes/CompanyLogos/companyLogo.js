@@ -28,7 +28,7 @@ const CompanyLogo = ({ titleHollow, titleFilled, description }) => {
 
   return (
     <div className=" mx-auto   ">
-      <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
+      <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center lg:gap-2 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
           style={{
@@ -43,10 +43,10 @@ const CompanyLogo = ({ titleHollow, titleFilled, description }) => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
-      <p className="max-w-5xl mx-auto text-lg  text-justify sm:text-center text-gray-500 px-4 mb-8">
+      <p className=" md:max-w-5xl mx-auto text-base  text-justify md:text-center text-gray-500  mb-8">
         {description}
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-8">
+      <div className="flex flex-wrap items-center justify-center gap-8 sm:max-w-7xl mx-auto">
         {logos.map((logo, index) => (
           <div className="relative group bg-white h-44 md:h-48 md:w-48 lg:h-56 w-44 lg:w-56 rounded-lg border p-4">
             {/* Card content wrapper */}

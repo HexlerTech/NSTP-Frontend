@@ -184,9 +184,9 @@ const Highlight = () => {
         <hr className="border-primary/20" />
 
         {/* Header Section with Pitch Us Circle */}
-        <div className="flex flex-col md:flex-row justify-between items-center min-h-[300px] mt-9 mb-12 sm:px-7 md:px-16 ">
+        <div className="flex flex-col md:flex-row justify-between items-center min-h-[300px]  mb-12 sm:px-7 md:px-16 ">
           <div className="flex-1  ">
-            <h1 className="mb-8 text-xl lg:text-3xl font-extrabold leading-none tracking-tight">
+            <h1 className="mb-4 text-xl text-center md:text-left lg:text-3xl font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -201,7 +201,7 @@ const Highlight = () => {
                 <span className=" text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
-            <p className="text-white text-md md:text-lg md:max-w-lg ">
+            <p className="text-white text-center md:text-left text-base md:max-w-lg ">
               Explore Pakistan's premier technology park, our innovative
               initiatives, and discover how NSTP is defining the future of
               innovation through success stories and strategic collaborations
@@ -246,7 +246,7 @@ const Highlight = () => {
                   <div className="text-primary text-md lg:text-lg font-semibold">
                     {item.label}
                   </div>
-                  <div className="text-gray-400 text-md lg:text-lg">
+                  <div className="text-gray-400 text-sm md:text-base">
                     {item.description}
                   </div>
                 </div>

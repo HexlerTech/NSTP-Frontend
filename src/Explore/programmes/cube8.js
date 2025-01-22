@@ -387,7 +387,7 @@ const StartupAchievementsSection = () => {
         {achievements.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white rounded-xl w-[17rem] sm:w-[21rem] h-[20rem] shadow-lg overflow-hidden transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="group relative bg-white rounded-xl w-[21rem] h-[21rem] shadow-lg overflow-hidden transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             <div className="relative h-48 overflow-hidden">
               {/* Image with zoom effect */}
@@ -410,13 +410,13 @@ const StartupAchievementsSection = () => {
                 <h3 className="text-xl font-semibold text-center mb-3 text-gray-800 group-hover:text-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-center text-sm w-64 group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-gray-600 text-center text-sm w-[17rem] group-hover:text-gray-700 transition-colors duration-300">
                   {item.description}
                 </p>
               </div>
 
               {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100" />
+              {/* <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100" /> */}
             </div>
 
             {/* Hover overlay for depth effect */}
@@ -480,7 +480,7 @@ const ProgramRequirementsSection = () => {
       <div className="flex flex-wrap items-center justify-center gap-8 sm:max-w-7xl">
         {requirements.map((req, index) => (
           <div key={index} className="transform-gpu">
-            <div className="group relative bg-white w-[18rem] sm:w-[40rem] md:w-[30rem] min-h-44 rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 will-change-transform">
+            <div className="group relative bg-gray-50 w-[21rem] xl:w-[32rem] min-h-72 lg:min-h-44 rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 will-change-transform">
               {/* Animated border gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
 
@@ -637,7 +637,7 @@ const Cube8 = () => {
 
               {/* Right side - Content */}
               <div className="flex flex-col flex-1   items-center md:items-start  ml-0 lg:ml-10 w-full">
-                <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
+                <h1 className="text-xl lg:text-3xl mb-4 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
                   <span
                     className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
                     style={{
@@ -653,7 +653,7 @@ const Cube8 = () => {
                   </span>
                 </h1>
 
-                <p className="text-md font-normal text-gray-500 mb-8 lg:leading-6 md:leading-6 text-justify w-full md:w-[80%]">
+                <p className="text-base font-normal text-gray-500 mb-4 text-justify md:text-left w-full md:w-[80%]">
                   {about}
                 </p>
                 <Link
@@ -707,7 +707,7 @@ const Cube8 = () => {
 
           {/* Apply Section */}
           <div id="apply" className=" p-6 md:p-12  lg:p-24   w-full ">
-            <h1 className="text-xl lg:text-3xl mb-8 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+            <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                 style={{
@@ -723,7 +723,7 @@ const Cube8 = () => {
               </span>
             </h1>
             <div className="text-gray-600 text-center flex flex-col items-center justify-center text-sm ">
-              <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-500 px-4 mb-8">
+              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500 px-4 mb-4">
                 Growth-stage startups meeting our program requirements can apply
                 for the Cube 8 Accelerator Program through our application form.
                 Selected companies will be invited for detailed evaluation and
