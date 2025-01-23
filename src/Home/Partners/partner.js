@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LiaBuildingSolid } from "react-icons/lia";
-import GoogleCloud from "../../Assets/partners/google-cloud.png";
-import AWS from "../../Assets/partners/aws.png";
-import NAMA from "../../Assets/partners/nama.png";
-import IASP from "../../Assets/partners/iasp.png";
-import NUST from "../../Assets/partners/NUST.png";
-import PakLaunch from "../../Assets/partners/paklaunch.png";
-import UBank from "../../Assets/partners/U-Bank.png";
-import USEmbassy from "../../Assets/partners/us-embassy.png";
-import ZaynVC from "../../Assets/partners/zayn-vc.png";
 
-const Partners = () => {
+const Partners = ({logos,firstText, secondText}) => {
   const [scrollSpeed, setScrollSpeed] = useState("35s");
 
   useEffect(() => {
@@ -29,17 +20,7 @@ const Partners = () => {
     return () => window.removeEventListener("resize", updateScrollSpeed);
   }, []);
 
-  const partners = [
-    { name: "NUST", logo: NUST },
-    { name: "Zayn VC", logo: ZaynVC },
-    { name: "Google Cloud", logo: GoogleCloud },
-    { name: "AWS", logo: AWS },
-    { name: "NAMA", logo: NAMA },
-    { name: "US Embassy", logo: USEmbassy },
-    { name: "U-Bank", logo: UBank },
-    { name: "PakLaunch", logo: PakLaunch },
-    { name: "IASP", logo: IASP },
-  ];
+  
 
   return (
     <div className="">
@@ -51,10 +32,10 @@ const Partners = () => {
             textStroke: "1px #000000",
           }}
         >
-          OUR
+          {firstText}
         </span>{" "}
         <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
-          PARTNERS
+          {secondText}
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
@@ -68,7 +49,7 @@ const Partners = () => {
           >
             {/* First set */}
             <div className="flex w-full justify-around items-center">
-              {partners.map((partner, index) => (
+              {logos.map((partner, index) => (
                 <div
                   key={index}
                   className="flex items-center justify-center h-32 md:h-48 w-32 md:w-48 mx-4 relative group shrink-0"
@@ -83,7 +64,7 @@ const Partners = () => {
             </div>
             {/* Second set */}
             <div className="flex w-full justify-around items-center">
-              {partners.map((partner, index) => (
+              {logos.map((partner, index) => (
                 <div
                   key={`clone-${index}`}
                   className="flex items-center justify-center h-32 md:h-48 w-32 md:w-48 mx-4 relative group shrink-0"

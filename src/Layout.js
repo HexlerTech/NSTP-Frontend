@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/navbar";
 import Home from "./Home/page";
 import {TenancyForm} from "./TenancyForm/page";
-import About from "./About/page";
+import About from "./AboutNSTP/page";
 import Contact from "./Contact/page";
 import Innovate from "./Innovate/innovate";
 import Partnerships from "./Partnerships/partnerships";

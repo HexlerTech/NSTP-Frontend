@@ -22,6 +22,17 @@ import { FaSchool, FaSeedling, FaUserFriends } from "react-icons/fa";
 import { PiPerson } from "react-icons/pi";
 import { FaCameraRetro } from "react-icons/fa";
 
+
+import GoogleCloud from "../Assets/partners/google-cloud.png";
+import AWS from "../Assets/partners/aws.png";
+import NAMA from "../Assets/partners/nama.png";
+import IASP from "../Assets/partners/iasp.png";
+import NUST from "../Assets/partners/NUST.png";
+import PakLaunch from "../Assets/partners/paklaunch.png";
+import UBank from "../Assets/partners/U-Bank.png";
+import USEmbassy from "../Assets/partners/us-embassy.png";
+import ZaynVC from "../Assets/partners/zayn-vc.png";
+
 import Footer from "../Components/footer";
 import image1 from "../Assets/12.png";
 import image2 from "../Assets/2.jpeg";
@@ -251,6 +262,17 @@ const NSTPAbout = () => {
 };
 
 const Home = () => {
+  const partners = [
+    { name: "NUST", logo: NUST },
+    { name: "Zayn VC", logo: ZaynVC },
+    { name: "Google Cloud", logo: GoogleCloud },
+    { name: "AWS", logo: AWS },
+    { name: "NAMA", logo: NAMA },
+    { name: "US Embassy", logo: USEmbassy },
+    { name: "U-Bank", logo: UBank },
+    { name: "PakLaunch", logo: PakLaunch },
+    { name: "IASP", logo: IASP },
+  ];
   return (
     <div className="">
       <div className="relative w-full h-screen">
@@ -409,7 +431,7 @@ const Home = () => {
           </p>
       </div> */}
       <Companies />
-      <Partners />
+      <Partners logos={partners} firstText="OUR" secondText="PARTNERS" />
       <div className="flex flex-col items-center justify-center pb-6 md:pb-12  lg:pb-24">
         <Link
           target="_blank"
