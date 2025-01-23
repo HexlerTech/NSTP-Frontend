@@ -213,7 +213,7 @@ const NSTPAbout = () => {
             </span>
           </h1>
 
-          <p className="text-base font-normal  text-gray-500 mb-4 text-center md:text-left w-full md:w-[80%]">
+          <p className="text-base font-normal  text-gray-500 mb-4 text-justify md:text-left w-full md:w-[80%]">
             The National Science and Technology Park (NSTP) in Islamabad fosters
             innovation, housing high-tech companies, startups, research centers,
             and educational institutions. It promotes science, technology, and a

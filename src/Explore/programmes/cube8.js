@@ -370,7 +370,7 @@ const StartupAchievementsSection = () => {
     <div className="w-full  mx-auto  flex-col flex items-center justify-center">
       <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
         <span
-          className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+          className="text-transparent text-3xl md:text-4xl text-center lg:text-5xl xl:text-4xl block"
           style={{
             WebkitTextStroke: "1px #000000",
             textStroke: "1px #000000",
@@ -387,7 +387,7 @@ const StartupAchievementsSection = () => {
         {achievements.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white rounded-xl w-[21rem] h-[21rem] shadow-lg overflow-hidden transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="group relative bg-white rounded-xl w-[18rem] sm:w-[21rem]  h-[21rem] shadow-lg overflow-hidden transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             <div className="relative h-48 overflow-hidden">
               {/* Image with zoom effect */}
@@ -467,7 +467,7 @@ const ProgramRequirementsSection = () => {
         >
           PROGRAM
         </span>{" "}
-        <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+        <span className="text-white text-3xl text-center  md:text-4xl lg:text-5xl xl:text-4xl block">
           REQUIREMENTS
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
@@ -477,15 +477,15 @@ const ProgramRequirementsSection = () => {
           criteria
         </p> */}
 
-      <div className="flex flex-wrap items-center justify-center gap-8 sm:max-w-7xl">
+      <div className="flex flex-wrap items-center justify-center gap-8 sm:max-w-7xl ">
         {requirements.map((req, index) => (
-          <div key={index} className="transform-gpu">
-            <div className="group relative bg-gray-50 w-[21rem] xl:w-[32rem] min-h-72 lg:min-h-44 rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 will-change-transform">
+          <div key={index} className="transform-gpu ">
+            <div className="group relative bg-gray-50 w-[18rem] sm:w-[21rem] xl:w-[32rem] min-h-72 lg:min-h-44 rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 will-change-transform">
               {/* Animated border gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
 
               {/* Corner accent */}
-              <div className="absolute -right-12 -top-12 w-24 h-24 bg-primary/5 rounded-full transition-all duration-500 group-hover:scale-150 group-hover:bg-primary/10" />
+              {/* <div className="hidden sm:absolute  sm:-right-12 sm:-top-12 w-12 sm:w-24 h-12 sm:h-24 bg-primary/5 rounded-full transition-all duration-500 group-hover:scale-150 group-hover:bg-primary/10" /> */}
 
               <div className="relative flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 {/* Icon container with animation */}
@@ -723,7 +723,7 @@ const Cube8 = () => {
               </span>
             </h1>
             <div className="text-gray-600 text-center flex flex-col items-center justify-center text-sm ">
-              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500 px-4 mb-4">
+              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500  mb-4">
                 Growth-stage startups meeting our program requirements can apply
                 for the Cube 8 Accelerator Program through our application form.
                 Selected companies will be invited for detailed evaluation and

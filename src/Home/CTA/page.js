@@ -27,7 +27,7 @@ const contactInfo = {
 };
 const CTA = () => {
   return (
-    <div className="relative w-full min-h-[400px]  p-6 md:p-12  lg:p-24 bg-gradient-to-br from-black via-black/95 to-black overflow-hidden">
+    <div className="relative w-full min-h-[400px]  flex flex-col items-center justify-center p-6 md:p-12  lg:p-24 bg-gradient-to-br from-black via-black/95 to-black overflow-hidden">
       {/* Animated rotating background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large rotating circles */}
@@ -79,11 +79,11 @@ const CTA = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.05),transparent_70%)]" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto ">
-        <div className="text-center ">
+      <div className="relative max-w-6xl mx-auto   ">
+        <div className="flex flex-col items-center justify-center gap-3 ">
           {/* Heading with outline effect */}
-          <div className="inline-flex flex-col items-center justify-center space-y-2">
-            <h1 className="text-xl lg:text-3xl mb-4    flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
+          <div className="inline-flex flex-col  items-center justify-center space-y-2">
+            <h1 className="text-xl lg:text-3xl   flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
                 style={{
@@ -98,15 +98,15 @@ const CTA = () => {
                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
-            <div className="flex items-center space-x-3 mb-4">
+          </div>
+            <div className="flex items-center justify-center space-x-3 ">
               <span className="h-0.5 w-12 bg-primary/30"></span>
               <CircuitBoard className="w-6 h-6 text-primary" />
               <span className="h-0.5 w-12 bg-primary/30"></span>
             </div>
-          </div>
 
           {/* Description */}
-          <p className="max-w-2xl mx-auto text-base text-justify md:text-center text-gray-300 mb-8">
+          <p className="max-w-2xl mx-auto text-base text-justify md:text-center text-gray-300 mb-4">
             National Science and Technology Park at NUST provides a platform for
             innovation and technology growth in Pakistan.
           </p>

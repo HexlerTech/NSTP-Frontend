@@ -51,7 +51,7 @@ const Offer = () => {
 
   return (
     <div className=" mx-auto p-6 md:p-12  lg:p-24 ">
-      <h1 className="text-xl lg:text-3xl mb-4    flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
+      <h1 className="text-xl lg:text-3xl mb-4  flex-wrap  flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{
@@ -67,7 +67,7 @@ const Offer = () => {
         </span>
       </h1>
       
-      <p className="max-w-2xl mx-auto text-base text-gray-500 text-center mb-8">
+      <p className="max-w-2xl mx-auto text-base text-gray-500 text-justify md:text-center mb-4">
       With over 500,000 sq ft of development space  NSTP  is the
       ideal home for residents to expand their business in the proximity of NUST
           </p>

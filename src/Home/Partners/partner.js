@@ -43,7 +43,7 @@ const Partners = () => {
 
   return (
     <div className="">
-        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 px-6 md:px-12  lg:px-24 pt-6 md:pt-12  lg:pt-24   flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
+        <h1 className="text-xl lg:text-3xl mb-8 flex-wrap md:mb-14 px-6 md:px-12  lg:px-24 pt-6 md:pt-12  lg:pt-24   flex items-center justify-center gap-2 md:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
           style={{

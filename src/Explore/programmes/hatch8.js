@@ -85,7 +85,7 @@ const EligibilitySection = () => {
         {criteria.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white rounded-lg w-[17rem] sm:w-[21rem] h-56 shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="group relative bg-gray-50 rounded-lg   w-[18rem] sm:w-[24rem] h-56 shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
             {/* Decorative background elements */}
             {/* <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-br-full transition-all duration-300 group-hover:w-full group-hover:h-full group-hover:bg-primary/10" />
@@ -279,11 +279,14 @@ const CarouselSection = ({ items }) => {
   // Update itemsToShow based on screen width with more specific breakpoints
   useEffect(() => {
     const updateItemsToShow = () => {
-      if (window.innerWidth < 640) { // sm
+      if (window.innerWidth < 640) {
+        // sm
         setItemsToShow(1);
-      } else if (window.innerWidth < 1024) { // md to lg
+      } else if (window.innerWidth < 1024) {
+        // md to lg
         setItemsToShow(2);
-      } else { // lg and above
+      } else {
+        // lg and above
         setItemsToShow(3);
       }
     };
@@ -306,12 +309,14 @@ const CarouselSection = ({ items }) => {
   return (
     <div className="w-full px-4 md:px-8 max-w-7xl mx-auto">
       <h1 className="text-center mb-8 md:mb-12">
-        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight block mb-1"
+        <span
+          className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight block mb-1"
           style={{
             WebkitTextStroke: "1px #000000",
             textStroke: "1px #000000",
-            color: "transparent"
-          }}>
+            color: "transparent",
+          }}
+        >
           MEET
         </span>
         <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-black">
@@ -341,7 +346,7 @@ const CarouselSection = ({ items }) => {
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${(currentIndex * (100 / itemsToShow))}%)`,
+              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
             }}
           >
             {items.map((item, index) => (
@@ -380,9 +385,7 @@ const CarouselSection = ({ items }) => {
               key={i}
               onClick={() => setCurrentIndex(i)}
               className={`h-2 rounded-full transition-all ${
-                i === currentIndex
-                  ? "bg-primary w-6"
-                  : "bg-gray-300 w-2"
+                i === currentIndex ? "bg-primary w-6" : "bg-gray-300 w-2"
               }`}
             />
           ))}
@@ -534,7 +537,7 @@ const Hatch = () => {
 
               {/* Right side - Content */}
               <div className="flex flex-col flex-1 items-center md:items-start  ml-0 lg:ml-10 w-full">
-                <h1 className="text-xl lg:text-3xl mb-8 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
+                <h1 className="text-xl lg:text-3xl mb-4 flex-wrap flex flex-col md:flex-row items-center  md:gap-2   font-extrabold leading-none tracking-tight">
                   <span
                     className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block "
                     style={{
@@ -550,7 +553,7 @@ const Hatch = () => {
                   </span>
                 </h1>
 
-                <p className="text-base font-normal text-gray-500 mb-8  text-justify md:text-left w-full md:w-[80%]">
+                <p className="text-base font-normal text-gray-500 mb-4  text-justify md:text-left w-full md:w-[80%]">
                   {about}
                 </p>
                 <Link
@@ -606,7 +609,10 @@ const Hatch = () => {
             <TimeLine />
           </div>
           {/* Apply */}
-          <div id="apply" className="px-6 md:px-12  lg:px-24 pb-6 md:pb-12  lg:pb-24   w-full">
+          <div
+            id="apply"
+            className="px-6 md:px-12  lg:px-24 pb-6 md:pb-12  lg:pb-24   w-full"
+          >
             <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"

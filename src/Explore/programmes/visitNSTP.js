@@ -110,7 +110,7 @@ const VisitSections = () => {
           {targetAudiences.map((audience, index) => (
             <div
               key={index}
-              className="group p-6 bg-gray-50 rounded-xl w-[21rem] xl:w-[32rem] h-56 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 bg-gray-50 rounded-xl w-[18rem] sm:w-[21rem] xl:w-[32rem] h-56 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="mb-4 p-3 rounded-full bg-primary/10 w-16 h-16 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <audience.icon className="w-8 h-8 text-primary" />
@@ -143,7 +143,7 @@ const VisitSections = () => {
           {expectations.map((item, index) => (
             <div
               key={index}
-              className="group relative bg-gray-50 p-8 rounded-xl shadow-lg transform  w-[21rem] min-h-56 transition-all duration-300 hover:-translate-y-2 hover:rotate-1 overflow-hidden"
+              className="group relative bg-gray-50 p-8 rounded-xl shadow-lg transform w-[18rem]  sm:w-[21rem] min-h-56 transition-all duration-300 hover:-translate-y-2 hover:rotate-1 overflow-hidden"
             >
               {/* Gradient overlay that appears on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -304,7 +304,7 @@ const VisitNSTP = () => {
               </span>
             </h1>
             <div className="text-gray-600 flex flex-col items-center justify-center text-center text-sm">
-              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500 px-4 mb-4">
+              <p className="md:max-w-2xl mx-auto text-base text-justify md:text-center text-gray-500  mb-4">
                 Campus tours are available Monday through Friday, from 9 AM to 4
                 PM. Group tours can be arranged for educational institutions and
                 organizations. Please schedule your visit at least one week in

@@ -293,25 +293,27 @@ const NSTPGallery = () => {
         </span>
       </h1>
       <div className="flex flex-wrap items-center justify-center gap-8 max-w-7xl">
-        {images.map((image) => (
-          <div
-            key={image.id}
-            className="group relative overflow-hidden rounded-lg w-[21rem] min-h-56 bg-white cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
-            onClick={() => setSelectedImage(image)}
-          >
+      {images.map((image) => (
+        <div
+          key={image.id}
+          className="group relative overflow-hidden rounded-lg w-[18rem] sm:w-[21rem] h-56 bg-white cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
+          onClick={() => setSelectedImage(image)}
+        >
+          <div className="w-full h-full">
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover" // Changed from h-48 to h-full
+              className="w-full h-56 object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <h3 className="text-lg font-semibold">{image.title}</h3>
-              </div>
+          </div>
+          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h3 className="text-lg font-semibold">{image.title}</h3>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </div>
 
       {selectedImage && (
         <div
@@ -462,7 +464,7 @@ const EnhancedSections = () => {
               {eligibilityCriteria.map((item, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl w-[21rem] sm:h-[20rem] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                  className="group bg-gray-50 rounded-xl w-[18rem] sm:w-[20rem] sm:h-[21rem] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="mb-4 p-3 rounded-full bg-[#8cc63f]/10 group-hover:bg-[#8cc63f]/20 transition-colors">
@@ -509,7 +511,7 @@ const EnhancedSections = () => {
               {targetSectors.map((sector, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl shadow-lg w-[17rem] sm:w-[21rem] sm:h-[20rem] p-6 hover:shadow-xl transition-shadow duration-300"
+                  className="group bg-gray-50 rounded-xl shadow-lg w-[18rem] sm:w-[20rem] sm:h-[20rem] p-6 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="mb-4 p-3 rounded-full bg-[#8cc63f]/10 group-hover:bg-[#8cc63f]/20 transition-colors">

@@ -215,92 +215,46 @@ const ProgramSections = () => {
           >
             DISCOVER
           </span>{" "}
-          <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+          <span className="text-black text-3xl text-center md:text-4xl lg:text-5xl xl:text-4xl block">
             THE CURRICULUM
             <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
           </span>
         </h1>
 
         {/* Cards Container */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-10 px-4 ">
-          {/* Target Audience Card */}
-          <div className="group relative h-full w-full  flex items-center justify-center ">
-            {/* Decorative background elements */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-white/30 to-white/30 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-            <div className="relative bg-gray-50 rounded-lg w-full xl:w-[35rem] min-h-[27rem] xl:min-h-[24rem] lg:min-h-[22rem]  p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
-              {/* Icon and Title */}
-              <div className="flex items-center  sm:gap-6 flex-col sm:flex-row sm:mb-8">
-                <div className="relative ">
-                  {/* Animated rings */}
-                  <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-[spin_8s_linear_infinite]"></div>
-                  <div className="absolute inset-1 rounded-full border-2 border-primary/30 animate-[spin_6s_linear_infinite_reverse]"></div>
-                  {/* Icon container */}
-                  <div className="relative w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Target className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-xl  md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
-                  Target Audience
-                </h3>
-              </div>
-
-              {/* Content */}
-              <div className="relative overflow-hidden rounded-xl p-2 sm:p-6  flex-grow">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-                <p className="text-gray-600 text-md leading-relaxed text-sm md:text-base">
-                  Final year university students pursuing degrees in Computer
-                  Science, Software Engineering, Information Technology, or
-                  related technical fields.
-                </p>
-              </div>
+        <div className="flex flex-wrap items-center  justify-center gap-8">
+      {/* Target Audience Card */}
+      <div className="group relative w-[18rem] sm:w-[21rem] xl:w-[33rem] ">
+        <div className="absolute -inset-1 bg-gradient-to-r from-white/30 to-white/30 rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
+        <div className="relative bg-gray-50 rounded-lg w-full sm:h-80 xl:h-72 p-6 shadow-xl hover:shadow-2xl transition duration-300">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Target className="w-6 h-6 text-primary" />
             </div>
+            <h3 className="text-xl font-bold text-gray-900">Target Audience</h3>
           </div>
-
-          {/* Program Structure Card */}
-          <div className="group relative h-full w-full flex items-center justify-center  ">
-            {/* Decorative background elements */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/30 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-            <div className="relative bg-gray-50 rounded-lg w-full xl:w-[35rem] min-h-[27rem] xl:min-h-[24rem] lg:min-h-[22rem] p-8 shadow-xl hover:shadow-2xl transition duration-300  flex flex-col">
-              {/* Icon and Title */}
-              <div className="flex items sm:gap-6 flex-col sm:flex-row sm:mb-8">
-                <div className="relative">
-                  {/* Animated rings */}
-                  {/* <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-[spin_8s_linear_infinite]"></div>
-                  <div className="absolute inset-1 rounded-full border-2 border-primary/30 animate-[spin_6s_linear_infinite_reverse]"></div> */}
-                  {/* Icon container */}
-                  <div className="relative w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <BookOpen className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
-                  Program Structure
-                </h3>
-              </div>
-
-              {/* Content */}
-              <div className="relative overflow-hidden rounded-xl  p-2 sm:p-6   flex-grow">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-gray-700 font-medium">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span>Duration: 6 months</span>
-                  </div>
-                  <ul className="space-y-3 mt-4 text-sm md:text-base">
-                    {components.map((item, index) => (
-                      <li
-                        key={index}
-                        className="flex items-center gap-3 text-gray-600 group/item"
-                      >
-                        <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary/60 group-hover/item:scale-150 transition-transform duration-300"></div>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p className="text-gray-600 text-justify md:text-center leading-relaxed">
+            Our program is designed for final year university students pursuing degrees in technical fields. We focus on developing practical skills and industry knowledge through hands-on experience, preparing graduates for successful careers in technology.
+          </p>
         </div>
+      </div>
+
+      {/* Program Structure Card */}
+      <div className="group relative w-[18rem] sm:w-[21rem] xl:w-[33rem]">
+        <div className="absolute -inset-1 bg-gradient-to-r from-white/30 to-white/30 rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
+        <div className="relative bg-gray-50 rounded-lg w-full sm:h-80 xl:h-72 p-6 shadow-xl hover:shadow-2xl transition duration-300">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <BookOpen className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900">Program Structure</h3>
+          </div>
+          <p className="text-gray-600 text-justify md:text-center leading-relaxed">
+            Our comprehensive 6-month program combines theoretical learning with practical projects. Students engage in interactive sessions, hands-on workshops, and real-world projects to build a strong foundation in modern technologies.
+          </p>
+        </div>
+      </div>
+    </div>
       </div>
     </div>
   );
@@ -358,7 +312,7 @@ const EligibilitySection = () => {
         {criteria.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-gray-50 shadow-xl w-[17rem] sm:w-[21rem] min-h-56 rounded-lg overflow-hidden transform perspective-1000"
+            className="group relative bg-gray-50 shadow-xl w-[18rem] sm:w-[21rem] min-h-56 rounded-lg overflow-hidden transform perspective-1000"
           >
             {/* Card Background with Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -386,7 +340,7 @@ const EligibilitySection = () => {
                 <h3 className="text-xl font-semibold transform transition-all duration-300 group-hover:scale-105">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-gray-600 text-base leading-relaxed max-w-xs mx-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                   {item.description}
                 </p>
               </div>
@@ -555,7 +509,7 @@ const InternshipProgram = () => {
               </span>
             </h1>
             <div className="text-gray-900 text-center flex flex-col items-center justify-center text-sm">
-              <p className="md:max-w-2xl mx-auto text-base mb-4 text-center text-gray-500 px-4 ">
+              <p className="md:max-w-2xl mx-auto text-base mb-4 text-justify md:text-center text-gray-500 ">
                 Interested students can apply through their university's career
                 portal or directly through NSTP's application portal.
                 Applications should include a current resume, academic

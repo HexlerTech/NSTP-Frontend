@@ -201,7 +201,7 @@ const Highlight = () => {
                 <span className=" text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
-            <p className="text-white text-center md:text-left text-base md:max-w-lg ">
+            <p className="text-white text-justify md:text-left text-base md:max-w-lg ">
               Explore Pakistan's premier technology park, our innovative
               initiatives, and discover how NSTP is defining the future of
               innovation through success stories and strategic collaborations
