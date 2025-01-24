@@ -93,10 +93,11 @@ import Footer from "../Components/footer";
 const Partnerships = () => {
   const data = [
     {
-      name: "Google Cloud",
-      logo: GoogleCloud,
-      description: "A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products. Offering cutting-edge technology solutions for businesses of all sizes.",
+      name: "NUST",
+      logo: NUST,
+      description: "National University of Sciences & Technology, one of Pakistan's premier institutions of science and technology education, driving research and innovation.",
     },
+    
     {
       name: "Amazon Web Services (AWS)",
       logo: AWS,
@@ -113,9 +114,9 @@ const Partnerships = () => {
       description: "International Association of Science Parks and Areas of Innovation, connecting science parks worldwide and fostering innovation ecosystems globally.",
     },
     {
-      name: "NUST",
-      logo: NUST,
-      description: "National University of Sciences & Technology, one of Pakistan's premier institutions of science and technology education, driving research and innovation.",
+      name: "Google Cloud",
+      logo: GoogleCloud,
+      description: "A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products. Offering cutting-edge technology solutions for businesses of all sizes.",
     },
     {
       name: "PakLaunch",

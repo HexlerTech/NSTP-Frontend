@@ -121,7 +121,7 @@ const Navbar = () => {
                   </Link>
                   <div className="absolute hidden group-hover:block top-full left-0 bg-black border border-gray-700 rounded-lg py-1 min-w-[130px] z-50">
                     <Link
-                      target="_blank"
+                      
                       className="block px-4 py-2 hover:bg-gray-800 cursor-pointer hover:text-primary"
                       // onClick={() => handleClick("/about")}
                       to={"/about"}
@@ -304,7 +304,7 @@ const Navbar = () => {
                 >
                   <Link
                     to="/about"
-                    target="_blank"
+                  
                     className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200"
                   >
                     NSTP

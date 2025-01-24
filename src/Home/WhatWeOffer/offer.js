@@ -75,7 +75,7 @@ const Offer = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-gray-50 w-72 sm:w-80  h-64 group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2"
+            className="bg-gray-50 w-72 sm:w-80  h-64 group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-transform duration-500 ease-out hover:-translate-y-2"
           >
             {/* Animated background patterns */}
             {/* <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-br-full transition-all duration-500 ease-in-out group-hover:scale-150 group-hover:bg-primary/20" />
@@ -87,12 +87,12 @@ const Offer = () => {
               <div className="mb-6">
                 <div className="relative w-16 h-16 mx-auto transform transition-all duration-500 ease-out group-hover:scale-110">
                   {/* Rotating background square */}
-                  <div className="absolute inset-0 bg-black group-hover:bg-primary rounded-xl transform rotate-0 transition-all duration-500 ease-out group-hover:rotate-[45deg] group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-primary group-hover:bg-primary rounded-xl transform rotate-0 transition-transform duration-500 ease-out group-hover:rotate-[45deg] group-hover:scale-110" />
 
                   {/* Icon container */}
-                  <div className="absolute inset-0 bg-black rounded-xl shadow-lg transform transition-all duration-500 ease-out group-hover:rotate-12">
+                  <div className="absolute inset-0 bg-black rounded-xl shadow-lg transform transition-transform duration-500 ease-out ">
                     <div className="w-full h-full flex items-center justify-center p-4">
-                      <service.icon className="w-8 h-8 text-white transform transition-all duration-500 ease-out group-hover:scale-110" />
+                      <service.icon className="w-8 h-8 text-white transform transition-transform duration-500 ease-out group-hover:scale-110" />
                     </div>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ const Offer = () => {
 
               {/* Content section with animated elements */}
               <div className="relative z-10 text-center space-y-4">
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent transform transition-all duration-500 ease-out group-hover:scale-105 group-hover:from-black group-hover:to-black">
+                <h3 className="text-xl font-semibold text-primary group-hover:text-black bg-clip-text  transform transition-color duration-500 ease-out ">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed transition-all duration-500 ease-out group-hover:text-gray-700">
