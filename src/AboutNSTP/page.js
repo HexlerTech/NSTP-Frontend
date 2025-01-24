@@ -6,6 +6,7 @@ import {
   useAnimation,
   useTransform,
 } from "framer-motion";
+import AnimatedNumbers from "react-animated-numbers";
 import {
   ArrowRight,
   MapPin,
@@ -16,6 +17,14 @@ import {
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
+import Image1 from "../Assets/img1.jpg";
+import Image2 from "../Assets/img2.jpg";
+import Image3 from "../Assets/img3.jpg";
+import Image4 from "../Assets/img4.jpg";
+import Image5 from "../Assets/img5.jpg";
+import Image6 from "../Assets/img6.jpg";
+import Image7 from "../Assets/img7.jpg";
+import Image8 from "../Assets/img8.jpg";
 
 import GoogleCloud from "../Assets/partners/google-cloud.png";
 import AWS from "../Assets/partners/aws.png";
@@ -27,78 +36,58 @@ import UBank from "../Assets/partners/U-Bank.png";
 import USEmbassy from "../Assets/partners/us-embassy.png";
 import ZaynVC from "../Assets/partners/zayn-vc.png";
 
-import image1 from "../Assets/Gallery/image1.svg";
+import image1 from "../Assets/about.jpg";
+// import image1 from "../Assets/Gallery/image1.svg";
 import image2 from "../Assets/Gallery/image13.svg";
-import WhyNSTP from "../Assets/about-us.webp";
+import WhyNSTP from "../Assets/about-us.svg";
 import Footer from "../Components/footer";
 import Partners from "../Home/Partners/partner";
 import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-const TimelineItem = ({ year, title, description, index }) => {
+const TimelineItem = ({ year, title, description, index, total }) => {
   const isEven = index % 2 === 0;
-  const ref = useRef(null);
-  const isInView = useFramerInView(ref, { once: true }); // Use renamed hook
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="flex flex-col items-center relative w-full"
-    >
-      <div className="flex w-full justify-center items-start group gap-8">
+    <div className="relative flex-1 min-w-0 flex gap-4 sm:gap-0 flex-col-reverse sm:flex-col h-full items-center group">
+      <motion.div
+        initial={{ opacity: 0, y: isEven ? -20 : 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.2 }}
+        className={`  sm:absolute w-60 sm:w-44 ${
+          isEven ? "sm:-top-24" : "sm:top-24"
+        } text-center `}
+      >
+        <p className="text-sm text-gray-700 group-hover:text-primary transition-colors duration-500">
+          {description}
+        </p>
+      </motion.div>
+
+      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-0 w-full">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-          transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
-          className={`sm:flex-1 justify-end group-hover:text-primary transition-colors duration-300 items-end flex flex-col ${
-            !isEven ? "opacity-0" : ""
-          }`}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: index * 0.2 }}
+          className="shrink-0 h-12 w-12 sm:h-16 sm:w-16 bg-neutral-900 group-hover:bg-primary rounded-full transition-colors duration-500 flex items-center justify-center"
         >
-          {isEven && (
-            <>
-              <h3 className="text-lg sm:text-xl text-primary text-right font-bold">
-                {title}
-              </h3>
-              <p className="text-gray-400 sm:text-lg text-right max-w-[22rem] group-hover:text-primary transition-colors duration-300">
-                {description}
-              </p>
-            </>
-          )}
+          <span className="text-base sm:text-lg font-bold text-white">
+            {year}
+          </span>
         </motion.div>
 
-        <div className="flex flex-col items-center z-10">
-          <div className="sm:w-20 h-16 w-16 sm:h-20 bg-white group-hover:bg-primary transition-colors duration-300 rounded-full flex items-center justify-center shrink-0">
-            <span className="text-black font-bold">{year}</span>
-          </div>
-          {index < 7 && (
-            <div className="h-24 border-l-2 border-dashed border-white my-2" />
-          )}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-          transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
-          className={`flex-1 text-left group-hover:text-primary transition-colors duration-300 ${
-            isEven ? "opacity-0" : ""
-          }`}
-        >
-          {!isEven && (
-            <>
-              <h3 className="text-lg sm:text-xl text-primary font-bold">
-                {title}
-              </h3>
-              <p className="text-gray-400 sm:text-lg max-w-[22rem] group-hover:text-primary transition-colors duration-300">
-                {description}
-              </p>
-            </>
-          )}
-        </motion.div>
+        {index < total - 1 && (
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="w-full border-t-2 border-dashed border-gray-600 origin-left"
+          />
+        )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 // const CountUp = ({ end, prefix = "", suffix = "" }) => {
@@ -164,53 +153,39 @@ const AboutNSTP = () => {
     offset: ["start end", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
 
   const timelineData = [
     {
       year: 2004,
-      title: "Establishment",
       description:
-        "Established Pakistan's first incubation center, TechOne NUST Incubator.",
+        "Established Pakistan’s first incubation center, TechOne NUST Incubator.",
     },
-    {
-      year: 2009,
-      title: "NSTP Concept",
-      description: "Concept of NSTP created to foster scientific advancements.",
-    },
+
     {
       year: 2012,
-      title: "NUST Approval",
-      description: "Approval from NUST Board of Governors for NSTP.",
+      description: "NSTP project approved by NUST Board of Governors.",
     },
     {
       year: 2016,
-      title: "Feasibility Study",
       description: "Deloitte's feasibility study confirmed NSTP's potential.",
     },
     {
       year: 2019,
-      title: "Science Park Status",
-      description: "Approved as Pakistan's first science park under P3A.",
+      description:
+        "Approved as Pakistan's first science park under Public Private Partnership (P3A).",
     },
     {
       year: 2020,
-      title: "Tech SEZ Declaration",
       description:
-        "Declared Pakistan's first Tech SEZ with incentives for tech enterprises.",
+        "Declared Pakistan’s first Tech hi-tech SEZ with incentives for tech enterprises. ",
     },
+
     {
       year: 2024,
-      title: "CEMTECH Inauguration",
       description:
-        "Inaugurated CEMTECH, began NUST IT Complex & Resolve Tower construction.",
-    },
-    {
-      year: 2030,
-      title: "Future Expansion",
-      description:
-        "Master plan includes 5-6 high-rise towers to expand NSTP's capacity.",
+        "Inauguration of Center for Emerging Technologies (CEMTECH) with master plan for 5-6 high-rise towers to be completed.",
     },
   ];
   const partners = [
@@ -228,23 +203,30 @@ const AboutNSTP = () => {
     {
       value: 20,
       prefix: "PKR ",
-      suffix: "B+",
-      label: "Revenue Generated",
+      suffix: " B",
+      label: "in revenue generated by tenants",
     },
     {
-      value: 6000,
-      suffix: "+",
-      label: "High-Tech Jobs Created",
+      value: 15,
+      prefix: "PKR ",
+      suffix: " B",
+      label: "raised in funding",
     },
     {
-      value: 250,
-      suffix: "+",
-      label: "Startups Graduated",
+      value: 2.4,
+      prefix: "PKR ",
+      suffix: " B",
+      label: "invested in R&D",
     },
     {
       value: 165,
       suffix: "+",
-      label: "R&D Projects Supported",
+      label: "R&D projects supported",
+    },
+    {
+      value: 100,
+      suffix: "+",
+      label: "technology transfers completed",
     },
   ];
   const { ref, inView } = useInView({
@@ -252,10 +234,27 @@ const AboutNSTP = () => {
     triggerOnce: true,
   });
   return (
-    <div className="bg-gray-200 min-h-screen w-full relative">
+    <div className="bg-gray-200 min-h-screen w-full relative mt-12 sm:mt-0">
       {/* hero section  */}
-      <section className="relative h-screen">
-        <img src={image1} alt="hero" className="w-full h-full object-cover" />
+      <section className="relative h-[30vh] sm:h-screen">
+        <div className="grid grid-cols-4 absolute top-0 left-0 w-full h-full">
+          <div
+            style={{ backgroundImage: `url(${Image1})` }}
+            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
+          ></div>
+          <div
+            style={{ backgroundImage: `url(${Image7})` }}
+            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
+          ></div>
+          <div
+            style={{ backgroundImage: `url(${Image5})` }}
+            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
+          ></div>
+          <div
+            style={{ backgroundImage: `url(${Image3})` }}
+            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
+          ></div>
+        </div>
         <div className="absolute -bottom-10 left-5 sm:left-14 w-fit ">
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold sm:tracking-tight">
             <div
@@ -304,7 +303,7 @@ const AboutNSTP = () => {
             collaborative environment NSTP hosts renowned organizations such as
             ABB, Hytera, Rapidev, Hitit, HATO Agricultural Lighting, Rapid
             Silicon, Turkish Aerospace, Vyro and others all contributing to the
-            region's advancement in cutting-edge technologies
+            region’s advancement in cutting-edge technologies.
           </p>
           <motion.div
             className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh] overflow-hidden rounded-lg"
@@ -320,79 +319,56 @@ const AboutNSTP = () => {
       </section>
 
       {/* time lines */}
-      <section className="p-6 md:p-12 relative  bg-black xl:p-24">
-        {/* Animated Background with Rotating Blur Circles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Large rotating blur circles */}
-          <div className="absolute w-full h-full animate-[spin_20s_linear_infinite]">
-            {[...Array(3)].map((_, i) => (
-              <div
-                key={`blur-${i}`}
-                className="absolute w-96 h-96 rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(139, 195, 74, 0.3), transparent 70%)",
-                  left: `${30 + 40 * Math.cos((2 * Math.PI * i) / 3)}%`,
-                  top: `${30 + 40 * Math.sin((2 * Math.PI * i) / 3)}%`,
-                  filter: "blur(40px)",
-                  transform: `scale(${1 + Math.sin((i * Math.PI) / 3)})`,
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Floating blue bubbles */}
-          <div className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={`bubble-${i}`}
-                className="absolute w-3 h-3 rounded-full bg-primary/30"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animation: `float ${5 + Math.random() * 5}s linear infinite`,
-                  animationDelay: `${-Math.random() * 5}s`,
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Small green dots */}
-          <div className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={`dot-${i}`}
-                className="absolute w-1 h-1 bg-primary/20 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animation: `float ${5 + Math.random() * 5}s linear infinite`,
-                  animationDelay: `${-Math.random() * 5}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="w-full relative">
-          <h1 className="text-xl lg:text-3xl mb-12 flex-wrap   flex items-center justify-center gap-2 md:gap-4 font-extrabold leading-none tracking-tight">
-            <span
-              className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
+      <section className="p-6 md:p-12  xl:p-24 relative bg-white overflow-hidden ">
+        {/* <div className="absolute inset-0">
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-96 h-96 rounded-full opacity-30"
               style={{
-                WebkitTextStroke: "1px #ffffff",
-                textStroke: "1px #ffffff",
+                background:
+                  "radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%)",
+                filter: "blur(40px)",
+              }}
+              animate={{
+                x: [0, 100, 0],
+                y: [0, 50, 0],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                delay: i * 5,
+              }}
+            />
+          ))}
+        </div> */}
+
+        <div className="relative">
+          <h1 className="text-xl lg:text-3xl mb-8  flex items-center flex-wrap justify-center gap-1 md:gap-4 font-extrabold leading-none tracking-tight">
+            <span
+              className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+              style={{
+                WebkitTextStroke: "1px #000000",
+                textStroke: "1px #000000",
               }}
             >
-              OUR
+              GENESIS OF
             </span>{" "}
-            <span className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
-              TIMELINE
-              <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
+            <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+              NSTP
+              <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
-          <div className="max-w-5xl mx-auto relative ">
-            <div className="flex flex-col items-center ">
+
+          <div className="overflow-hidden py-8 sm:py-32 ">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-4 px-4 w-full sm:w-[90%] md:w-[80%] mx-auto ">
               {timelineData.map((item, index) => (
-                <TimelineItem key={item.year} {...item} index={index} />
+                <TimelineItem
+                  key={item.year}
+                  {...item}
+                  index={index}
+                  total={timelineData.length}
+                />
               ))}
             </div>
           </div>
@@ -400,13 +376,13 @@ const AboutNSTP = () => {
       </section>
 
       {/* why nstp  */}
-      <section className="w-full  mx-auto px-6 md:px-12  lg:px-24 pt-6 md:pt-12  lg:pt-24 bg-gray-50">
+      <section className="w-full  mx-auto p-6 md:p-12  lg:p-24  bg-gray-50">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="hidden md:flex items-center justify-center">
             <img
               src={WhyNSTP}
               alt="why choose us image"
-              className="w-2/4 md:w-full rounded-lg shadow-lg"
+              className="w-2/4 md:w-[80%] rounded-lg shadow-lg"
             />
           </div>
 
@@ -422,31 +398,45 @@ const AboutNSTP = () => {
                 WHY
               </span>{" "}
               <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
-                CHOOSE US
+                NSTP
                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
 
             <p className="text-gray-600 sm:text-lg text-justify md:text-left leading-relaxed">
-              What does it take to make strategic decisions when the variables
-              are proliferating? What lenses do leaders now need to apply when
-              they're determining the way forward on the given initiative?
+              NSTP provides a dynamic environment for innovation and growth,
+              enabling businesses to collaborate across industries and research
+              domains. With access to over 60 active research areas, 350
+              advanced laboratories, and specialized Centers of Excellence such
+              as the National Centre of Artificial Intelligence (NCA), National
+              Centre of Robotics & Automation (NCRA), and N-ovative Health
+              Technologies (NHT), the park empowers businesses to excel in
+              transformative fields. Spanning 71.3 acres with SEZ and STZ
+              statuses, NSTP offers tax exemptions, licensing opportunities, and
+              technology transfer support.
             </p>
 
             <p className="text-gray-600 sm:text-lg text-justify md:text-left leading-relaxed">
-              As the complexity of the business landscape continues to rapidly
-              increase and the impact of each decision ripples outward, today's
-              business leaders have even more challenges to face. In this issue,
-              we explore this new decision-making calculus, examining a handful
-              of the variables many leaders now contend with.
+              Its recognition as an SDG Model Zone by GASEZ underscores its
+              commitment to sustainable development and high governance
+              standards, further enhancing its position as Pakistan's premier
+              hub for Science, Technology, and Innovation (STI).
+            </p>
+            <p className="text-gray-600 sm:text-lg text-justify md:text-left leading-relaxed">
+              In a landmark development, Faisal Aftab of Zayn VC joined NSTP as
+              Resident Venture Capitalist, bringing invaluable resources such as
+              mentorship, workshops, and investment pitch opportunities. This
+              collaboration strengthens the ecosystem for both startups and
+              established companies, empowering them with the tools to innovate
+              and scale.
             </p>
 
             <Link
               target="_blank"
-              to="/newsroom"
+              to="/explore"
               className="bg-black flex gap-3 items-center mx-auto md:mx-0 justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
-              Learn More
+              Join NSTP
               <HiArrowSmRight className="text-lg md:text-2xl" />
             </Link>
           </div>
@@ -505,22 +495,23 @@ const AboutNSTP = () => {
               <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
-          <div
-            ref={ref}
-            className="flex  flex-wrap  items-center justify-center  gap-8 "
-          >
+          <div className="flex flex-wrap items-center justify-center gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-6 bg-gray-50 w-56 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                className="text-center p-6 bg-gray-50 w-56 h-32 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
               >
-                <div className="text-3xl sm:text-4xl font-bold sm:mb-2">
+                <div className="text-3xl sm:text-4xl font-bold sm:mb-2 flex items-center justify-center gap-2">
                   {stat.prefix}
-                  {inView ? (
-                    <CountUp end={stat.value} duration={2} separator="," />
-                  ) : (
-                    "0"
-                  )}
+                  {/* <CountUp end={stat.value} duration={2} separator="," /> */}
+                  <AnimatedNumbers
+                    animateToNumber={stat.value}
+                    duration={2000}
+                    transitions={(index) => ({
+                      type: "spring",
+                      duration: index + 0.4,
+                    })}
+                  />
                   {stat.suffix}
                 </div>
                 <p className="text-gray-600 font-medium">{stat.label}</p>
@@ -531,7 +522,11 @@ const AboutNSTP = () => {
       </section>
       {/* flags  */}
       <section>
-        <Partners logos={partners} firstText="OUR" secondText="FLAGS" />
+        <Partners
+          logos={partners}
+          firstText="HUB FOR "
+          secondText="INTERNATIONAL R&D"
+        />
       </section>
 
       {/* visit nstp  */}
