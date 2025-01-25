@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { LiaBuildingSolid } from "react-icons/lia";
+import Animation from "../../Animation";
 
 const Partners = ({logos,firstText, secondText}) => {
   const [scrollSpeed, setScrollSpeed] = useState("35s");
@@ -24,6 +25,7 @@ const Partners = ({logos,firstText, secondText}) => {
 
   return (
     <div className="">
+         <Animation>
         <h1 className="text-xl lg:text-3xl mb-8 flex-wrap text-center md:mb-14 px-6 md:px-12  lg:px-24 pt-6 md:pt-12  lg:pt-24   flex items-center justify-center gap-2 md:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
@@ -39,6 +41,7 @@ const Partners = ({logos,firstText, secondText}) => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
+         </Animation>
       <div className="w-full bg-gray-100 h-72 mb-16">
         <div className="relative overflow-hidden h-full">
           <div

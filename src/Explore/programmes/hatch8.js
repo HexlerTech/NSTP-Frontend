@@ -28,6 +28,7 @@ import TimeLine from "./Hatch8Components/timeline";
 import Brochure from "../../Assets/exploreNSTP/Hatch 8 Booklet.pdf";
 
 import Image2 from "../../Assets/exploreNSTP/nstpimage2.jpg";
+import Animation from "../../Animation";
 
 const EligibilitySection = () => {
   const criteria = [
@@ -65,6 +66,7 @@ const EligibilitySection = () => {
   ];
 
   return (
+    
     <div className="w-full  mx-auto flex flex-col items-center justify-center ">
       <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex  md:flex-row items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
@@ -216,7 +218,7 @@ const BenefitsSection = () => {
           ))}
         </div>
       </div>
-
+      <Animation>
       <div className="relative z-10 ">
         <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
           <span
@@ -257,6 +259,7 @@ const BenefitsSection = () => {
           })}
         </div>
       </div>
+      </Animation>
 
       <style jsx>{`
         @keyframes float {
@@ -503,6 +506,7 @@ const Hatch = () => {
                 </span>
                 <HiArrowSmRight /> Company
               </p>
+              <Animation className={"h-full"}>
               <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
                 <span
                   className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -518,12 +522,14 @@ const Hatch = () => {
                   <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
                 </span>
               </h1>
+              </Animation>
             </div>
           </div>
         </div>
 
         <div className="    flex flex-col items-center justify-center ">
           {/* Program Overview */}
+          <Animation>
           <div className="relative p-6 md:p-12  lg:p-24  ">
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
               {/* Left side - Image */}
@@ -578,6 +584,7 @@ const Hatch = () => {
               </div>
             </div>
           </div>
+          </Animation>
 
           {/* Key Benefits */}
 
@@ -586,6 +593,7 @@ const Hatch = () => {
           </div>
 
           {/* Company Logo  */}
+          <Animation>
           <div className=" w-full p-6 md:p-12  lg:p-24     ">
             <CompanyLogo
               titleHollow={hatch8TitleHollow}
@@ -593,11 +601,14 @@ const Hatch = () => {
               description={hatch8Description}
             />
           </div>
+          </Animation>
 
           {/* Eligibility */}
 
           <div className=" w-full bg-black p-6 md:p-12  lg:p-24    ">
+          <Animation>
             <EligibilitySection />
+            </Animation>
           </div>
           {/* Mentors */}
           {/* <div className="p-6 md:p-12  lg:p-24    ">
@@ -605,9 +616,12 @@ const Hatch = () => {
           </div> */}
 
           {/* Timeline */}
+          <Animation>
           <div className=" w-full p-6 md:p-12  lg:p-24   ">
             <TimeLine />
           </div>
+          </Animation>
+          <Animation>
           {/* Apply */}
           <div
             id="apply"
@@ -651,6 +665,7 @@ const Hatch = () => {
               </div>
             )}
           </div>
+          </Animation>
           <FixedDownloadButton />
         </div>
       </div>

@@ -41,6 +41,7 @@ import { Cube8Form } from "../../TenancyForm/page";
 import { useNavigate } from "react-router-dom";
 import CompanyLogo from "./CompanyLogos/companyLogo";
 import { HiArrowSmRight } from "react-icons/hi";
+import Animation from "../../Animation";
 
 const CarouselSection = ({ title, items }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -275,7 +276,7 @@ const WhatWeOfferSection = () => {
           ))}
         </div>
       </div>
-
+<Animation>
       <div className="relative z-10 ">
         <h1 className="text-xl lg:text-3xl mb-8  md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
           <span
@@ -316,6 +317,7 @@ const WhatWeOfferSection = () => {
           })}
         </div>
       </div>
+      </Animation>
 
       <style jsx>{`
         @keyframes float {
@@ -457,6 +459,7 @@ const ProgramRequirementsSection = () => {
 
   return (
     <div className="w-full bg-black  p-6 md:p-12  lg:p-24  flex flex-col items-center justify-center  ">
+    <Animation>
       <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -472,11 +475,12 @@ const ProgramRequirementsSection = () => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
+      </Animation>
       {/* <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-gray-300 px-4 mb-8">
           We're looking for exceptional startups that meet the following
           criteria
         </p> */}
-
+<Animation>
       <div className="flex flex-wrap items-center justify-center gap-8 sm:max-w-7xl ">
         {requirements.map((req, index) => (
           <div key={index} className="transform-gpu ">
@@ -513,6 +517,7 @@ const ProgramRequirementsSection = () => {
           </div>
         ))}
       </div>
+      </Animation>
     </div>
   );
 };
@@ -603,6 +608,7 @@ const Cube8 = () => {
                 </span>
                 <ChevronRight /> Accelerator
               </p>
+              <Animation className={"h-full"}>
               <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
                 <span
                   className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -618,12 +624,14 @@ const Cube8 = () => {
                   <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
                 </span>
               </h1>
+              </Animation>
             </div>
           </div>
         </div>
 
         <div className="  flex flex-col items-center justify-center">
           {/* Program Overview */}
+          <Animation>
           <div className="relative p-6 md:p-12  lg:p-24  ">
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
               {/* Left side - Image */}
@@ -678,12 +686,14 @@ const Cube8 = () => {
               </div>
             </div>
           </div>
+          </Animation>
 
           {/* Replace your existing "what we offer" section with: */}
           <div className=" w-full ">
             <WhatWeOfferSection />
           </div>
           {/* Company Logo  */}
+          <Animation>
           <div className="p-6 md:p-12  lg:p-24   w-full  ">
             <CompanyLogo
               titleHollow={hatch8TitleHollow}
@@ -691,11 +701,15 @@ const Cube8 = () => {
               description={hatch8Description}
             />
           </div>
+          </Animation>
 
           {/* Replace your existing "what startups will achieve" section with: */}
+
+          <Animation>
           <div className=" w-full   px-6 md:px-12  lg:px-24  pb-6 md:pb-12  lg:pb-24 ">
             <StartupAchievementsSection />
           </div>
+          </Animation>
           {/* Program Requirements */}
           <div className="   w-full">
             <ProgramRequirementsSection />
@@ -706,6 +720,7 @@ const Cube8 = () => {
           </div> */}
 
           {/* Apply Section */}
+          <Animation>
           <div id="apply" className=" p-6 md:p-12  lg:p-24   w-full ">
             <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
               <span
@@ -745,6 +760,7 @@ const Cube8 = () => {
               </div>
             )}
           </div>
+          </Animation>
         </div>
       </div>{" "}
       {/* Add this closing div tag */}

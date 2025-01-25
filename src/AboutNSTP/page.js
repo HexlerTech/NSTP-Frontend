@@ -44,6 +44,7 @@ import Footer from "../Components/footer";
 import Partners from "../Home/Partners/partner";
 import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import Animation from "../Animation";
 
 const TimelineItem = ({ year, title, description, index, total }) => {
   const isEven = index % 2 === 0;
@@ -256,6 +257,7 @@ const AboutNSTP = () => {
           ></div>
         </div>
         <div className="absolute -bottom-10 left-5 sm:left-14 w-fit ">
+        <Animation>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold sm:tracking-tight">
             <div
               className="text-transparent uppercase sm:leading-[0.9]"
@@ -270,6 +272,7 @@ const AboutNSTP = () => {
               in pakistan
             </div>
           </h1>
+        </Animation>
         </div>
       </section>
 
@@ -294,6 +297,7 @@ const AboutNSTP = () => {
               <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1> */}
+             <Animation>
           <p className="text-base md:text-xl text-gray-600 font-sans text-justify md:text-left mb-24 leading-relaxed  max-w-5xl">
             Established in 2019, National Science & Technology Park (NSTP)
             located within Pakistan's premier STEM institution, the National
@@ -305,6 +309,7 @@ const AboutNSTP = () => {
             Silicon, Turkish Aerospace, Vyro and others all contributing to the
             region’s advancement in cutting-edge technologies.
           </p>
+          </Animation>
           <motion.div
             className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh] overflow-hidden rounded-lg"
             style={{ scale, opacity }}
@@ -344,6 +349,7 @@ const AboutNSTP = () => {
         </div> */}
 
         <div className="relative">
+        <Animation>
           <h1 className="text-xl lg:text-3xl mb-8  flex items-center flex-wrap justify-center gap-1 md:gap-4 font-extrabold leading-none tracking-tight">
             <span
               className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -359,6 +365,7 @@ const AboutNSTP = () => {
               <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
+          </Animation>
 
           <div className="overflow-hidden py-8 sm:py-32 ">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-4 px-4 w-full sm:w-[90%] md:w-[80%] mx-auto ">
@@ -386,6 +393,7 @@ const AboutNSTP = () => {
             />
           </div>
 
+          <Animation>
           <div className="space-y-6">
             <h1 className="text-xl lg:text-3xl mb-4 md:mb-8 flex-wrap   flex items-center justify-center md:justify-start  gap-2 md:gap-4 font-extrabold leading-none tracking-tight">
               <span
@@ -440,6 +448,7 @@ const AboutNSTP = () => {
               <HiArrowSmRight className="text-lg md:text-2xl" />
             </Link>
           </div>
+          </Animation>
         </div>
       </section>
 
@@ -478,8 +487,11 @@ const AboutNSTP = () => {
           </div>
         </div>
       </section> */}
+      
       <section className="bg-white p-6 md:p-12  lg:p-24 ">
+      
         <div className=" mx-auto px-4">
+        <Animation>
           <h1 className="text-xl lg:text-3xl mb-8  flex items-center flex-wrap justify-center gap-1 md:gap-4 font-extrabold leading-none tracking-tight">
             <span
               className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -495,6 +507,7 @@ const AboutNSTP = () => {
               <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
             </span>
           </h1>
+          </Animation>
           <div className="flex flex-wrap items-center justify-center gap-8">
             {stats.map((stat, index) => (
               <div
@@ -519,6 +532,7 @@ const AboutNSTP = () => {
             ))}
           </div>
         </div>
+       
       </section>
       {/* flags  */}
       <section>
@@ -592,6 +606,7 @@ const AboutNSTP = () => {
       </section> */}
 
       <section className=" px-6 md:px-12  lg:px-24 pb-6 md:pb-12  lg:pb-24">
+      <Animation>
         <div className=" max-w-6xl mx-auto   ">
           <div className="flex flex-col items-center justify-center gap-3 ">
             {/* Heading with outline effect */}
@@ -645,6 +660,7 @@ const AboutNSTP = () => {
             </div>
           </div>
         </div>
+        </Animation>
       </section>
       <Footer />
     </div>

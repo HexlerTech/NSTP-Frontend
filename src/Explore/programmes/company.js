@@ -37,6 +37,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import { Link } from "react-scroll";
+import Animation from "../../Animation";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -176,7 +177,7 @@ const BenefitsSection = () => {
           ))}
         </div>
       </div>
-
+      <Animation>
       <div className="relative z-10 ">
         <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
           <span
@@ -217,6 +218,7 @@ const BenefitsSection = () => {
           })}
         </div>
       </div>
+      </Animation>
 
       <style jsx>{`
         @keyframes float {
@@ -277,6 +279,7 @@ const NSTPGallery = () => {
 
   return (
     <div className="w-full mx-auto p-6 md:p-12  lg:p-24  bg-black  flex flex-col items-center justify-center">
+      <Animation>
       <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -292,6 +295,8 @@ const NSTPGallery = () => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
+      </Animation>
+      <Animation>
       <div className="flex flex-wrap items-center justify-center gap-8 max-w-7xl">
       {images.map((image) => (
         <div
@@ -314,6 +319,7 @@ const NSTPGallery = () => {
         </div>
       ))}
     </div>
+    </Animation>
 
       {selectedImage && (
         <div
@@ -652,6 +658,7 @@ const CompanyInfoPage = () => {
                 </span>
                 <HiArrowSmRight /> Company
               </p>
+               <Animation className={"h-full"}>
               <h1 className="text-xl lg:text-3xl h-full flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
                 <span
                   className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -667,12 +674,14 @@ const CompanyInfoPage = () => {
                   <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
                 </span>
               </h1>
+              </Animation>
             </div>
           </div>
         </div>
 
         <div className=" flex flex-col items-center justify-center ">
           {/* // Program Overview */}
+          <Animation>
           <div className="relative  p-6 md:p-12  lg:p-24 ">
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
               {/* Left side - Image */}
@@ -735,19 +744,22 @@ const CompanyInfoPage = () => {
               </div>
             </div>
           </div>
+          </Animation>
 
           <div className="w-full    ">
             <NSTPGallery />
           </div>
-
+          <Animation>
           <div className="w-full  p-6 md:p-12  lg:p-24   ">
             <EnhancedSections />
           </div>
+          </Animation>
 
           <div className="w-full    ">
             <BenefitsSection />
           </div>
 
+          <Animation>
           <div id="apply" className="w-full  p-6 md:p-12  lg:p-24  ">
             <h1 className="text-xl lg:text-3xl mb-4 flex flex-col md:flex-row items-center justify-center md:gap-2  font-extrabold leading-none tracking-tight">
               <span
@@ -786,6 +798,7 @@ const CompanyInfoPage = () => {
               </div>
             )}
           </div>
+          </Animation>
         </div>
       </div>
       <Footer />

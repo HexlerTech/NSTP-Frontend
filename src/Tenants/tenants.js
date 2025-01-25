@@ -5,6 +5,7 @@ import data from "./data";
 import hexlerLogo from "../Assets/Hexler Logo.png";
 import Image2 from "../Assets/exploreNSTP/nstpimage2.jpg";
 import Footer from "../Components/footer";
+import Animation from "../Animation";
 
 const Tenants = () => {
   const [floors, setFloors] = useState([]);
@@ -68,7 +69,8 @@ const Tenants = () => {
           ))}
         </div>
 
-        <div className="relative max-w-7xl mx-auto animate-fade-up">
+        <Animation>
+        <div className="relative max-w-7xl mx-auto ">
           <div className="flex items-center justify-center gap-4 mb-4">
             <h1 className="text-xl lg:text-3xl flex items-center justify-center gap-4 font-extrabold leading-none tracking-tight">
               <span
@@ -90,12 +92,14 @@ const Tenants = () => {
             Home to over 80 innovative companies pushing the boundaries of technology
           </p>
         </div>
+        </Animation>
       </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Search and Filter Section */}
-        <div className="mb-12 space-y-6 animate-fade-up">
+        <Animation>
+        <div className="mb-12 space-y-6 ">
           <div className="relative max-w-md mx-auto">
             <input
               type="text"
@@ -145,12 +149,13 @@ const Tenants = () => {
             ))}
           </div>
         </div>
-
+        </Animation>
         {/* Companies Grid */}
+        <Animation>
         {Object.keys(groupedTenants).map((wing) => (
           <div
             key={wing}
-            className="mb-16 animate-fade-up"
+            className="mb-16 "
           >
             <div className="flex items-center mb-8 bg-gradient-to-r from-black to-black/50 p-4 rounded-2xl">
               <span
@@ -212,6 +217,7 @@ const Tenants = () => {
             </div>
           </div>
         ))}
+        </Animation>
       </div>
       <Footer />
     </div>
