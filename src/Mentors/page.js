@@ -64,6 +64,7 @@ const Mentors = () => {
           </span>
         </h1>
         </Animation>
+        <Animation>
 
         <div className="text-center mb-6">
           <button
@@ -88,7 +89,7 @@ const Mentors = () => {
             </button>
           ))}
         </div>
-
+        </Animation>
         <Animation>
           <div className="flex flex-wrap items-center justify-center gap-6 ">
             {data.map(
