@@ -38,11 +38,11 @@ const Contact = () => {
         <div className="absolute -bottom-16 left-0 w-64 h-64 bg-primary/30 rounded-full blur-3xl" />
         <div className="absolute top-20 right-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute top-40 left-1/2 w-48 h-48 bg-primary/20 rounded-full blur-2xl" />
-        <Animation className={"h-full"}>
         <div className="relative max-w-7xl mx-auto  flex items-center justify-center h-full flex-col animate-fade-up">
           <div className="flex items-center justify-center gap-4 mb-4 ">
             {/* <img src={nstp} alt="NSTP" className="w-16 h-16"/> */}
 
+        <Animation >
             <h1 className="text-xl lg:text-3xl    flex items-center justify-center  gap-4 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
@@ -58,13 +58,15 @@ const Contact = () => {
                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
+            </Animation>
           </div>
+          <Animation>
           <p className="text-center text-md md:text-lg text-gray-300 max-w-2xl mx-auto">
             Join Pakistan's premier science and technology ecosystem. We're here
             to help you innovate, grow, and succeed.
           </p>
-        </div>
         </Animation>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-10">

@@ -69,9 +69,10 @@ const Tenants = () => {
           ))}
         </div>
 
-        <Animation>
+       
         <div className="relative max-w-7xl mx-auto ">
           <div className="flex items-center justify-center gap-4 mb-4">
+          <Animation>
             <h1 className="text-xl lg:text-3xl flex items-center justify-center gap-4 font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -87,12 +88,14 @@ const Tenants = () => {
                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
+            </Animation>
           </div>
+          <Animation>
           <p className="text-center text-md md:text-lg text-gray-300 max-w-2xl mx-auto">
             Home to over 80 innovative companies pushing the boundaries of technology
           </p>
-        </div>
         </Animation>
+        </div>
       </div>
 
       {/* Main Content */}
