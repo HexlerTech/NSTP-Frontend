@@ -213,86 +213,6 @@ const Gallery = () => {
         }}
       >
         {/* <div className="flex animate-scroll-right"> */}
-        {/* First set of grid */}
-        <div className="min-w-full grid grid-cols-3 gap-4 p-2">
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image1}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image2}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image3}
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image15}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image16}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image17}
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image4}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image5}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image6}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image7}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-
         {/* Second set of grid  */}
 
         <div className="min-w-full grid grid-cols-3 gap-4 p-2">
@@ -375,6 +295,87 @@ const Gallery = () => {
           </div>
         </div>
 
+        {/* First set of grid */}
+        <div className="min-w-full grid grid-cols-3 gap-4 p-2">
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image1}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image2}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image3}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image15}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image16}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image17}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image4}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image5}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image6}
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={image7}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        
         {/* third set of grid */}
         <div className="min-w-full grid grid-cols-3 gap-4 p-2">
           <div className="flex flex-col items-center justify-center gap-4">

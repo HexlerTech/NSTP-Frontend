@@ -2,6 +2,7 @@ import React from 'react';
 import pfp2 from "../Assets/pfp2.jpeg";
 import Footer from "../Components/footer";
 import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs';
+import Animation from '../Animation';
 
 const Team = () => {
     const teamMembers = [
@@ -34,15 +35,30 @@ const Team = () => {
     return (
         <>
         <div className="p-4 lg:p-16 mt-24">
-          <h1 className="mb-4 lg:mb-8 text-2xl lg:text-3xl font-extrabold leading-none tracking-tight text-gray-900 text-center">
-            MEET OUR <span className="text-primary">TEAM</span>
-          </h1>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <Animation>
+        <h1 className="text-xl lg:text-3xl mb-8 md:mb-14 flex flex-col md:flex-row items-center justify-center md:gap-2 font-extrabold leading-none tracking-tight">
+          <span
+            className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
+            style={{
+              WebkitTextStroke: "1px #000000",
+              textStroke: "1px #000000",
+            }}
+          >
+            MEET OUR
+          </span>{" "}
+          <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block">
+            TEAM
+            <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
+          </span>
+        </h1>
+        </Animation>
+
+        <Animation>
+          <div className="flex flex-wrap items-center justify-center gap-4">
             {teamMembers.map((member, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                className="bg-gray-50 rounded-lg w-[31rem] min-h-64 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
               >
                 <div className="flex flex-col items-center pt-6 px-4">
                   <img
@@ -80,6 +96,7 @@ const Team = () => {
               </div>
             ))}
           </div>
+          </Animation>
         </div>
         <Footer />
         </>
