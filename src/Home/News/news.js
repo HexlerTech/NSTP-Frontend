@@ -7,6 +7,7 @@ import News4 from "../../Assets/news/nust.jpg";
 import News5 from "../../Assets/news/sez.jpg";
 import News6 from "../../Assets/news/federal.jpg";
 import { Link } from "react-router-dom";
+import Animation from "../../Animation";
 
 const News = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -95,6 +96,7 @@ const News = () => {
   return (
     <div className="w-full bg-white p-6 md:p-12  lg:p-24">
       <div className="max-w-7xl mx-auto">
+      <Animation>
       <h1 className="text-xl lg:text-3xl mb-8 md:mb-14   flex flex-col sm:flex-row items-center justify-center  sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
@@ -110,7 +112,9 @@ const News = () => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
+      </Animation>
 
+      <Animation>
         <div className="relative ">
           {/* Navigation Buttons */}
           <button
@@ -185,6 +189,7 @@ const News = () => {
             ))}
           </div>
         </div>
+        </Animation>
       </div>
     </div>
   );

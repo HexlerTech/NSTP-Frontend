@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`z-50 bg-black text-white px-4 lg:px-6 py-2 flex justify-between items-center fixed w-full ${
+      className={`z-50 bg-black text-white px-4 lg:px-6 py-2 flex h-[73px]  justify-between items-center fixed w-full ${
         isScrolling ? "bg-opacity-80" : "bg-opacity-100"
       }`}
     >

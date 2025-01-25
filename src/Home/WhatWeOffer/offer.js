@@ -9,6 +9,7 @@ import {
   Car,
   FlaskConical,
 } from "lucide-react";
+import Animation from "../../Animation";
 
 const Offer = () => {
   const services = [
@@ -51,6 +52,7 @@ const Offer = () => {
 
   return (
     <div className=" mx-auto p-6 md:p-12  lg:p-24 ">
+      <Animation>
       <h1 className="text-xl lg:text-3xl mb-4  flex-wrap  flex items-center justify-center gap-2 sm:gap-4 font-extrabold leading-none tracking-tight">
         <span
           className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
@@ -66,11 +68,15 @@ const Offer = () => {
           <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
         </span>
       </h1>
+      </Animation>
       
+      <Animation>
       <p className="max-w-2xl mx-auto text-base text-gray-500 text-justify md:text-center mb-4">
       With over 500,000 sq ft of development space  NSTP  is the
       ideal home for residents to expand their business in the proximity of NUST
           </p>
+          </Animation>
+          <Animation>
       <div className="flex flex-wrap items-center justify-center gap-6 sm:max-w-[88rem]  mx-auto">
         {services.map((service, index) => (
           <div
@@ -117,6 +123,7 @@ const Offer = () => {
           </div>
         ))}
       </div>
+      </Animation>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import ilm from '../../Assets/companieslogos/ilm.png';
 import zambeel from '../../Assets/companieslogos/zambeel.png';
 import truid from '../../Assets/companieslogos/truid_logo_main.png';
 import zytrics from '../../Assets/companieslogos/zytrics.png';
+import Animation from '../../Animation';
 
 
 const Companies = () => {
@@ -33,6 +34,7 @@ const Companies = () => {
   return (
     <div className="h-fit bg-black p-6 md:p-12  lg:p-24">
       <div className="container mx-auto px-4">
+      <Animation>
         <div className="text-center mb-16 ">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
             <span className="text-transparent" style={{
@@ -50,8 +52,9 @@ const Companies = () => {
             Large multinational corporations (MNCs), startups, small and medium-sized enterprises (SMEs), and research and development (R&D) houses from all around the world
           </p>
         </div>
-
+        </Animation>
         <div className="max-w-7xl mx-auto ">
+        <Animation>
           <motion.div 
             className="flex items-center justify-center flex-wrap gap-6"
             initial="hidden"
@@ -96,6 +99,7 @@ const Companies = () => {
               </motion.div>
             ))}
           </motion.div>
+          </Animation>
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@ import {
   ArrowUpRight,
   Users2,
 } from "lucide-react";
+import Animation from "../../Animation";
 
 const Highlight = () => {
   const highlights = [
@@ -186,6 +187,7 @@ const Highlight = () => {
         {/* Header Section with Pitch Us Circle */}
         <div className="flex flex-col md:flex-row justify-between items-center min-h-[300px]  mb-12 sm:px-7 md:px-16 ">
           <div className="flex-1  ">
+          <Animation>
             <h1 className="mb-4 text-xl text-center md:text-left lg:text-3xl font-extrabold leading-none tracking-tight">
               <span
                 className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
@@ -201,13 +203,17 @@ const Highlight = () => {
                 <span className=" text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
               </span>
             </h1>
+            </Animation>
+            <Animation>
             <p className="text-white text-justify md:text-left text-base md:max-w-lg ">
               Explore Pakistan's premier technology park, our innovative
               initiatives, and discover how NSTP is defining the future of
               innovation through success stories and strategic collaborations
             </p>
+            </Animation>
           </div>
 
+          <Animation>
           <div className="relative flex items-center justify-center mt-8 md:mt-0 ">
             <div
               className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-16 sm:px-6 lg:px-11 cursor-pointer"
@@ -224,9 +230,11 @@ const Highlight = () => {
               className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
             />
           </div>
+          </Animation>
         </div>
 
         {/* Stats Grid */}
+        <Animation>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-12 ">
           {highlights.map((item, index) => {
             const IconComponent = item.icon;
@@ -254,6 +262,7 @@ const Highlight = () => {
             );
           })}
         </div>
+        </Animation>
       </div>
 
       {/* Bottom gradient line */}

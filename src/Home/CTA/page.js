@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import Animation from "../../Animation";
 
 const contactInfo = {
   website: "nstp.pk",
@@ -79,6 +80,7 @@ const CTA = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.05),transparent_70%)]" />
       </div>
 
+      <Animation>
       <div className="relative max-w-6xl mx-auto   ">
         <div className="flex flex-col items-center justify-center gap-3 ">
           {/* Heading with outline effect */}
@@ -99,11 +101,11 @@ const CTA = () => {
               </span>
             </h1>
           </div>
-            <div className="flex items-center justify-center space-x-3 ">
-              <span className="h-0.5 w-12 bg-primary/30"></span>
-              <CircuitBoard className="w-6 h-6 text-primary" />
-              <span className="h-0.5 w-12 bg-primary/30"></span>
-            </div>
+          <div className="flex items-center justify-center space-x-3 ">
+            <span className="h-0.5 w-12 bg-primary/30"></span>
+            <CircuitBoard className="w-6 h-6 text-primary" />
+            <span className="h-0.5 w-12 bg-primary/30"></span>
+          </div>
 
           {/* Description */}
           <p className="max-w-2xl mx-auto text-base text-justify md:text-center text-gray-300 mb-4">
@@ -132,6 +134,7 @@ const CTA = () => {
           </div>
         </div>
       </div>
+      </Animation>
 
       {/* Subtle bottom pattern */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
