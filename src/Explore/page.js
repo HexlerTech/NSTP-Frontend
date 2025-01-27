@@ -11,6 +11,7 @@ import { ChevronRight, ArrowRight } from "lucide-react";
 import "./explore.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import LazyLoad from "../LazyLoad";
 
 // Card Component
 const Card = ({ title, description, imageSrc, imageAlt, link }) => {
@@ -25,18 +26,10 @@ const Card = ({ title, description, imageSrc, imageAlt, link }) => {
             alt={imageAlt}
             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
           /> */}
-          <LazyLoadImage
-             src={imageSrc}
-            //  placeholderSrc={imageSrc} // Add this line
-             alt={imageAlt}
-             effect="blur"
-            //  wrapperClassName="w-full h-full" // Add this line
-            wrapperProps={{
-              // If you need to, you can tweak the effect transition using the wrapper style.
-              style: {transitionDelay: "1s"},
-          }}
-             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-             
+           <LazyLoad 
+            imageSrc={imageSrc}
+            imageAlt={imageAlt}
+            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
           />
         </div>
         <div

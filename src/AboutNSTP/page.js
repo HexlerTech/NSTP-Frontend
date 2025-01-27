@@ -45,6 +45,7 @@ import Partners from "../Home/Partners/partner";
 import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Animation from "../Animation";
+import LazyLoad from "../LazyLoad";
 
 const TimelineItem = ({ year, title, description, index, total }) => {
   const isEven = index % 2 === 0;
@@ -238,7 +239,7 @@ const AboutNSTP = () => {
     <div className="bg-gray-200 min-h-screen w-full relative mt-12 sm:mt-0">
       {/* hero section  */}
       <section className="relative h-[30vh] sm:h-screen">
-        <div className="grid grid-cols-4 absolute top-0 left-0 w-full h-full">
+        {/* <div className="grid grid-cols-4 absolute top-0 left-0 w-full h-full">
           <div
             style={{ backgroundImage: `url(${Image1})` }}
             className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
@@ -255,7 +256,48 @@ const AboutNSTP = () => {
             style={{ backgroundImage: `url(${Image3})` }}
             className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
           ></div>
-        </div>
+        </div> */}
+        <div className="grid grid-cols-4 absolute top-0 left-0 w-full h-full">
+  <div className="relative">
+    <LazyLoad
+      imageSrc={Image1}
+      imageAlt="Background Image 1"
+      wrapperClassName="absolute inset-0"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+  </div>
+  
+  <div className="relative">
+    <LazyLoad
+      imageSrc={Image7}
+      imageAlt="Background Image 2"
+      wrapperClassName="absolute inset-0"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+  </div>
+  
+  <div className="relative">
+    <LazyLoad
+      imageSrc={Image5}
+      imageAlt="Background Image 3"
+      wrapperClassName="absolute inset-0"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+  </div>
+  
+  <div className="relative">
+    <LazyLoad
+      imageSrc={Image3}
+      imageAlt="Background Image 4"
+      wrapperClassName="absolute inset-0"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+  </div>
+</div>
         <div className="absolute -bottom-10 left-5 sm:left-14 w-fit ">
         <Animation>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold sm:tracking-tight">

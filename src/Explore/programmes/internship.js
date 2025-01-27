@@ -30,6 +30,7 @@ import Footer from "../../Components/footer";
 import { InternshipForm } from "../../TenancyForm/page";
 import { Link } from "react-scroll";
 import Animation from "../../Animation";
+import LazyLoad from "../../LazyLoad";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -392,9 +393,10 @@ const InternshipProgram = () => {
       <div className="my-10 md:my-4 lg:my-8 pt-4 md:pt-10">
         <div className="relative w-full flex justify-center">
           <div className="relative w-full h-[31rem] overflow-hidden">
-            <img
-              src={Image1}
-              alt="Internship Program"
+            
+            <LazyLoad
+              imageSrc={Image1}
+              imageAlt="Internship Program"
               className="absolute inset-0 w-full h-full object-cover brightness-50"
             />
             <div className="absolute inset-0 bg-black/20 rounded-xl" />
@@ -443,9 +445,10 @@ const InternshipProgram = () => {
               <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6 ">
                 {/* Left side - Image */}
                 <div className="w-full md:w-[540px] lg:w-[670px] ">
-                  <img
-                    src={Image2}
-                    alt="Program Overview"
+                 
+                  <LazyLoad 
+                    imageSrc={Image2}
+                    imageAlt="Program Overview"
                     className="w-full h-full rounded-md "
                   />
                 </div>

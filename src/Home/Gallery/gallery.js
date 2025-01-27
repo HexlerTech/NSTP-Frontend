@@ -178,6 +178,7 @@ import image20 from "../../Assets/Gallery/image20.svg";
 import image21 from "../../Assets/Gallery/image21.svg";
 import image22 from "../../Assets/Gallery/image22.svg";
 import image23 from "../../Assets/Gallery/image23.svg";
+import LazyLoad from "../../LazyLoad";
 
 const Gallery = () => {
   const [scrollSpeed, setScrollSpeed] = useState("35s");
@@ -223,49 +224,54 @@ const Gallery = () => {
                 src={image18}
                 alt=""
               />
-            </div>
-            <div>
-              <img
+              <LazyLoad
+                imageSrc={image18}
+                imageAlt="Gallery 18"
                 className="h-auto max-w-full rounded-lg"
-                src={image21}
-                alt=""
               />
             </div>
             <div>
-              <img
+              <LazyLoad
                 className="h-auto max-w-full rounded-lg"
-                src={image20}
-                alt=""
+                imageSrc={image21}
+                imageAlt="Gallery 21"
+              />
+            </div>
+            <div>
+              <LazyLoad
+                imageSrc={image20}
+                imageAlt="Gallery 20"
+                className="h-auto max-w-full rounded-lg"
               />
             </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-4">
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image19}
+                imageAlt="Gallery 19"
                 className="h-auto max-w-full rounded-lg"
-                src={image11}
-                alt=""
               />
             </div>
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image12}
+                imageAlt="Gallery 12"
                 className="h-auto max-w-full rounded-lg"
-                src={image12}
-                alt=""
               />
             </div>
             <div>
-              <img
+            <LazyLoad
+                imageSrc={image13}
+                imageAlt="Gallery 13"
                 className="h-auto max-w-full rounded-lg"
-                src={image13}
-                alt=""
               />
             </div>
             <div>
-              <img
+            <LazyLoad
+                imageSrc={image14}
+                imageAlt="Gallery 14"
                 className="h-auto max-w-full rounded-lg"
-                src={image14}
-                alt=""
               />
             </div>
           </div>
@@ -279,17 +285,17 @@ const Gallery = () => {
               />
             </div> */}
             <div>
-              <img
+            <LazyLoad
+                imageSrc={image22}
+                imageAlt="Gallery 22"
                 className="h-auto max-w-full rounded-lg"
-                src={image22}
-                alt=""
               />
             </div>
             <div>
-              <img
+            <LazyLoad
+                imageSrc={image23}
+                imageAlt="Gallery 23"
                 className="h-auto max-w-full rounded-lg"
-                src={image23}
-                alt=""
               />
             </div>
           </div>
@@ -299,105 +305,104 @@ const Gallery = () => {
         <div className="min-w-full grid grid-cols-3 gap-4 p-2">
           <div className="flex flex-col items-center justify-center gap-4">
             <div>
-              <img
+            <LazyLoad
+                imageSrc={image1}
+                imageAlt="Gallery 1"
                 className="h-auto max-w-full rounded-lg"
-                src={image1}
-                alt=""
               />
             </div>
             <div>
-              <img
+            <LazyLoad
+                imageSrc={image2}
+                imageAlt="Gallery 2"
                 className="h-auto max-w-full rounded-lg"
-                src={image2}
-                alt=""
               />
             </div>
             <div>
-              <img
+            <LazyLoad
+                imageSrc={image3}
+                imageAlt="Gallery 3"
                 className="h-auto max-w-full rounded-lg"
-                src={image3}
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image15}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image16}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={image17}
-                alt=""
               />
             </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-4">
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image15}
+                imageAlt="Gallery 15"
                 className="h-auto max-w-full rounded-lg"
-                src={image4}
-                alt=""
               />
             </div>
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image16}
+                imageAlt="Gallery 16"
                 className="h-auto max-w-full rounded-lg"
-                src={image5}
-                alt=""
               />
             </div>
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image17}
+                imageAlt="Gallery 17"
                 className="h-auto max-w-full rounded-lg"
-                src={image6}
-                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div>
+              <LazyLoad
+                imageSrc={image4}
+                imageAlt="Gallery 4"
+                className="h-auto max-w-full rounded-lg"
               />
             </div>
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image5}
+                imageAlt="Gallery 5"
                 className="h-auto max-w-full rounded-lg"
-                src={image7}
-                alt=""
+              />
+            </div>
+            <div>
+              <LazyLoad
+                imageSrc={image6}
+                imageAlt="Gallery 6"
+                className="h-auto max-w-full rounded-lg"
+              />
+            </div>
+            <div>
+              <LazyLoad
+                imageSrc={image7}
+                imageAlt="Gallery 7"
+                className="h-auto max-w-full rounded-lg"
               />
             </div>
           </div>
         </div>
 
-        
         {/* third set of grid */}
         <div className="min-w-full grid grid-cols-3 gap-4 p-2">
           <div className="flex flex-col items-center justify-center gap-4">
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image8}
+                imageAlt="Gallery 8"
                 className="h-auto max-w-full rounded-lg"
-                src={image8}
-                alt=""
               />
             </div>
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image9}
+                imageAlt="Gallery 9"
                 className="h-auto max-w-full rounded-lg"
-                src={image9}
-                alt=""
               />
             </div>
             <div>
-              <img
+              <LazyLoad
+                imageSrc={image10}
+                imageAlt="Gallery 10"
                 className="h-auto max-w-full rounded-lg"
-                src={image10}
-                alt=""
               />
             </div>
           </div>
