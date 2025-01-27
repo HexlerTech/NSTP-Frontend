@@ -227,7 +227,7 @@ const Gallery = () => {
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"
-                src={image19}
+                src={image21}
                 alt=""
               />
             </div>
@@ -271,13 +271,13 @@ const Gallery = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4">
-            <div>
+            {/* <div>
               <img
                 className="h-auto max-w-full rounded-lg"
                 src={image1}
                 alt=""
               />
-            </div>
+            </div> */}
             <div>
               <img
                 className="h-auto max-w-full rounded-lg"

@@ -9,6 +9,8 @@ import { HiArrowRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import "./explore.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 // Card Component
 const Card = ({ title, description, imageSrc, imageAlt, link }) => {
@@ -18,14 +20,30 @@ const Card = ({ title, description, imageSrc, imageAlt, link }) => {
     <div className="group bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
       <div className="relative">
         <div className="h-48 overflow-hidden">
-          <img
+          {/* <img
             src={imageSrc}
             alt={imageAlt}
             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          /> */}
+          <LazyLoadImage
+             src={imageSrc}
+            //  placeholderSrc={imageSrc} // Add this line
+             alt={imageAlt}
+             effect="blur"
+            //  wrapperClassName="w-full h-full" // Add this line
+            wrapperProps={{
+              // If you need to, you can tweak the effect transition using the wrapper style.
+              style: {transitionDelay: "1s"},
+          }}
+             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+             
           />
         </div>
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
-          <ArrowRight className="w-5 h-5 text-primary" />
+        <div
+          onClick={() => navigate(link)}
+          className="absolute cursor-pointer  hover:bg-primary hover:scale-105 transition-all duration-500 top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2"
+        >
+          <ArrowRight className="w-5 h-5 text-black  " />
         </div>
       </div>
       <div className="p-6">
