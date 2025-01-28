@@ -51,6 +51,7 @@ import Highlight from "./ParkHighlight/highlight";
 import Offer from "./WhatWeOffer/offer";
 import News from "./News/news";
 import Animation from "../Animation";
+import LazyLoad from "../LazyLoad";
 
 const NSTPStats = [
   {
@@ -241,7 +242,7 @@ const NSTPAbout = () => {
           <Animation>
           <Link
             to="/about"
-            className="bg-black flex gap-3 mx-auto md:mx-0 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+            className="bg-black flex gap-3 mx-auto md:mx-0 items-center justify-center !text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
           >
             About us
             <HiArrowSmRight className="text-lg md:text-2xl" />
@@ -283,83 +284,82 @@ const Home = () => {
   return (
     <div className="">
       <div className="relative w-full h-screen">
-        {/* Background image with overlay */}
-        <div
-          style={{
-            backgroundImage: `url(${ban})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="absolute inset-0"
-        >
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
+      {/* Background image container with LazyLoad */}
+      <div className="absolute inset-0">
+        <LazyLoad
+          imageSrc={ban}
+          imageAlt="Background Banner"
+          wrapperClassName="absolute inset-0"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      {/* Content - positioned above the overlay */}
+      <div className="relative z-10 flex flex-col justify-between h-full">
+        {/* Top content */}
+        <div className="flex items-center w-full lg:p-10 px-5 pt-10 pb-2 mt-28">
+          <div className="w-full">
+            <p className="text-4xl sm:text-5xl lg:text-[5.5rem] text-[#90C74B] text-left mt-5 font-semibold slide-left leading-30">
+              NATIONAL SCIENCE
+              <br /> <span>& TECHNOLOGY PARK</span>
+            </p>
+            <h3 className="text-xl sm:text-3xl lg:text-5xl text-white italic text-left mt-3 font-bold hollow-text-main3">
+              Innovation PowerHouse of Pakistan
+            </h3>
+            <h2 className="text-sm md:text-xl text-white text-left mt-2 italic">
+              Hi-Tech Economic Zone, and Special Technology Zone
+            </h2>
+          </div>
         </div>
 
-        {/* Content - positioned above the overlay */}
-        <div className="relative z-10 flex flex-col justify-between h-full">
-          {/* Top content */}
-          <div className="flex items-center w-full lg:p-10 px-5 pt-10 pb-2 mt-28">
-            <div className="w-full">
-              <p className="text-4xl sm:text-5xl lg:text-[5.5rem] text-[#90C74B] text-left mt-5 font-semibold slide-left leading-30">
-                NATIONAL SCIENCE
-                <br /> <span>& TECHNOLOGY PARK</span>
-              </p>
-              <h3 className="text-xl sm:text-3xl lg:text-5xl text-white italic text-left mt-3 font-bold hollow-text-main3">
-                Innovation PowerHouse of Pakistan
-              </h3>
-              <h2 className="text-sm md:text-xl text-white text-left mt-2 italic">
-                Hi-Tech Economic Zone, and Special Technology Zone
-              </h2>
-            </div>
-          </div>
-
-          {/* Bottom content - positioned at bottom */}
-          <div className="w-full overflow-hidden">
-            <div className="relative w-full flex items-center justify-between px-6">
-              {/* Left side with 1st and text */}
-              <div className="flex items-center h-[160px] sm:h-[224px] lg:h-[384px] lg:mt-24">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-                  <div className="flex items-start">
-                    <span className="text-[#90C74B] text-4xl sm:text-7xl lg:text-8xl leading-none">
-                      1
-                    </span>
-                    <span style={{ WebkitTextStrokeWidth: "0.4px" }} className="text-primary text-xs sm:text-sm  -ml-1 sm:-ml-2 mt-1 md:text-2xl lg:text-3xl">
-                      st
-                    </span>
-                  </div>
-                  <div className="flex flex-col">
-                    <h1 className="text-sm md:text-2xl lg:text-4xl text-white whitespace-normal">
-                      Science Technology Park
-                    </h1>
-                    <h1 className="text-sm md:text-2xl -mt-1 lg:mt-2 lg:text-4xl text-white whitespace-normal">
-                      Established by NUST
-                    </h1>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right side with rotating pitch us */}
-              <div className="relative flex items-center justify-center">
-                <div
-                  className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-12 sm:px-6 lg:px-11 cursor-pointer"
-                  onClick={() => (window.location.href = "/tenancy")}
-                >
-                  <FiArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
-                  <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
-                    Pitch Us
+        {/* Bottom content */}
+        <div className="w-full overflow-hidden">
+          <div className="relative w-full flex items-center justify-between px-6">
+            {/* Left side with 1st and text */}
+            <div className="flex items-center h-[160px] sm:h-[224px] lg:h-[384px] lg:mt-24">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+                <div className="flex items-start">
+                  <span className="text-[#90C74B] text-4xl sm:text-7xl lg:text-8xl leading-none">
+                    1
+                  </span>
+                  <span style={{ WebkitTextStrokeWidth: "0.4px" }} className="text-primary text-xs sm:text-sm -ml-1 sm:-ml-2 mt-1 md:text-2xl lg:text-3xl">
+                    st
                   </span>
                 </div>
-                <img
-                  src={pitchus}
-                  alt="Pakistan's Largest Innovation Ecosystem"
-                  className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
-                />
+                <div className="flex flex-col">
+                  <h1 className="text-sm md:text-2xl lg:text-4xl text-white whitespace-normal">
+                    Science Technology Park
+                  </h1>
+                  <h1 className="text-sm md:text-2xl -mt-1 lg:mt-2 lg:text-4xl text-white whitespace-normal">
+                    Established by NUST
+                  </h1>
+                </div>
               </div>
+            </div>
+
+            {/* Right side with rotating pitch us */}
+            <div className="relative flex items-center justify-center">
+              <div
+                className="absolute z-20 flex flex-col items-center justify-center rounded-full hover:bg-[#90C74B] transition-colors duration-300 py-3 px-2 sm:py-8 lg:py-12 sm:px-6 lg:px-11 cursor-pointer"
+                onClick={() => (window.location.href = "/tenancy")}
+              >
+                <FiArrowUpRight className="text-white text-2xl lg:text-5xl -rotate-90" />
+                <span className="text-white text-xs sm:text-base lg:text-2xl font-bold mt-1">
+                  Pitch Us
+                </span>
+              </div>
+              <LazyLoad
+                imageSrc={pitchus}
+                imageAlt="Pakistan's Largest Innovation Ecosystem"
+                className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
+              />
             </div>
           </div>
         </div>
       </div>
+    </div>
       <NSTPAbout />
       {/* <Statistics /> */}
       {/* <div className="flex flex-col md:flex-row mb-16 sm:mb-0 lg:flex-row items-right md:items-center justify-center p-10 pr-0 lg:p-20 lg:pr-0 lg:pb-0 lg:pt-0">
@@ -446,7 +446,7 @@ const Home = () => {
         <Link
           target="_blank"
           to="/tenants"
-          className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+          className="bg-black flex gap-3 items-center justify-center !text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
         >
           View All Company
           <HiArrowSmRight className="text-lg md:text-2xl" />

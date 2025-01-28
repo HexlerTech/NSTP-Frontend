@@ -10,6 +10,7 @@ import ilm from "../../../Assets/companieslogos/ilm.png";
 import zambeel from "../../../Assets/companieslogos/zambeel.png";
 import truid from "../../../Assets/companieslogos/truid_logo_main.png";
 import zytrics from "../../../Assets/companieslogos/zytrics.png";
+import LazyLoad from "../../../LazyLoad";
 const CompanyLogo = ({ titleHollow, titleFilled, description }) => {
   const logos = [
     { name: "Avionics Solution", src: avionicsSolution },
@@ -52,9 +53,10 @@ const CompanyLogo = ({ titleHollow, titleFilled, description }) => {
             {/* Card content wrapper */}
             <div className="relative aspect-square flex items-center justify-center">
               {/* Logo image */}
-              <img
-                src={logo.src}
-                alt={`${logo.name} logo`}
+             
+              <LazyLoad
+                imageSrc={logo.src}
+                imageAlt={`${logo.name} logo`}
                 className="w-full h-full object-contain"
               />
 

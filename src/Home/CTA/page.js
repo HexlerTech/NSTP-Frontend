@@ -118,7 +118,7 @@ const CTA = () => {
             <Link
               target="_blank"
               to="/about"
-              className="bg-primary flex gap-3 items-center justify-center text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+              className="bg-primary flex gap-3 dark:!text-black items-center justify-center !text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-white hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
               Learn more
               <BookOpen className="w-5 h-5 mr-2" />
@@ -126,7 +126,7 @@ const CTA = () => {
             <Link
               target="_blank"
               to="/contact"
-              className="bg-white flex gap-3 items-center justify-center text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+              className="bg-white flex gap-3 items-center justify-center   !text-black px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
               Get started
               <HiArrowSmRight className="text-lg md:text-2xl" />

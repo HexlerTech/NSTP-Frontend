@@ -38,6 +38,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-scroll";
 import Animation from "../../Animation";
+import LazyLoad from "../../LazyLoad";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -305,9 +306,10 @@ const NSTPGallery = () => {
           onClick={() => setSelectedImage(image)}
         >
           <div className="w-full h-full">
-            <img
-              src={image.src}
-              alt={image.alt}
+            
+            <LazyLoad
+              imageSrc={image.src}
+              imageAlt={image.alt}
               className="w-full h-56 object-cover"
             />
           </div>
@@ -327,9 +329,10 @@ const NSTPGallery = () => {
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-4xl w-full">
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
+          
+            <LazyLoad
+              imageSrc={selectedImage.src}
+              imageAlt={selectedImage.alt}
               className="w-full h-auto rounded-lg"
             />
             <button
@@ -633,9 +636,10 @@ const CompanyInfoPage = () => {
       <div className="my-10 md:my-4 lg:my-8 pt-4 md:pt-10">
         <div className="relative w-full flex justify-center">
           <div className="relative w-full h-[31rem] overflow-hidden">
-            <img
-              src={companies}
-              alt="Company Spaces"
+           
+            <LazyLoad
+              imageSrc={companies}
+              imageAlt="Company Spaces"
               className="absolute inset-0 w-full h-full object-cover brightness-50"
             />
 
@@ -686,9 +690,10 @@ const CompanyInfoPage = () => {
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
               {/* Left side - Image */}
               <div className="w-full md:w-[540px] lg:w-[670px]">
-                <img
-                  src={Image2}
-                  alt="Program Overview"
+               
+                <LazyLoad
+                  imageSrc={Image2}
+                  imageAlt="Program Overview"
                   className="w-full h-full rounded-md "
                 />
               </div>

@@ -110,7 +110,7 @@ const Navbar = () => {
                   onMouseLeave={() => setIsMenuOpenAbout(false)}
                 >
                   <Link
-                    className={`cursor-pointer ${
+                    className={`cursor-pointer text-white ${
                       activeLink === "/about" ||
                       activeLink === "https://nust.edu.pk/about-us/"
                         ? "text-primary"
@@ -122,7 +122,7 @@ const Navbar = () => {
                   <div className="absolute hidden group-hover:block top-full left-0 bg-black border border-gray-700 rounded-lg py-1 min-w-[130px] z-50">
                     <Link
                       
-                      className="block px-4 py-2 hover:bg-gray-800 cursor-pointer hover:text-primary"
+                      className="block px-4 py-2 hover:bg-gray-800 cursor-pointer text-white hover:text-primary"
                       // onClick={() => handleClick("/about")}
                       to={"/about"}
                     >
@@ -130,7 +130,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       target="_blank"
-                      className="block px-4 py-2 hover:bg-gray-800 cursor-pointer hover:text-primary"
+                      className="block px-4 py-2 hover:bg-gray-800 cursor-pointer text-white hover:text-primary"
                       // onClick={() => handleClick("https://nust.edu.pk/about-us/")}
                       to="https://nust.edu.pk/about-us/"
                     >
@@ -273,20 +273,20 @@ const Navbar = () => {
             HOME
           </a> */}
           <div
-            className="relative group"
+            className="relative group "
             onMouseEnter={() => setIsMenuOpenAbout(true)}
             onMouseLeave={() => setIsMenuOpenAbout(false)}
           >
             <Link
               to="/about"
-              className={`flex items-center space-x-1 px-3 py-2 rounded-md transition-colors duration-200 cursor-pointer ${
+              className={`flex items-center space-x-1 px-3 py-2 !text-[#fff] !dark:text-[#fff] rounded-md transition-colors duration-200 cursor-pointer ${
                 activeLink === "/about" ||
                 activeLink === "https://nust.edu.pk/about-us/"
                   ? "text-primary"
                   : "hover:text-primary"
               }`}
             >
-              <span>ABOUT</span>
+             <span className="!text-[#fff] !dark:text-[#fff]">ABOUT</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
                   isMenuOpenAbout ? "rotate-180" : ""
@@ -305,14 +305,14 @@ const Navbar = () => {
                   <Link
                     to="/about"
                   
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200"
+                    className="block px-4 py-2 text-sm !text-[#fff] !dark:text-[#fff] hover:bg-gray-800 hover:text-primary transition-colors duration-200"
                   >
                     NSTP
                   </Link>
                   <Link
                     to="https://nust.edu.pk/about-us/"
                     target="_blank"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200"
+                    className="block px-4 py-2 text-sm !text-[#fff] !dark:text-[#fff] hover:bg-gray-800 hover:text-primary transition-colors duration-200"
                   >
                     NUST
                   </Link>
@@ -373,13 +373,13 @@ const Navbar = () => {
             onMouseLeave={() => setIsMenuOpenTeam(false)}
           >
             <Link
-              className={`flex items-center space-x-1 px-3 py-2 rounded-md transition-colors duration-200 cursor-pointer ${
+              className={`flex items-center space-x-1 px-3 py-2 !text-[#fff] !dark:text-[#fff] rounded-md transition-colors duration-200 cursor-pointer ${
                 activeLink === "/mentors" || activeLink === "/team"
                   ? "text-primary"
                   : "hover:text-primary"
               }`}
             >
-              <span>OUR TEAM</span>
+              <span className="!text-[#fff] !dark:text-[#fff]">OUR TEAM</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
                   isMenuOpenTeam ? "rotate-180" : ""
@@ -397,14 +397,14 @@ const Navbar = () => {
                 >
                   <Link
                     to="/mentors"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200 cursor-pointer"
+                    className="block px-4 py-2 text-sm !text-[#fff] !dark:text-[#fff] hover:bg-gray-800 hover:text-primary transition-colors duration-200 cursor-pointer"
                     onClick={() => handleClick("/mentors")}
                   >
                     MENTORS
                   </Link>
                   <Link
                     to="/team"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors duration-200 cursor-pointer"
+                    className="block px-4 py-2 text-sm !text-[#fff] !dark:text-[#fff] hover:bg-gray-800 hover:text-primary transition-colors duration-200 cursor-pointer"
                     onClick={() => handleClick("/team")}
                   >
                     NSTP TEAM

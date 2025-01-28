@@ -34,7 +34,7 @@ const Footer = () => {
                 <li className="mb-4">
                   <div className="hover:text-green-500 text-white flex gap-2 items-center cursor-pointer">
                     <TbWorldWww />
-                    <a href={`https://${contactInfo.website}`}>
+                    <a className="!text-[#fff] !dark:text-[#fff]" href={`https://${contactInfo.website}`}>
                       {contactInfo.website}
                     </a>
                   </div>
@@ -72,7 +72,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2024{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="https://flowbite.com/" className="hover:underline !text-[#fff] !dark:text-[#fff]">
               NSTP
             </a>
             . All Rights Reserved.

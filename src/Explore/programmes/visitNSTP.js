@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-scroll";
 import Animation from "../../Animation";
+import LazyLoad from "../../LazyLoad";
 
 const VisitSections = () => {
   const targetAudiences = [
@@ -184,6 +185,11 @@ const VisitNSTP = () => {
               alt="NSTP Campus"
               className="absolute inset-0 w-full h-full object-cover brightness-50"
             />
+            <LazyLoad
+              imageSrc={Image4}
+              imageAlt="NSTP Campus"
+              className="absolute inset-0 w-full h-full object-cover brightness-50"
+            />
             <div className="absolute inset-0 bg-black/20 rounded-xl" />
             <div className="absolute inset-0 text-white p-6">
               <p className="text-primary flex items-center gap-2">
@@ -202,8 +208,8 @@ const VisitNSTP = () => {
                 </span>
                 <HiArrowSmRight /> Visit NSTP
               </p>
-              <Animation>
-                <div className="text-xl lg:text-3xl h-full flex flex-col  text-center  items-center justify-center  font-extrabold leading-none tracking-tight">
+              <Animation className="h-full">
+                <h1 className="text-xl lg:text-3xl h-full flex flex-col  text-center  items-center justify-center  font-extrabold leading-none tracking-tight">
                   <span
                     className="text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-4xl block"
                     style={{
@@ -217,7 +223,7 @@ const VisitNSTP = () => {
                     ECOSYSTEM OF NUST
                     <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3 bg-primary ml-1 rounded-full align-baseline"></span>
                   </span>
-                </div>
+                </h1>
               </Animation>
             </div>
           </div>
@@ -229,11 +235,12 @@ const VisitNSTP = () => {
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6 ">
               {/* Left side - Image */}
               <div className="w-full md:w-[540px] lg:w-[670px]">
-                <img
-                  src={Image2}
-                  alt="Program Overview"
-                  className="w-full h-full rounded-md "
-                />
+               
+                <LazyLoad
+                imageSrc={Image2}
+                imageAlt="Program Overview"
+                className="w-full h-full rounded-md "
+              />
               </div>
 
               {/* Right side - Content */}

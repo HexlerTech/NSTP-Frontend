@@ -8,6 +8,7 @@ import News5 from "../../Assets/news/sez.jpg";
 import News6 from "../../Assets/news/federal.jpg";
 import { Link } from "react-router-dom";
 import Animation from "../../Animation";
+import LazyLoad from "../../LazyLoad";
 
 const News = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -145,11 +146,16 @@ const News = () => {
                   >
                     <div className="relative group cursor-pointer">
                       <div className="relative h-64 overflow-hidden rounded-lg">
-                        <img
+                        {/* <img
                           src={article.image}
                           alt={article.title}
                           className="w-full h-full object-cover"
-                        />
+                        /> */}
+                        <LazyLoad
+                        imageSrc={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover"
+                      />
                         <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity group-hover:bg-opacity-50">
                           <div className="absolute top-4 left-4">
                             <p className="text-gray-200">{article.date}</p>

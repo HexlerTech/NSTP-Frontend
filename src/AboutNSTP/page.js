@@ -265,6 +265,12 @@ const AboutNSTP = () => {
       wrapperClassName="absolute inset-0"
       className="w-full h-full object-cover"
     />
+    {/* <LazyLoad
+      imageSrc={Image1}
+      imageAlt="Background Image 1"
+      wrapperClassName="absolute inset-0"
+      className="w-full h-full object-cover"
+    /> */}
     <div className="absolute inset-0 bg-black bg-opacity-20"></div>
   </div>
   
@@ -356,9 +362,10 @@ const AboutNSTP = () => {
             className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh] overflow-hidden rounded-lg"
             style={{ scale, opacity }}
           >
-            <img
-              src={image2}
-              alt="about"
+            
+            <LazyLoad 
+              imageSrc={image2}
+              imageAlt="About Image"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -428,9 +435,10 @@ const AboutNSTP = () => {
       <section className="w-full  mx-auto p-6 md:p-12  lg:p-24  bg-gray-50">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="hidden md:flex items-center justify-center">
-            <img
-              src={WhyNSTP}
-              alt="why choose us image"
+          
+            <LazyLoad 
+              imageSrc={WhyNSTP}
+              imageAlt="why choose us image"
               className="w-2/4 md:w-[80%] rounded-lg shadow-lg"
             />
           </div>
@@ -484,7 +492,7 @@ const AboutNSTP = () => {
             <Link
               target="_blank"
               to="/explore"
-              className="bg-black flex gap-3 items-center mx-auto md:mx-0 justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+              className="bg-black flex gap-3 items-center mx-auto md:mx-0 justify-center !text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
             >
               Join NSTP
               <HiArrowSmRight className="text-lg md:text-2xl" />
@@ -686,7 +694,7 @@ const AboutNSTP = () => {
               <Link
                 target="_blank"
                 to="/contact"
-                className="bg-primary flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-black hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+                className="bg-primary flex gap-3 items-center justify-center !text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-black hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 mr-2" />
@@ -694,7 +702,7 @@ const AboutNSTP = () => {
               <Link
                 target="_blank"
                 to="/explore/visit"
-                className="bg-black flex gap-3 items-center justify-center text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
+                className="bg-black flex gap-3 items-center justify-center !text-white px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-semibold transform hover:bg-primary hover:scale-105 transition-transform  duration-300 ease-in-out w-fit"
               >
                 Visit Campus
                 <MapPin className="text-lg md:text-2xl" />

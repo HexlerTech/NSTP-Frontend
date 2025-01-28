@@ -29,6 +29,7 @@ import Brochure from "../../Assets/exploreNSTP/Hatch 8 Booklet.pdf";
 
 import Image2 from "../../Assets/exploreNSTP/nstpimage2.jpg";
 import Animation from "../../Animation";
+import LazyLoad from "../../LazyLoad";
 
 const EligibilitySection = () => {
   const criteria = [
@@ -479,9 +480,10 @@ const Hatch = () => {
           {/* Image container with opacity */}
           <div className="relative w-full h-[31rem]  overflow-hidden">
             {/* Background image with overlay */}
-            <img
-              src={hatch}
-              alt="Hatch 8"
+            
+            <LazyLoad
+              imageSrc={hatch}
+              imageAlt="Hatch 8"
               className="absolute inset-0 w-full h-full object-cover  brightness-50"
             />
 
@@ -534,10 +536,11 @@ const Hatch = () => {
             <div className="flex flex-col-reverse md:flex-row items-center  gap-10 lg:gap-6">
               {/* Left side - Image */}
               <div className="w-full md:w-[540px] lg:w-[670px]">
-                <img
-                  src={Image2}
-                  alt="Program Overview"
-                  className="w-full h-full rounded-md "
+                
+                <LazyLoad 
+                imageSrc={Image2}
+                imageAlt="Program Overview"
+                className="w-full h-full rounded-md "
                 />
               </div>
 
