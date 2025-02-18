@@ -1,28 +1,18 @@
 import React from "react";
 
-import avionicsSolution from "../../../Assets/companieslogos/avionics solutions.png";
-import craft from "../../../Assets/companieslogos/craft.png";
-import databi from "../../../Assets/companieslogos/databi.png";
-import GISPLUS from "../../../Assets/companieslogos/GISPLUS.png";
-import hato from "../../../Assets/companieslogos/hato.webp";
-import HEXLER from "../../../Assets/companieslogos/HEXLER.png";
-import ilm from "../../../Assets/companieslogos/ilm.png";
-import zambeel from "../../../Assets/companieslogos/zambeel.png";
-import truid from "../../../Assets/companieslogos/truid_logo_main.png";
-import zytrics from "../../../Assets/companieslogos/zytrics.png";
 import LazyLoad from "../../../LazyLoad";
 const CompanyLogo = ({ titleHollow, titleFilled, description }) => {
   const logos = [
-    { name: "Avionics Solution", src: avionicsSolution },
-    { name: "Craft", src: craft },
-    { name: "Data Bi", src: databi },
-    { name: "GIS Plus", src: GISPLUS },
-    { name: "Hato Argicultural Lighting", src: hato },
-    { name: "Hexler Tech", src: HEXLER },
-    { name: "ILM International Learning Machine", src: ilm },
-    { name: "Zambeel", src: zambeel },
-    { name: "Trust ID", src: truid },
-    { name: "Zaytrics Innovation Starts Here", src: zytrics },
+    { name: "Avionics Solution", src: "/images/companieslogos/avionics solutions.png" },
+    { name: "Craft", src: "/images/companieslogos/craft.png" },
+    { name: "Data Bi", src: "/images/companieslogos/databi.png" },
+    { name: "GIS Plus", src: "/images/companieslogos/GISPLUS.png" },
+    { name: "Hato Argicultural Lighting", src: "/images/companieslogos/hato.webp" },
+    { name: "Hexler Tech", src: "/images/companieslogos/HEXLER.png" },
+    { name: "ILM International Learning Machine", src: "/images/companieslogos/ilm.png" },
+    { name: "Zambeel", src: "/images/companieslogos/zambeel.png" },
+    { name: "Trust ID", src: "/images/companieslogos/truid_logo_main.png" },
+    { name: "Zaytrics Innovation Starts Here", src: "/images/companieslogos/zytrics.png" },
     // { name: 'Hawkins', src: '/api/placeholder/200/100' },
     // { name: 'Grant Thornton', src: '/api/placeholder/200/100' }
   ];

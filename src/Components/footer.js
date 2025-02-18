@@ -1,5 +1,4 @@
 import React from "react";
-import nstplogo from "../Assets/nstp.png";
 import { TbWorldWww } from "react-icons/tb";
 import { MdEmail } from "react-icons/md";
 import { BiPhone } from "react-icons/bi";
@@ -21,7 +20,7 @@ const Footer = () => {
         <div className="md:flex md:justify-between ">
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 sm:gap-5">
             <div className="flex flex-col items-center lg:items-start">
-              <img src={nstplogo} alt="nstp" className="w-12 mb-2 lg:me-2" />
+              <img src="/images/nstp.png" alt="nstp" className="w-12 mb-2 lg:me-2" />
               <h1 className="text-2xl text-center lg:text-left font-bold text-white">
                 NSTP
               </h1>

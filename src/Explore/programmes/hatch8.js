@@ -17,17 +17,12 @@ import {
 } from "lucide-react";
 import {} from "lucide-react";
 import { Hatch8 } from "../../TenancyForm/page";
-import hatch from "../../Assets/exploreNSTP/hatch8image.jpg";
 import CompanyLogo from "./CompanyLogos/companyLogo";
-import Image6 from "../../Assets/exploreNSTP/hatch8.png";
 import Footer from "../../Components/footer";
 import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 import TimeLine from "./Hatch8Components/timeline";
-import Brochure from "../../Assets/exploreNSTP/Hatch 8 Booklet.pdf";
-
-import Image2 from "../../Assets/exploreNSTP/nstpimage2.jpg";
 import Animation from "../../Animation";
 import LazyLoad from "../../LazyLoad";
 
@@ -399,44 +394,7 @@ const CarouselSection = ({ items }) => {
   );
 };
 
-const FacultyAndTeams = () => {
-  const mentors = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "AI Research Lead",
-      description:
-        "Leading expert in artificial intelligence with 15+ years of experience in machine learning and neural networks.",
-      image: Image6,
-    },
-    {
-      name: "Michael Chen",
-      role: "Tech Entrepreneur",
-      description:
-        "Serial entrepreneur who has successfully founded and scaled multiple tech startups in Asia and Silicon Valley.",
-      image: Image6,
-    },
-    {
-      name: "Dr. Aisha Rahman",
-      role: "Innovation Director",
-      description:
-        "Specializes in bridging academic research with commercial applications in biotechnology and healthcare.",
-      image: Image6,
-    },
-    {
-      name: "James Wilson",
-      role: "Investment Advisor",
-      description:
-        "Venture capital expert with a portfolio of successful tech investments across emerging markets.",
-      image: Image6,
-    },
-  ];
 
-  return (
-    <div className="space-y-16">
-      <CarouselSection items={mentors} />
-    </div>
-  );
-};
 const Hatch = () => {
   const [showForm, setShowForm] = useState(false);
 
@@ -453,7 +411,7 @@ const Hatch = () => {
       try {
         // Create a link element
         const link = document.createElement("a");
-        link.href = Brochure; // Using the imported Brochure path
+        link.href = "/images/exploreNSTP/Hatch 8 Booklet.pdf"; // Using the imported Brochure path
         link.download = "NSTP-Hatch8-Brochure.pdf";
         document.body.appendChild(link);
         link.click();
@@ -482,7 +440,7 @@ const Hatch = () => {
             {/* Background image with overlay */}
             
             <LazyLoad
-              imageSrc={hatch}
+              imageSrc="/images/exploreNSTP/hatch8image.jpg"
               imageAlt="Hatch 8"
               className="absolute inset-0 w-full h-full object-cover  brightness-50"
             />
@@ -538,7 +496,7 @@ const Hatch = () => {
               <div className="w-full md:w-[540px] lg:w-[670px]">
                 
                 <LazyLoad 
-                imageSrc={Image2}
+                imageSrc="/images/exploreNSTP/nstpimage2.jpg"
                 imageAlt="Program Overview"
                 className="w-full h-full rounded-md "
                 />

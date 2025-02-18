@@ -1,13 +1,4 @@
 import React from "react";
-import GoogleCloud from "../Assets/partners/google-cloud.png";
-import AWS from "../Assets/partners/aws.png";
-import NAMA from "../Assets/partners/nama.png";
-import IASP from "../Assets/partners/iasp.png";
-import NUST from "../Assets/partners/NUST.png";
-import PakLaunch from "../Assets/partners/paklaunch.png";
-import UBank from "../Assets/partners/U-Bank.png";
-import USEmbassy from "../Assets/partners/us-embassy.png";
-import ZaynVC from "../Assets/partners/zayn-vc.png";
 import Footer from "../Components/footer";
 import Animation from "../Animation";
 
@@ -15,55 +6,55 @@ const Partnerships = () => {
   const data = [
     {
       name: "NUST",
-      logo: NUST,
+      logo: "/images/partners/NUST.png",
       description:
         "National University of Sciences & Technology, one of Pakistan's premier institutions of science and technology education, driving research and innovation.",
     },
     {
       name: "Amazon Web Services (AWS)",
-      logo: AWS,
+      logo: "/images/partners/aws.png",
       description:
         "A comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Leading the cloud computing industry with innovative solutions.",
     },
     {
       name: "NAMA",
-      logo: NAMA,
+      logo: "/images/partners/nama.png",
       description:
         "NAMA Group is a leading organization in Pakistan focused on innovation and technological advancement, providing diverse solutions and services across multiple sectors.",
     },
     {
       name: "IASP",
-      logo: IASP,
+      logo: "/images/partners/iasp.png",
       description:
         "International Association of Science Parks and Areas of Innovation, connecting science parks worldwide and fostering innovation ecosystems globally.",
     },
     {
       name: "Google Cloud",
-      logo: GoogleCloud,
+      logo: "/images/partners/google-cloud.png",
       description:
         "A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products. Offering cutting-edge technology solutions for businesses of all sizes.",
     },
     {
       name: "PakLaunch",
-      logo: PakLaunch,
+      logo: "/images/partners/paklaunch.png",
       description:
         "A pioneering platform connecting Pakistani startups with investors and resources globally, fostering the growth of Pakistan's startup ecosystem.",
     },
     {
       name: "U Microfinance Bank",
-      logo: UBank,
+      logo: "/images/partners/U-Bank.png",
       description:
         "A leading microfinance institution in Pakistan, providing innovative financial solutions and supporting economic growth through accessible banking services.",
     },
     {
       name: "U.S. Embassy Islamabad",
-      logo: USEmbassy,
+      logo: "/images/partners/us-embassy.png",
       description:
         "The diplomatic mission of the United States in Pakistan, fostering bilateral relations and supporting collaborative initiatives in technology, education, and innovation.",
     },
     {
       name: "Zayn Capital Ventures",
-      logo: ZaynVC,
+      logo: "/images/partners/zayn-vc.png",
       description:
         "A venture capital firm investing in high-potential Pakistani startups, driving innovation and supporting the growth of technology-driven businesses in the region.",
     },

@@ -1,45 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import {
   motion,
   useScroll,
   useInView as useFramerInView, // Rename here
-  useAnimation,
+
   useTransform,
 } from "framer-motion";
 import AnimatedNumbers from "react-animated-numbers";
 import {
   ArrowRight,
-  MapPin,
-  Building2,
-  Users,
-  BookOpen,
+  MapPin, 
   CircuitBoard,
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
-import CountUp from "react-countup";
-import Image1 from "../Assets/img1.jpg";
-import Image2 from "../Assets/img2.jpg";
-import Image3 from "../Assets/img3.jpg";
-import Image4 from "../Assets/img4.jpg";
-import Image5 from "../Assets/img5.jpg";
-import Image6 from "../Assets/img6.jpg";
-import Image7 from "../Assets/img7.jpg";
-import Image8 from "../Assets/img8.jpg";
-
-import GoogleCloud from "../Assets/partners/google-cloud.png";
-import AWS from "../Assets/partners/aws.png";
-import NAMA from "../Assets/partners/nama.png";
-import IASP from "../Assets/partners/iasp.png";
-import NUST from "../Assets/partners/NUST.png";
-import PakLaunch from "../Assets/partners/paklaunch.png";
-import UBank from "../Assets/partners/U-Bank.png";
-import USEmbassy from "../Assets/partners/us-embassy.png";
-import ZaynVC from "../Assets/partners/zayn-vc.png";
-
-import image1 from "../Assets/about.jpg";
-// import image1 from "../Assets/Gallery/image1.svg";
-import image2 from "../Assets/Gallery/image13.svg";
-import WhyNSTP from "../Assets/about-us.svg";
 import Footer from "../Components/footer";
 import Partners from "../Home/Partners/partner";
 import { HiArrowSmRight } from "react-icons/hi";
@@ -92,61 +65,7 @@ const TimelineItem = ({ year, title, description, index, total }) => {
     </div>
   );
 };
-// const CountUp = ({ end, prefix = "", suffix = "" }) => {
-//   const [count, setCount] = useState(0);
-//   const nodeRef = useRef();
-//   const [isVisible, setIsVisible] = useState(false);
-//   const [hasAnimated, setHasAnimated] = useState(false);
 
-//   useEffect(() => {
-//     const hasAnimatedBefore = localStorage.getItem(`counter-${end}`);
-//     if (hasAnimatedBefore) {
-//       setCount(end);
-//       return;
-//     }
-
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting && !hasAnimated) {
-//           setIsVisible(true);
-//           setHasAnimated(true);
-//           localStorage.setItem(`counter-${end}`, "true");
-//         }
-//       },
-//       { threshold: 0.1 }
-//     );
-
-//     if (nodeRef.current) observer.observe(nodeRef.current);
-//     return () => observer.disconnect();
-//   }, [end, hasAnimated]);
-
-//   useEffect(() => {
-//     if (!isVisible) return;
-
-//     let startTime = null;
-//     const animate = (timestamp) => {
-//       if (!startTime) startTime = timestamp;
-//       const progress = (timestamp - startTime) / 2000;
-
-//       if (progress < 1) {
-//         setCount(Math.floor(end * progress));
-//         requestAnimationFrame(animate);
-//       } else {
-//         setCount(end);
-//       }
-//     };
-
-//     requestAnimationFrame(animate);
-//   }, [end, isVisible]);
-
-//   return (
-//     <div ref={nodeRef} className="text-4xl font-bold mb-2">
-//       {prefix}
-//       {count.toLocaleString()}
-//       {suffix}
-//     </div>
-//   );
-// };
 
 const AboutNSTP = () => {
   const sectionRef = useRef(null);
@@ -191,15 +110,15 @@ const AboutNSTP = () => {
     },
   ];
   const partners = [
-    { name: "NUST", logo: NUST },
-    { name: "Zayn VC", logo: ZaynVC },
-    { name: "Google Cloud", logo: GoogleCloud },
-    { name: "AWS", logo: AWS },
-    { name: "NAMA", logo: NAMA },
-    { name: "US Embassy", logo: USEmbassy },
-    { name: "U-Bank", logo: UBank },
-    { name: "PakLaunch", logo: PakLaunch },
-    { name: "IASP", logo: IASP },
+    { name: "NUST", logo: "/images/partners/nust.png" },
+    { name: "Zayn VC", logo: "/images/partners/zayn-vc.png" },
+    { name: "Google Cloud", logo: "/images/partners/google-cloud.png" },
+    { name: "AWS", logo: "/images/partners/aws.png" },
+    { name: "NAMA", logo: "/images/partners/nama.png" },
+    { name: "US Embassy", logo: "/images/partners/us-embassy.png" },
+    { name: "U-Bank", logo: "/images/partners/U-Bank.png" },
+    { name: "PakLaunch", logo: "/images/partners/paklaunch.png" },
+    { name: "IASP", logo:   "/images/partners/iasp.png" },
   ];
   const stats = [
     {
@@ -239,28 +158,11 @@ const AboutNSTP = () => {
     <div className="bg-gray-200 min-h-screen w-full relative mt-12 sm:mt-0">
       {/* hero section  */}
       <section className="relative h-[30vh] sm:h-screen">
-        {/* <div className="grid grid-cols-4 absolute top-0 left-0 w-full h-full">
-          <div
-            style={{ backgroundImage: `url(${Image1})` }}
-            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
-          ></div>
-          <div
-            style={{ backgroundImage: `url(${Image7})` }}
-            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
-          ></div>
-          <div
-            style={{ backgroundImage: `url(${Image5})` }}
-            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
-          ></div>
-          <div
-            style={{ backgroundImage: `url(${Image3})` }}
-            className="bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-20"
-          ></div>
-        </div> */}
+        
         <div className="grid grid-cols-4 absolute top-0 left-0 w-full h-full">
   <div className="relative">
     <LazyLoad
-      imageSrc={Image1}
+      imageSrc="/images/img1.jpg"
       imageAlt="Background Image 1"
       wrapperClassName="absolute inset-0"
       className="w-full h-full object-cover"
@@ -276,8 +178,8 @@ const AboutNSTP = () => {
   
   <div className="relative">
     <LazyLoad
-      imageSrc={Image7}
-      imageAlt="Background Image 2"
+      imageSrc="/images/img7.jpg"
+      imageAlt="Background Image 7"
       wrapperClassName="absolute inset-0"
       className="w-full h-full object-cover"
     />
@@ -286,18 +188,18 @@ const AboutNSTP = () => {
   
   <div className="relative">
     <LazyLoad
-      imageSrc={Image5}
+      imageSrc="/images/img5.jpg"
+      imageAlt="Background Image 5"
+      wrapperClassName="absolute inset-0"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+  </div>
+  
+  <div className="relative">
+    <LazyLoad
+      imageSrc="/images/img3.jpg"
       imageAlt="Background Image 3"
-      wrapperClassName="absolute inset-0"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-  </div>
-  
-  <div className="relative">
-    <LazyLoad
-      imageSrc={Image3}
-      imageAlt="Background Image 4"
       wrapperClassName="absolute inset-0"
       className="w-full h-full object-cover"
     />
@@ -364,7 +266,7 @@ const AboutNSTP = () => {
           >
             
             <LazyLoad 
-              imageSrc={image2}
+              imageSrc="/images/Gallery/image13.svg"
               imageAlt="About Image"
               className="w-full h-full object-cover"
             />
@@ -437,7 +339,7 @@ const AboutNSTP = () => {
           <div className="hidden md:flex items-center justify-center">
           
             <LazyLoad 
-              imageSrc={WhyNSTP}
+              imageSrc="/images/about-us.svg"
               imageAlt="why choose us image"
               className="w-2/4 md:w-[80%] rounded-lg shadow-lg"
             />
@@ -502,41 +404,6 @@ const AboutNSTP = () => {
         </div>
       </section>
 
-      {/* number values  */}
-      {/* <section className="bg-gray-50 p-6 md:p-12  lg:p-24">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-xl lg:text-3xl mb-8 flex-wrap md:mb-14 px-6 md:px-12  lg:px-24 pt-6 md:pt-12  lg:pt-24   flex items-center justify-center gap-2 md:gap-4 font-extrabold leading-none tracking-tight">
-            <span
-              className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
-              style={{
-                WebkitTextStroke: "1px #000000",
-                textStroke: "1px #000000",
-              }}
-            >
-              ECONOMIC
-            </span>{" "}
-            <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
-              CONTRIBUTION
-              <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
-            </span>
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-white rounded-lg shadow-sm"
-              >
-                <CountUp
-                  end={stat.value}
-                  prefix={stat.prefix}
-                  suffix={stat.suffix}
-                />
-                <p className="text-gray-600 font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
       
       <section className="bg-white p-6 md:p-12  lg:p-24 ">
       

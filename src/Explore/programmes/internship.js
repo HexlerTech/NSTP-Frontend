@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import { HiArrowSmRight } from "react-icons/hi";
-import { FaRegCircleDot } from "react-icons/fa6";
-import internship from "../../Assets/exploreNSTP/hatch8.png";
-import Image1 from "../../Assets/exploreNSTP/internshipProgram2.png";
-import Image2 from "../../Assets/exploreNSTP/nstpimage2.jpg";
 // import {  BookOpen } from 'lucide-react';
 import {
   Users2,
@@ -395,7 +391,7 @@ const InternshipProgram = () => {
           <div className="relative w-full h-[31rem] overflow-hidden">
             
             <LazyLoad
-              imageSrc={Image1}
+              imageSrc="/images/exploreNSTP/internshipProgram2.png"
               imageAlt="Internship Program"
               className="absolute inset-0 w-full h-full object-cover brightness-50"
             />
@@ -447,7 +443,7 @@ const InternshipProgram = () => {
                 <div className="w-full md:w-[540px] lg:w-[670px] ">
                  
                   <LazyLoad 
-                    imageSrc={Image2}
+                    imageSrc="/images/exploreNSTP/nstpimage2.jpg"
                     imageAlt="Program Overview"
                     className="w-full h-full rounded-md "
                   />

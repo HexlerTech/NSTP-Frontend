@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import avionicsSolution from "../../Assets/companieslogos/avionics solutions.png";
-import craft from "../../Assets/companieslogos/craft.png";
-import databi from "../../Assets/companieslogos/databi.png";
-import GISPLUS from "../../Assets/companieslogos/GISPLUS.png";
-import hato from "../../Assets/companieslogos/hato.webp";
-import HEXLER from "../../Assets/companieslogos/HEXLER.png";
-import ilm from '../../Assets/companieslogos/ilm.png';
-import zambeel from '../../Assets/companieslogos/zambeel.png';
-import truid from '../../Assets/companieslogos/truid_logo_main.png';
-import zytrics from '../../Assets/companieslogos/zytrics.png';
+
 import Animation from '../../Animation';
 
 
@@ -18,16 +9,16 @@ const Companies = () => {
 
   // Using your company data
   const companyNames = [
-    { name: "Avionics Solution", logo: avionicsSolution },
-    { name: "Craft", logo: craft },
-    { name: "Databi", logo: databi },
-    { name: "GISPLUS", logo: GISPLUS },
-    { name: "Hato", logo: hato },
-    { name: "HEXLER", logo: HEXLER },
-    { name: "ILM", logo: ilm },
-    { name: "Zambeel", logo: zambeel },
-    { name: "Truid", logo: truid },
-    { name: "Zaytrics", logo: zytrics }
+    { name: "Avionics Solution", logo: "/images/companieslogos/avionics solutions.png" },
+    { name: "Craft", logo: "/images/companieslogos/craft.png" },
+    { name: "Databi", logo: "/images/companieslogos/databi.png" },
+    { name: "GISPLUS", logo: "/images/companieslogos/GISPLUS.png" },
+    { name: "Hato", logo: "/images/companieslogos/hato.webp" },
+    { name: "HEXLER", logo: "/images/companieslogos/HEXLER.png" },
+    { name: "ILM", logo: "/images/companieslogos/ilm.png" },
+    { name: "Zambeel", logo: "/images/companieslogos/zambeel.png" },
+    { name: "Truid", logo: "/images/companieslogos/truid_logo_main.png" },
+    { name: "Zaytrics", logo: "/images/companieslogos/zytrics.png" }
   ];
 
 

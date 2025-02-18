@@ -1,12 +1,8 @@
-import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useState } from "react";
 import { HiArrowSmRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/footer";
 import { VisitNSTPForm } from "../../TenancyForm/page";
-import Image4 from "../../Assets/exploreNSTP/nstpimage4.jpg";
-
-import Image2 from "../../Assets/exploreNSTP/nstpimage2.jpg";
 import {
   Building2,
   Users2,
@@ -180,13 +176,9 @@ const VisitNSTP = () => {
       <div className="my-10 md:my-4 lg:my-8 pt-4 md:pt-10">
         <div className="relative w-full flex justify-center">
           <div className="relative w-full h-[31rem] overflow-hidden">
-            <img
-              src={Image4}
-              alt="NSTP Campus"
-              className="absolute inset-0 w-full h-full object-cover brightness-50"
-            />
+            
             <LazyLoad
-              imageSrc={Image4}
+              imageSrc="/images/exploreNSTP/nstpimage4.jpg"
               imageAlt="NSTP Campus"
               className="absolute inset-0 w-full h-full object-cover brightness-50"
             />
@@ -237,7 +229,7 @@ const VisitNSTP = () => {
               <div className="w-full md:w-[540px] lg:w-[670px]">
                
                 <LazyLoad
-                imageSrc={Image2}
+                imageSrc="/images/exploreNSTP/nstpimage2.jpg"
                 imageAlt="Program Overview"
                 className="w-full h-full rounded-md "
               />

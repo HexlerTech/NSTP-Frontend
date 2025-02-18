@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import pitchus from "../../Assets/preview.png";
 import {
   Building2,
   Flask,
@@ -225,7 +224,7 @@ const Highlight = () => {
               </span>
             </div>
             <img
-              src={pitchus}
+              src="/images/preview.png"
               alt="Pitch Us Circle"
               className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
             />

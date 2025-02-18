@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
-import nstplogowhite from "../Assets/nstplogowhite.png";
-import hatch8 from "../Assets/hatch8.png";
-import cube8 from "../Assets/cube8.png";
-import excelerate from "../Assets/excelerate.png";
+
 
 const sectors = [
   "AgriTech",
@@ -4605,18 +4602,18 @@ const Excelerate = () => {
 const TenancyForm = () => {
   const options = [
     {
-      image: nstplogowhite,
+      image: "/images/nstplogowhite.png",
       name: "Company",
     },
     {
-      image: cube8,
+      image: "/images/cube8.png",
       name: "Cube-8 Incubation",
     },
     {
-      image: hatch8,
+      image: "/images/hatch8.png",
       name: "Hatch-8 Programme",
     },
-    { image: excelerate, name: "Excelerate" },
+    { image: "/images/excelerate.png", name: "Excelerate" },
   ];
   const [activeOption, setActiveOption] = useState("Company");
   return (

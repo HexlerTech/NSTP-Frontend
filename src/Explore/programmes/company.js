@@ -4,15 +4,6 @@ import { FaRegCircleDot } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/footer";
 import { CompanyForm } from "../../TenancyForm/page";
-import companies from "../../Assets/exploreNSTP/visitNSTP.jpg";
-import Image1 from "../../Assets/exploreNSTP/nstpimage1.jpg";
-import Image2 from "../../Assets/exploreNSTP/nstpimage2.jpg";
-import Image3 from "../../Assets/exploreNSTP/nstpimage3.jpg";
-import Image4 from "../../Assets/exploreNSTP/nstpimage4.jpg";
-import Image5 from "../../Assets/exploreNSTP/nstpimage5.jpg";
-import Image6 from "../../Assets/exploreNSTP/nstpimage6.jpg";
-
-import Image7 from "../../Assets/exploreNSTP/hatch8.png";
 
 import {
   Camera,
@@ -240,37 +231,37 @@ const NSTPGallery = () => {
   const images = [
     {
       id: 1,
-      src: Image1,
+      src: "/images/exploreNSTP/nstpimage1.jpg",
       alt: "NSTP Building Exteriors",
       title: "Modern Office Facilities",
     },
     {
       id: 2,
-      src: Image2,
+      src: "/images/exploreNSTP/nstpimage2.jpg",
       alt: "NSTP Interior",
       title: "Collaborative Workspace",
     },
     {
       id: 3,
-      src: Image3,
+      src: "/images/exploreNSTP/nstpimage3.jpg",
       alt: "NSTP Conference Room",
       title: "Meeting Spaces",
     },
     {
       id: 4,
-      src: Image4,
+      src: "/images/exploreNSTP/nstpimage4.jpg",
       alt: "NSTP Innovation Lab",
       title: "Innovation Hub",
     },
     {
       id: 5,
-      src: Image5,
+      src: "/images/exploreNSTP/nstpimage5.jpg",
       alt: "NSTP Campus",
       title: "Campus View",
     },
     {
       id: 6,
-      src: Image6,
+      src: "/images/exploreNSTP/nstpimage6.jpg",
       alt: "NSTP Events Space",
       title: "Event Facilities",
     },
@@ -638,7 +629,7 @@ const CompanyInfoPage = () => {
           <div className="relative w-full h-[31rem] overflow-hidden">
            
             <LazyLoad
-              imageSrc={companies}
+              imageSrc="/images/exploreNSTP/visitNSTP.jpg"
               imageAlt="Company Spaces"
               className="absolute inset-0 w-full h-full object-cover brightness-50"
             />
@@ -692,7 +683,7 @@ const CompanyInfoPage = () => {
               <div className="w-full md:w-[540px] lg:w-[670px]">
                
                 <LazyLoad
-                  imageSrc={Image2}
+                  imageSrc="/images/exploreNSTP/nstpimage2.jpg"
                   imageAlt="Program Overview"
                   className="w-full h-full rounded-md "
                 />

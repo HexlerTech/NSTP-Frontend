@@ -1,10 +1,4 @@
 import React from "react";
-import nstplogo from "../../Assets/nstp.png";
-import { TbWorldWww } from "react-icons/tb";
-import { MdEmail } from "react-icons/md";
-import { BiPhone } from "react-icons/bi";
-import { FaFax } from "react-icons/fa";
-import { BiLocationPlus } from "react-icons/bi";
 
 import {
   BookOpen,

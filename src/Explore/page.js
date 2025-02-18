@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from "react";
-import internship from "../Assets/exploreNSTP/internshipProgram.JPG";
-import hatch8 from "../Assets/exploreNSTP/hatch8.jpg";
-import cube8 from "../Assets/exploreNSTP/cube8.jpg";
-import companyOffice from "../Assets/exploreNSTP/companyOffice.jpg";
-import explore from "../Assets/explore.png";
-import VisitNSTP from "../Assets/exploreNSTP/visitNSTP.jpg";
-import { HiArrowRight } from "react-icons/hi";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import "./explore.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import LazyLoad from "../LazyLoad";
 
@@ -84,14 +76,14 @@ const Students = () => (
       <Card
         title="Internship Program"
         description="Join our comprehensive 6-month internship program designed for final-year students. Work on real projects, learn from industry experts, and build your professional network."
-        imageSrc={internship}
+        imageSrc="/images/exploreNSTP/internshipProgram.JPG"
         imageAlt="Internship Program"
         link="/explore/internship"
       />
       <Card
         title="Hatch 8 Incubation"
         description="Transform your innovative ideas into successful ventures with our startup incubation program. Access mentorship, workspace, and resources to build your startup."
-        imageSrc={hatch8}
+        imageSrc="/images/exploreNSTP/hatch8.jpg"
         imageAlt="Hatch 8"
         link="/explore/hatch"
       />
@@ -113,7 +105,7 @@ const EducationalInstitutes = () => (
     <Card
       title="Visit NSTP"
       description="Experience our world-class facilities firsthand. Our campus tours showcase state-of-the-art research labs, innovation centers, and learning spaces designed to foster technical education and career development."
-      imageSrc={VisitNSTP}
+      imageSrc="/images/exploreNSTP/visitNSTP.jpg"
       imageAlt="Visit NSTP"
       link="/explore/visit"
     />
@@ -135,14 +127,14 @@ const Startup = () => (
       <Card
         title="Hatch 8 Incubation"
         description="Perfect for early-stage startups, our incubation program provides mentorship, workspace, and essential resources to help validate and grow your business idea."
-        imageSrc={hatch8}
+        imageSrc="/images/exploreNSTP/hatch8.jpg"
         imageAlt="Hatch 8"
         link="/explore/hatch"
       />
       <Card
         title="Cube 8 Accelerator"
         description="Designed for growth-stage startups, our accelerator program offers advanced resources, strategic partnerships, and scaling opportunities to take your business to the next level."
-        imageSrc={cube8}
+        imageSrc="/images/exploreNSTP/cube8.jpg"
         imageAlt="Cube 8"
         link="/explore/cube"
       />
@@ -164,7 +156,7 @@ const Company = () => (
     <Card
       title="Corporate Solutions"
       description="Access premium office spaces, R&D labs, and innovation centers backed by comprehensive business support services. Leverage our strategic location and educational partnerships to drive your regional growth."
-      imageSrc={companyOffice}
+      imageSrc="/images/exploreNSTP/companyOffice.jpg"
       imageAlt="Company Office"
       link="/explore/company"
     />

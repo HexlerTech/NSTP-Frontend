@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Globe, ChevronRight } from "lucide-react";
 import data from "./data";
-import hexlerLogo from "../Assets/Hexler Logo.png";
-import Image2 from "../Assets/exploreNSTP/nstpimage2.jpg";
 import Footer from "../Components/footer";
 import Animation from "../Animation";
 
@@ -36,7 +34,7 @@ const Tenants = () => {
       <div
         className="fixed inset-0"
         style={{
-          backgroundImage: `url(${Image2})`,
+          backgroundImage: `url("/images/exploreNSTP/nstpimage2.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -185,7 +183,7 @@ const Tenants = () => {
                     <div className="flex items-center gap-4">
                       <div className="flex-shrink-0">
                         <img
-                          src={hexlerLogo}
+                          src="/images/Hexler Logo.png"
                           alt={tenant.name}
                           className="w-16 h-16 rounded-lg object-cover"
                         />

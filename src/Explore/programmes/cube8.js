@@ -18,24 +18,6 @@ import {
   TrendingUp, // Added import
 } from "lucide-react";
 import { Link } from "react-scroll";
-import { FaRegCircleDot } from "react-icons/fa6";
-import Image1 from "../../Assets/exploreNSTP/nstpimage1.jpg";
-import Image2 from "../../Assets/exploreNSTP/nstpimage2.jpg";
-import Image3 from "../../Assets/exploreNSTP/nstpimage3.jpg";
-import Image4 from "../../Assets/exploreNSTP/nstpimage4.jpg";
-import Image5 from "../../Assets/exploreNSTP/nstpimage5.jpg";
-import Image7 from "../../Assets/exploreNSTP/nstpimage6.jpg";
-
-import Image6 from "../../Assets/exploreNSTP/hatch8.png";
-import { MdPublic, MdRocketLaunch } from "react-icons/md";
-import {
-  FaChartLine,
-  FaHandshake,
-  FaDollarSign,
-  FaBusinessTime,
-} from "react-icons/fa";
-import { BsGraphUpArrow } from "react-icons/bs";
-import { RiGovernmentLine } from "react-icons/ri";
 import Footer from "../../Components/footer";
 import { Cube8Form } from "../../TenancyForm/page";
 import { useNavigate } from "react-router-dom";
@@ -44,140 +26,6 @@ import { HiArrowSmRight } from "react-icons/hi";
 import Animation from "../../Animation";
 import LazyLoad from "../../LazyLoad";
 
-const CarouselSection = ({ title, items }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const itemsPerPage = {
-    mobile: 1, // Show 1 item on mobile
-    desktop: 3, // Show 3 items on desktop
-  };
-
-  const getItemsPerPage = () => {
-    return window.innerWidth < 768 ? itemsPerPage.mobile : itemsPerPage.desktop;
-  };
-
-  const [itemsToShow, setItemsToShow] = useState(getItemsPerPage());
-
-  useEffect(() => {
-    const handleResize = () => {
-      setItemsToShow(getItemsPerPage());
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const totalPages = Math.ceil(items.length / itemsToShow);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalPages);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalPages) % totalPages);
-  };
-
-  const visibleItems = items.slice(
-    currentSlide * itemsToShow,
-    (currentSlide + 1) * itemsToShow
-  );
-
-  return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        {title}
-      </h2>
-      <div className="relative">
-        <div className="flex flex-col md:flex-row gap-8">
-          {visibleItems.map((item, index) => (
-            <div key={index} className="flex-1">
-              <div className="flex flex-col items-center p-4">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
-                  <img
-                    src={item.image || "/api/placeholder/128/128"}
-                    alt={item.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-center mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-primary font-medium mb-2">{item.role}</p>
-                <p className="text-gray-600 text-sm text-center max-w-md">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Navigation Buttons - Repositioned for mobile */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 z-10"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 z-10"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-
-        {/* Dots Navigation */}
-        <div className="flex justify-center gap-2 mt-8">
-          {Array.from({ length: totalPages }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                currentSlide === index ? "bg-primary w-6" : "bg-gray-300"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-// const FacultyAndTeams = () => {
-//   const teams = [
-//     {
-//       name: "TechForge Team",
-//       role: "Software Development",
-//       description:
-//         "Award-winning team developing cutting-edge solutions in cloud computing and artificial intelligence.",
-//       image: Image6,
-//     },
-//     {
-//       name: "BioInnovate Group",
-//       role: "Biotechnology Research",
-//       description:
-//         "Pioneering team working on breakthrough solutions in healthcare and sustainable biotechnology.",
-//       image: Image6,
-//     },
-//     {
-//       name: "FinTech Solutions",
-//       role: "Financial Technology",
-//       description:
-//         "Innovative team revolutionizing financial services through blockchain and AI technologies.",
-//       image: Image6,
-//     },
-//     {
-//       name: "GreenTech Initiative",
-//       role: "Sustainable Technology",
-//       description:
-//         "Dedicated team developing sustainable solutions for environmental challenges.",
-//       image: Image6,
-//     },
-//   ];
-
-//   return (
-//     <div className="space-y-16">
-//       <CarouselSection title="Featured Teams" items={teams} />
-//     </div>
-//   );
-// };
 
 const WhatWeOfferSection = () => {
   const offerings = [
@@ -340,32 +188,32 @@ const StartupAchievementsSection = () => {
     {
       title: "Global Market Expansion",
       description: "Access international markets and scale globally",
-      image: Image1,
+      image: "/images/exploreNSTP/nstpimage1.jpg",
     },
     {
       title: "Scalable Operations",
       description: "Build and optimize scalable business operations",
-      image: Image2,
+      image: "/images/exploreNSTP/nstpimage2.jpg",
     },
     {
       title: "Investment Readiness",
       description: "Prepare for and secure significant investment",
-      image: Image3,
+      image: "/images/exploreNSTP/nstpimage3.jpg",
     },
     {
       title: "Strategic Partnerships",
       description: "Form valuable strategic partnerships",
-      image: Image4,
+      image: "/images/exploreNSTP/nstpimage4.jpg",
     },
     {
       title: "Growth Metrics",
       description: "Achieve significant growth metrics and KPIs",
-      image: Image5,
+      image: "/images/exploreNSTP/nstpimage5.jpg",
     },
     {
       title: "Market Compliance",
       description: "Ensure international regulatory compliance",
-      image: Image7,
+      image: "/images/exploreNSTP/nstpimage6.jpg",
     },
   ];
 
@@ -588,7 +436,7 @@ const Cube8 = () => {
         <div className="relative w-full flex justify-center">
           <div className="relative w-full h-[31rem] overflow-hidden">
             <LazyLoad
-              imageSrc={Image2}
+              imageSrc="/images/exploreNSTP/nstpimage2.jpg"
               imageAlt="Cube 8"
               className="absolute inset-0 w-full h-full object-cover brightness-50"
             />
@@ -639,7 +487,7 @@ const Cube8 = () => {
                 {/* Left side - Image */}
                 <div className="w-full md:w-[540px] lg:w-[670px]">
                   <LazyLoad
-                    imageSrc={Image2}
+                    imageSrc="/images/exploreNSTP/nstpimage2.jpg"
                     imageAlt="Program Overview"
                     className="w-full h-full rounded-md"
                   />

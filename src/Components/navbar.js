@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import nstplogo from "../Assets/nstp-logoWhite.png";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -68,7 +67,7 @@ const Navbar = () => {
         className="flex  items-center cursor-pointer"
         onClick={() => handleClick("/")}
       >
-        <img src={nstplogo} alt="nstp" className="w-28" />
+        <img src="/images/nstp-logoWhite.png" alt="nstp" className="w-28" />
         {/* <h1 className="text-lg font-bold">NSTP</h1> */}
       </div>
       {mobileView ? (

@@ -1,36 +1,35 @@
 import React, { useState } from "react";
-import pfp2 from "../Assets/pfp2.jpeg";
 import Footer from "../Components/footer";
 import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 import Animation from "../Animation";
 
 const data = [
   {
-    image: pfp2,
+    image: "/images/pfp2.jpeg",
     name: "Ahmed Haq",
     position: "Client Services Professional - Rogers Communication",
     department: "Computer Science",
   },
   {
-    image: pfp2,
+    image: "/images/pfp2.jpeg",
     name: "Ansir Junaid",
     position: "Chairman - SupplySide Group",
     department: "Computer Science",
   },
   {
-    image: pfp2,
+    image: "/images/pfp2.jpeg",
     name: "Dr Seemab Latif",
     position: "Founder - Aawaz",
     department: "Computer Science",
   },
   {
-    image: pfp2,
+    image: "/images/pfp2.jpeg",
     name: "Dr. Rafia Mumtaz",
     position: "Assistant Professor - NUST University",
     department: "Computer Science",
   },
   {
-    image: pfp2,
+    image: "/images/pfp2.jpeg",
     name: "Fahad Tiwana",
     position: "CEO - Tech Valley",
     department: "Software Engineering",

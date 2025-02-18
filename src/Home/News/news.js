@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import News1 from "../../Assets/news/zayn-vc.jpg";
-import News2 from "../../Assets/news/nust-award.jpg";
-import News3 from "../../Assets/news/nstp-sez.jpg";
-import News4 from "../../Assets/news/nust.jpg";
-import News5 from "../../Assets/news/sez.jpg";
-import News6 from "../../Assets/news/federal.jpg";
+
 import { Link } from "react-router-dom";
 import Animation from "../../Animation";
 import LazyLoad from "../../LazyLoad";
@@ -17,38 +12,38 @@ const News = () => {
   const pressArticles = [
     {
       date: "August 13, 2024",
-      image: News2,
+      image: "/images/news/nust-award.jpg",
       title: "NUST awarded special technology zone’s status...",
       link: "https://www.brecorder.com/news/40317231",
     },
     {
       date: "December 05, 2021",
-      image: News3,
+      image: "/images/news/nstp-sez.jpg",
       title: "NSTP SEZ body approves entry of two enterprises...",
       link: "https://www.brecorder.com/news/40137879",
     },
     {
       date: "July 16, 2021",
-      image: News4,
+      image: "/images/news/nust.jpg",
       title:
         "NUST signs agreement with consortium for development of technology park...",
       link: "https://www.brecorder.com/news/40107546",
     },
     {
       date: "December 05, 2021",
-      image: News5,
+      image: "/images/news/sez.jpg",
       title: "SEZs tool to enhance investment...",
       link: "https://tribune.com.pk/story/2332527/sezs-tool-to-enhance-investment",
     },
     {
       date: "December 15, 2023",
-      image: News6,
+      image: "/images/news/federal.jpg",
       title: "Federal Minister MoST visits Nust...",
       link: "https://www.brecorder.com/news/40278725/federal-minister-most-visits-nust",
     },
     {
       date: "June 04, 2024",
-      image: News1,
+      image: "/images/news/zayn-vc.jpg",
       title: "Zayn Venture Capital becomes Resident VC at NSTP-NUST...",
       link: "https://www.brecorder.com/news/40306731/zayn-venture-capital-becomes-resident-vc-at-nstp-nust",
     },

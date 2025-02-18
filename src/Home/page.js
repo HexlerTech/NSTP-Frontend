@@ -1,49 +1,21 @@
 import React, { useState, useRef,useEffect } from "react";
 import { Play, Pause } from "lucide-react";
-import Service from "./Services/service";
-import Statistics from "./Stats/stats";
+
 import Gallery from "./Gallery/gallery";
 import Companies from "./Companies/companies";
 import Partners from "./Partners/partner";
 import CTA from "./CTA/page";
 
-import pitchus from "../Assets/preview.png";
 import { FiArrowUpRight } from "react-icons/fi";
-import Typewriter from "typewriter-effect";
-import nstplogocolored from "../Assets/nstplogocolored.png";
-import NSTPVideo from "../Assets/NSTP-video.mp4";
-// import ban from "../Assets/nstp.svg";
-import ban from "../Assets/nstp1.svg";
-import nstp from "../Assets/nstp.png";
-import decor from "../Assets/robo-arm.png";
 
-import { BiCalendar, BiRightArrow, BiWorld } from "react-icons/bi";
+import { BiCalendar, BiWorld } from "react-icons/bi";
 import { FaSchool, FaSeedling, FaUserFriends } from "react-icons/fa";
 import { PiPerson } from "react-icons/pi";
-import { FaCameraRetro } from "react-icons/fa";
 
 
-import GoogleCloud from "../Assets/partners/google-cloud.png";
-import AWS from "../Assets/partners/aws.png";
-import NAMA from "../Assets/partners/nama.png";
-import IASP from "../Assets/partners/iasp.png";
-import NUST from "../Assets/partners/NUST.png";
-import PakLaunch from "../Assets/partners/paklaunch.png";
-import UBank from "../Assets/partners/U-Bank.png";
-import USEmbassy from "../Assets/partners/us-embassy.png";
-import ZaynVC from "../Assets/partners/zayn-vc.png";
 
 import Footer from "../Components/footer";
-import image1 from "../Assets/12.png";
-import image2 from "../Assets/2.jpeg";
-import image3 from "../Assets/3.png";
-import image4 from "../Assets/4.jpg";
-import image6 from "../Assets/6.jpg";
-import image7 from "../Assets/7.jpg";
-import image8 from "../Assets/8.jpg";
-import image9 from "../Assets/9.jpg";
-import image10 from "../Assets/10.jpg";
-import image11 from "../Assets/11.jpeg";
+
 import "../App.css";
 import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -164,7 +136,7 @@ const NSTPAbout = () => {
         onClick={handleVideoClick}
         onTimeUpdate={handleTimeUpdate}
       >
-        <source src={NSTPVideo} type="video/mp4" />
+        <source src="/images/NSTP-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       </Animation>
@@ -271,15 +243,16 @@ const NSTPAbout = () => {
 
 const Home = () => {
   const partners = [
-    { name: "NUST", logo: NUST },
-    { name: "Zayn VC", logo: ZaynVC },
-    { name: "Google Cloud", logo: GoogleCloud },
-    { name: "AWS", logo: AWS },
-    { name: "NAMA", logo: NAMA },
-    { name: "US Embassy", logo: USEmbassy },
-    { name: "U-Bank", logo: UBank },
-    { name: "PakLaunch", logo: PakLaunch },
-    { name: "IASP", logo: IASP },
+    { name: "NUST", logo: "/images/partners/NUST.png" },
+    { name: "Zayn VC", logo: "/images/partners/zayn-vc.png" },
+    { name: "Google Cloud", logo: "/images/partners/google-cloud.png" },
+    { name: "AWS", logo: "/images/partners/aws.png" },
+    { name: "NAMA", logo: "/images/partners/nama.png" },
+    { name: "US Embassy", logo: "/images/partners/us-embassy.png" },
+    { name: "U-Bank", logo: "/images/partners/U-Bank.png" },
+    { name: "PakLaunch", logo: "/images/partners/paklaunch.png" },
+    { name: "IASP", logo: "/images/partners/iasp.png" },
+    
   ];
   return (
     <div className="">
@@ -287,7 +260,7 @@ const Home = () => {
       {/* Background image container with LazyLoad */}
       <div className="absolute inset-0">
         <LazyLoad
-          imageSrc={ban}
+          imageSrc="/images/nstp1.svg"
           imageAlt="Background Banner"
           wrapperClassName="absolute inset-0"
           className="w-full h-full object-cover"
@@ -351,7 +324,7 @@ const Home = () => {
                 </span>
               </div>
               <LazyLoad
-                imageSrc={pitchus}
+                imageSrc="/images/preview.png"
                 imageAlt="Pakistan's Largest Innovation Ecosystem"
                 className="w-40 sm:w-56 lg:w-96 animate-spin-slow"
               />

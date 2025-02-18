@@ -1,5 +1,4 @@
 import React from 'react';
-import pfp2 from "../Assets/pfp2.jpeg";
 import Footer from "../Components/footer";
 import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs';
 import Animation from '../Animation';
@@ -9,25 +8,25 @@ const Team = () => {
         {
           name: "John Smith",
           position: "Chief Executive Officer",
-          image: pfp2,
+          image: "/images/pfp2.jpeg",
           description: "10+ years of experience in technology leadership"
         },
         {
           name: "Sarah Johnson",
           position: "Lead Developer",
-          image: pfp2,
+          image: "/images/pfp2.jpeg",
           description: "Full-stack expert specialized in React and Node.js"
         },
         {
           name: "Michael Chen",
           position: "UX Designer",
-          image: pfp2,
+          image: "/images/pfp2.jpeg",
           description: "Creating intuitive user experiences for 5+ years"
         },
         {
           name: "Emily Brown",
           position: "Product Manager",
-          image: pfp2,
+          image: "/images/pfp2.jpeg",
           description: "Driving product strategy and innovation"
         }
     ];

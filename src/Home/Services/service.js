@@ -5,9 +5,8 @@ import { AiFillStar } from "react-icons/ai";
 import { HiOutlineCalendar } from "react-icons/hi";
 import { FaRegBuilding } from "react-icons/fa";
 import { GiLightBulb } from "react-icons/gi";
-import nstplogocolored from "../../Assets/nstplogocolored.png";
 
-import workers from "../../Assets/workers.png";
+// import workers from "../../Assets/workers.png";
 
 
 const services = [
@@ -71,41 +70,44 @@ const Service = () => {
   };
 
   return (
-    <div className="sm:mt-32 lg:mt-48 md:mt-28">
-      <div className="hidden lg:block" style={containerStyle}></div>
-      <div className="bg-black">
-        <div className="flex flex-col items-center bg-black w-full relative top-0">
-          <img
-            src={workers}
-            alt="workers"
-            className=" w-5/6 sm:w-2/3 lg:w-2/3 absolute -top-10 sm:-top-20 lg:-top-44"
-          />
-        </div>
-        <div className="flex flex-col relative items-center bg-black w-full mt-28 sm:mt-36">
-          <p className="text-sm lg:text-xl italic text-primary text-center mt-10 mb-10">
-            Ready to power your business? <br></br> NSTP offers a range of
-            services to help you innovate and grow.
-          </p>
-          <h1 className="text-2xl lg:text-6xl text-white text-center">What We Offer</h1>
-          <div className="bg-black text-white mb-5 p-6 sm:p-16 lg:p-20 pt-0 pb-0 min-h-screen flex items-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-10">
-              {services.map((service) => {
-                return (
-                  <div key={service.id} className="p-3">
-                    <div className="flex items-center space-x-3">
-                      <p className="text-2xl text-primary">{service.icon}</p>
-                      <h2 className="text-lg lg:text-2xl font-semibold text-black-600">
-                        {service.title}
-                      </h2>
-                    </div>
-                    <p className="text-md lg:text-xl font-light">{service.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+    // <div className="sm:mt-32 lg:mt-48 md:mt-28">
+    //   <div className="hidden lg:block" style={containerStyle}></div>
+    //   <div className="bg-black">
+    //     <div className="flex flex-col items-center bg-black w-full relative top-0">
+    //       <img
+    //         src={workers}
+    //         alt="workers"
+    //         className=" w-5/6 sm:w-2/3 lg:w-2/3 absolute -top-10 sm:-top-20 lg:-top-44"
+    //       />
+    //     </div>
+    //     <div className="flex flex-col relative items-center bg-black w-full mt-28 sm:mt-36">
+    //       <p className="text-sm lg:text-xl italic text-primary text-center mt-10 mb-10">
+    //         Ready to power your business? <br></br> NSTP offers a range of
+    //         services to help you innovate and grow.
+    //       </p>
+    //       <h1 className="text-2xl lg:text-6xl text-white text-center">What We Offer</h1>
+    //       <div className="bg-black text-white mb-5 p-6 sm:p-16 lg:p-20 pt-0 pb-0 min-h-screen flex items-center">
+    //         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-10">
+    //           {services.map((service) => {
+    //             return (
+    //               <div key={service.id} className="p-3">
+    //                 <div className="flex items-center space-x-3">
+    //                   <p className="text-2xl text-primary">{service.icon}</p>
+    //                   <h2 className="text-lg lg:text-2xl font-semibold text-black-600">
+    //                     {service.title}
+    //                   </h2>
+    //                 </div>
+    //                 <p className="text-md lg:text-xl font-light">{service.description}</p>
+    //               </div>
+    //             );
+    //           })}
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+
+    // </div>
+    <div>
 
     </div>
   );

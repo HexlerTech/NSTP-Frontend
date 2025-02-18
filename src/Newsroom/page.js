@@ -67,7 +67,21 @@ const Newsroom = () => {
 
       <div className="flex w-full justify-between max-sm:flex-col z-10">
         <div className="text-left gap-4">
-          <h1 className="font-extrabold uppercase text-4xl ">Newsroom</h1>
+        <h1 className="text-xl lg:text-3xl  flex-wrap  flex items-center mb-2 gap-2  font-extrabold leading-none tracking-tight">
+        <span
+          className="text-transparent text-3xl md:text-4xl  lg:text-5xl xl:text-4xl block"
+          style={{
+            WebkitTextStroke: "1px #000000",
+            textStroke: "1px #000000",
+          }}
+        >
+          News
+        </span>{" "}
+        <span className="text-black text-3xl md:text-4xl lg:text-5xl xl:text-4xl block ">
+          Room
+          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl inline-block w-2 h-2 md:w-3 md:h-3  bg-primary ml-1 rounded-full align-baseline"></span>
+        </span>
+      </h1>
           <p className="text-gray-500">
             Stay updated with the latest news and events happening at NSTP
           </p>
